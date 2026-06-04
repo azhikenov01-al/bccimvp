@@ -819,6 +819,82 @@ input[type=range]::-webkit-slider-thumb {
 /* ============ HISTORY ============ */
 .history-header { padding: 24px 20px 16px; }
 .history-header h1 { font-size: 26px; letter-spacing: -0.03em; }
+
+/* ============ PORTFOLIO ============ */
+.portfolio-header { padding: 24px 20px 16px; }
+.portfolio-header h1 { font-size: 26px; letter-spacing: -0.03em; margin-bottom: 16px; }
+.portfolio-value { display: flex; flex-direction: column; gap: 4px; }
+.portfolio-value .label {
+  font-size: 11px; color: var(--text-mute); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.portfolio-value .value {
+  font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.portfolio-value .pl {
+  display: inline-flex; align-self: flex-start; align-items: center; gap: 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
+  padding: 3px 9px; border-radius: 7px; margin-top: 4px;
+}
+.portfolio-value .pl.up { color: var(--green); background: rgba(56,178,119,0.10); }
+.portfolio-value .pl.down { color: var(--red); background: rgba(224,115,107,0.10); }
+
+.portfolio-tabs {
+  display: flex; gap: 6px; padding: 0 20px 14px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.portfolio-tabs::-webkit-scrollbar { display: none; }
+.portfolio-tab {
+  padding: 8px 14px; border-radius: 10px; background: var(--surface);
+  border: 1px solid var(--border); font-size: 13px; font-weight: 600;
+  color: var(--text-dim); cursor: pointer; white-space: nowrap;
+}
+.portfolio-tab.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+.portfolio-list {
+  padding: 0 20px 20px; display: flex; flex-direction: column; gap: 10px;
+}
+.portfolio-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 14px; cursor: pointer; transition: transform 0.12s, border-color 0.2s;
+}
+.portfolio-card:active { transform: scale(0.99); border-color: var(--surface-3); }
+.pc-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.pc-top .bond-logo { flex-shrink: 0; }
+.pc-name-block { flex: 1; min-width: 0; }
+.pc-name {
+  font-size: 14px; font-weight: 700; margin-bottom: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pc-ticker { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); font-weight: 500; }
+.pc-value-block { text-align: right; flex-shrink: 0; }
+.pc-value {
+  font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700;
+  margin-bottom: 3px;
+}
+.pc-pl {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+  padding: 2px 7px; border-radius: 6px;
+}
+.pc-pl.up { color: var(--green); background: rgba(56,178,119,0.10); }
+.pc-pl.down { color: var(--red); background: rgba(224,115,107,0.10); }
+
+.pc-meta {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  padding-top: 12px; border-top: 1px solid var(--border);
+}
+.pc-meta-cell { min-width: 0; }
+.pc-meta-cell .label {
+  font-size: 10px; color: var(--text-mute); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;
+}
+.pc-meta-cell .value {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pc-meta-cell .value.green { color: var(--accent-soft); }
 .history-tabs {
   display: flex; gap: 6px; padding: 0 20px 16px;
 }
@@ -1336,7 +1412,7 @@ input[type=range]::-webkit-slider-thumb {
           </div>
 
           <div class="sticky-cta">
-            <button class="btn btn-primary" onclick="goTo('order-amount')">Купить</button>
+            <button class="btn btn-primary" onclick="state.flow='buy'; state.pricePerBond=100.45; state.nominal=1000; state.couponRate=0.135; state.ytm=0.142; state.nkdPerBond=12; applyFlowUI(); goTo('order-amount');">Купить</button>
           </div>
         </div>
 
@@ -1346,7 +1422,7 @@ input[type=range]::-webkit-slider-thumb {
             <div class="icon-btn" onclick="goTo('bond-detail')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" stroke-linecap="round"/></svg>
             </div>
-            <h1>Покупка</h1>
+            <h1 id="orderTitle">Покупка</h1>
           </div>
 
           <div class="order-progress">
@@ -1356,11 +1432,11 @@ input[type=range]::-webkit-slider-thumb {
 
           <div class="order-instrument">
             <div class="order-instrument-left">
-              <div class="name">Минфин РК · МЕККАМ-60</div>
-              <div class="ticker">MOM_KZT_05.27</div>
+              <div class="name" id="orderInstrumentName">Минфин РК · МЕККАМ-60</div>
+              <div class="ticker" id="orderInstrumentTicker">MOM_KZT_05.27</div>
             </div>
             <div class="order-quote">
-              <div class="price">100.45%</div>
+              <div class="price" id="orderInstrumentPrice">100.45%</div>
               <div class="chg">+0.32%</div>
             </div>
           </div>
@@ -1368,16 +1444,16 @@ input[type=range]::-webkit-slider-thumb {
           <!-- AVAILABLE BALANCE (moved up) -->
           <div class="available-row">
             <div class="available-block">
-              <span class="label">Доступно</span>
-              <span class="value">542 300 ₸</span>
+              <span class="label" id="availLabel">Доступно</span>
+              <span class="value" id="availValue">542 300 ₸</span>
             </div>
             <div class="available-block">
               <span class="label">Номинал</span>
-              <span class="value">1 000 ₸</span>
+              <span class="value" id="nominalValue">1 000 ₸</span>
             </div>
             <div class="available-block">
               <span class="label">Лот</span>
-              <span class="value">10 шт</span>
+              <span class="value" id="lotValue">10 шт</span>
             </div>
           </div>
 
@@ -1434,13 +1510,14 @@ input[type=range]::-webkit-slider-thumb {
           <div id="marketForm" style="display:none;">
             <div class="field-group">
               <div class="field-label">
-                Сумма
-                <span class="hint">по рыночной цене 100.45%</span>
+                <span id="mFieldLabel">Сумма</span>
+                <span class="hint" id="mFieldHint">по рыночной цене 100.45%</span>
               </div>
               <div class="field-input-wrap" id="mSumWrap">
                 <input type="text" id="mSumInput" placeholder="0" inputmode="numeric" oninput="recalcMarket()" />
-                <span class="field-suffix">₸</span>
+                <span class="field-suffix" id="mFieldSuffix">₸</span>
               </div>
+              <div class="qty-error" id="mQtyError"></div>
             </div>
           </div>
 
@@ -1506,8 +1583,8 @@ input[type=range]::-webkit-slider-thumb {
           </div>
 
           <div class="confirm-summary">
-            <div class="row"><span class="label">Облигация</span><span class="value">МЕККАМ-60</span></div>
-            <div class="row"><span class="label">Тикер</span><span class="value">MOM_KZT_05.27</span></div>
+            <div class="row"><span class="label">Облигация</span><span class="value" id="confirmBondName">МЕККАМ-60</span></div>
+            <div class="row"><span class="label">Тикер</span><span class="value" id="confirmBondTicker">MOM_KZT_05.27</span></div>
             <div class="row"><span class="label">Тип заявки</span><span class="value" id="confirmType">Рыночная</span></div>
             <div class="row"><span class="label">Количество</span><span class="value" id="confirmQty">100 шт</span></div>
             <div class="row"><span class="label">Цена</span><span class="value" id="confirmPrice">100.45%</span></div>
@@ -1515,16 +1592,16 @@ input[type=range]::-webkit-slider-thumb {
             <div class="row subtotal"><span class="label">Чистая сумма</span><span class="value" id="confirmClean">100 450 ₸</span></div>
             <div class="row"><span class="label">НКД <span class="tooltip-icon" title="Накопленный купонный доход">?</span></span><span class="value" id="confirmNkd">+1 200 ₸</span></div>
             <div class="row"><span class="label">Комиссия</span><span class="value" id="confirmFee">152 ₸</span></div>
-            <div class="row total"><span class="label">Итого сумма</span><span class="value" id="confirmTotal">101 802 ₸</span></div>
+            <div class="row total"><span class="label" id="confirmTotalLabel">Итого сумма</span><span class="value" id="confirmTotal">101 802 ₸</span></div>
           </div>
 
           <div class="warning-banner">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01" stroke-linecap="round"/></svg>
-            <span>После подтверждения заявка будет принята в работу. Статус можно отслеживать в <b>Истории</b> — облигация поступит на счёт в течение <b>1 рабочего дня (T+1)</b>.</span>
+            <span id="confirmWarningText">После подтверждения заявка будет принята в работу. Статус можно отслеживать в <b>Истории</b> — облигация поступит на счёт в течение <b>1 рабочего дня (T+1)</b>.</span>
           </div>
 
           <div class="sticky-cta">
-            <button class="btn btn-primary" onclick="executeOrder()">Подтвердить покупку</button>
+            <button class="btn btn-primary" id="confirmBtn" onclick="executeOrder()">Подтвердить покупку</button>
           </div>
         </div>
 
@@ -1540,8 +1617,8 @@ input[type=range]::-webkit-slider-thumb {
             <div class="success-card">
               <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 10px;">
                 <div>
-                  <div class="name">МЕККАМ-60</div>
-                  <div class="meta">MOM_KZT_05.27</div>
+                  <div class="name" id="successBondName">МЕККАМ-60</div>
+                  <div class="meta" id="successBondTicker">MOM_KZT_05.27</div>
                 </div>
                 <span class="status-pill-proc"><span class="dot"></span> В обработке</span>
               </div>
@@ -1554,12 +1631,35 @@ input[type=range]::-webkit-slider-thumb {
 
             <div class="success-actions">
               <button class="btn btn-primary" onclick="goTo('history'); addHistoryItem();">Открыть Историю</button>
-              <button class="btn btn-secondary" onclick="goTo('bonds-list')">Купить ещё облигации</button>
+              <button class="btn btn-secondary" id="successSecondaryBtn" onclick="goTo('bonds-list')">Купить ещё облигации</button>
             </div>
           </div>
         </div>
 
         <!-- ===== VIEW: HISTORY ===== -->
+        <!-- ===== VIEW: PORTFOLIO ===== -->
+        <div class="view" id="view-portfolio">
+          <div class="portfolio-header">
+            <h1>Портфель</h1>
+            <div class="portfolio-value">
+              <span class="label">Общая стоимость</span>
+              <span class="value" id="portfolioTotal">198 740 ₸</span>
+              <span class="pl up" id="portfolioPL">+3 240 ₸ · +1.66%</span>
+            </div>
+          </div>
+
+          <div class="portfolio-tabs">
+            <div class="portfolio-tab active">Облигации</div>
+            <div class="portfolio-tab">Акции</div>
+            <div class="portfolio-tab">ETF</div>
+            <div class="portfolio-tab">Денежные</div>
+          </div>
+
+          <div class="portfolio-list" id="portfolioList">
+            <!-- 2 готовых позиции, добавлены динамически в JS -->
+          </div>
+        </div>
+
         <div class="view" id="view-history">
           <div class="history-header">
             <h1>История</h1>
@@ -1613,7 +1713,7 @@ input[type=range]::-webkit-slider-thumb {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
           <span>История</span>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" onclick="goTo('portfolio')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2" stroke-linecap="round"/></svg>
           <span>Портфель</span>
         </div>
@@ -1879,9 +1979,10 @@ input[type=range]::-webkit-slider-thumb {
 const state = {
   currentView: 'bonds-list',
   market: 'KASE',
-  orderType: 'limit', // 'market' | 'limit' — лимитная по умолчанию
-  pricePerBond: 100.45,    // котировка в % от номинала
-  nominal: 1000,           // номинал ₸
+  orderType: 'limit',
+  flow: 'buy', // 'buy' | 'sell'
+  pricePerBond: 100.45,
+  nominal: 1000,
   available: 542300,
   couponRate: 0.135,
   ytm: 0.142,
@@ -1891,6 +1992,54 @@ const state = {
   execPrice: 100.45,
   validity: '1 июня 2026',
   hasHistoryItem: false,
+  // Готовые позиции в портфеле
+  holdings: [
+    {
+      id: 'hsbk',
+      issuer: 'Halyk Bank',
+      name: 'Halyk Bank',
+      ticker: 'HSBK_KZT_03.28',
+      logoClass: 'halyk',
+      logoText: 'H',
+      qty: 50,
+      avgPrice: 99.20,
+      currentPrice: 98.70,
+      nominal: 1000,
+      currency: '₸',
+      ytm: 17.8,
+      couponRate: 16.5,
+      nextCouponDate: '15.09.2026',
+      nextCouponAmount: 4125,
+      maturityDate: '15.03.2028',
+      daysToMaturity: 650,
+      lot: 10,
+      nkdPerBond: 22,
+      coupon10: 0.165,
+    },
+    {
+      id: 'kmg',
+      issuer: 'KazMunayGas',
+      name: 'KazMunayGas',
+      ticker: 'KMG_USD_09.30',
+      logoClass: 'kmg',
+      logoText: 'KMG',
+      qty: 30,
+      avgPrice: 95.80,
+      currentPrice: 96.40,
+      nominal: 1000,
+      currency: '$',
+      ytm: 7.4,
+      couponRate: 6.8,
+      nextCouponDate: '15.09.2026',
+      nextCouponAmount: 1020,
+      maturityDate: '15.09.2030',
+      daysToMaturity: 1567,
+      lot: 1,
+      nkdPerBond: 4,
+      coupon10: 0.068,
+    },
+  ],
+  currentHolding: null, // выбранная для продажи
 };
 
 function goTo(viewId) {
@@ -1901,7 +2050,7 @@ function goTo(viewId) {
   document.getElementById('appContent').scrollTop = 0;
 
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  const navMap = { 'bonds-list': 0, 'bond-detail': 0, 'order-amount': 0, 'order-confirm': 0, 'success': 0, 'history': 1 };
+  const navMap = { 'bonds-list': 0, 'bond-detail': 0, 'order-amount': 0, 'order-confirm': 0, 'success': 0, 'history': 1, 'portfolio': 2 };
   const idx = navMap[viewId];
   if (idx !== undefined) document.querySelectorAll('.nav-item')[idx].classList.add('active');
 
@@ -1909,8 +2058,164 @@ function goTo(viewId) {
   const g = document.querySelector('.flow-step[data-step="' + viewId + '"]');
   if (g) g.classList.add('active');
 
-  // При возврате в список облигаций или к деталям через список — сбрасываем форму покупки
-  if (viewId === 'bonds-list') resetOrderForm();
+  // Рендер портфеля при заходе
+  if (viewId === 'portfolio') renderPortfolio();
+  // При возврате в список облигаций / в портфель — сбрасываем форму, возвращаем flow на buy для дальнейших покупок
+  if (viewId === 'bonds-list') { state.flow = 'buy'; resetOrderForm(); applyFlowUI(); }
+}
+
+function renderPortfolio() {
+  const host = document.getElementById('portfolioList');
+  host.innerHTML = '';
+  state.holdings.forEach((h, i) => {
+    const currentValue = Math.round(h.qty * (h.currentPrice / 100) * h.nominal);
+    const purchaseValue = Math.round(h.qty * (h.avgPrice / 100) * h.nominal);
+    const pl = currentValue - purchaseValue;
+    const plPct = (pl / purchaseValue * 100);
+    const plClass = pl >= 0 ? 'up' : 'down';
+    const plSign = pl >= 0 ? '+' : '−';
+    const card = document.createElement('div');
+    card.className = 'portfolio-card';
+    card.onclick = () => openSell(h.id);
+    card.innerHTML = `
+      <div class="pc-top">
+        <div class="bond-logo ${h.logoClass}">${h.logoText}</div>
+        <div class="pc-name-block">
+          <div class="pc-name">${h.name}</div>
+          <div class="pc-ticker">${h.ticker} · ${h.qty} шт</div>
+        </div>
+        <div class="pc-value-block">
+          <div class="pc-value">${currentValue.toLocaleString('ru-RU').replace(/,/g,' ')} ${h.currency}</div>
+          <div class="pc-pl ${plClass}">${plSign}${Math.abs(pl).toLocaleString('ru-RU').replace(/,/g,' ')} ${h.currency} · ${plSign}${Math.abs(plPct).toFixed(2)}%</div>
+        </div>
+      </div>
+      <div class="pc-meta">
+        <div class="pc-meta-cell">
+          <div class="label">Ближайший купон</div>
+          <div class="value">${h.nextCouponDate}</div>
+        </div>
+        <div class="pc-meta-cell">
+          <div class="label">Сумма купона</div>
+          <div class="value green">+${h.nextCouponAmount.toLocaleString('ru-RU').replace(/,/g,' ')} ${h.currency}</div>
+        </div>
+        <div class="pc-meta-cell">
+          <div class="label">До погашения</div>
+          <div class="value">${h.daysToMaturity} дн.</div>
+        </div>
+      </div>
+    `;
+    host.appendChild(card);
+  });
+}
+
+function openSell(holdingId) {
+  const h = state.holdings.find(x => x.id === holdingId);
+  if (!h) return;
+  state.flow = 'sell';
+  state.currentHolding = h;
+  state.pricePerBond = h.currentPrice;
+  state.nominal = h.nominal;
+  state.couponRate = h.coupon10;
+  state.ytm = h.ytm / 100;
+  state.nkdPerBond = h.nkdPerBond;
+  applyFlowUI();
+  goTo('order-amount');
+}
+
+function applyFlowUI() {
+  const isBuy = state.flow === 'buy';
+  const h = state.currentHolding;
+  // Дефолтные значения для покупки
+  const defaults = {
+    name: 'Минфин РК · МЕККАМ-60',
+    shortName: 'МЕККАМ-60',
+    ticker: 'MOM_KZT_05.27',
+    price: '100.45%',
+    nominal: '1 000 ₸',
+    lot: '10 шт',
+    available: '542 300 ₸',
+    currency: '₸',
+  };
+
+  // 1. Заголовок
+  document.getElementById('orderTitle').textContent = isBuy ? 'Покупка' : 'Продажа';
+
+  // 2. Инструмент в order-instrument
+  if (!isBuy && h) {
+    document.getElementById('orderInstrumentName').textContent = h.name;
+    document.getElementById('orderInstrumentTicker').textContent = h.ticker;
+    document.getElementById('orderInstrumentPrice').textContent = h.currentPrice.toFixed(2) + '%';
+  } else {
+    document.getElementById('orderInstrumentName').textContent = defaults.name;
+    document.getElementById('orderInstrumentTicker').textContent = defaults.ticker;
+    document.getElementById('orderInstrumentPrice').textContent = defaults.price;
+  }
+
+  // 3. Available row
+  if (isBuy) {
+    document.getElementById('availLabel').textContent = 'Доступно';
+    document.getElementById('availValue').textContent = defaults.available;
+    document.getElementById('nominalValue').textContent = defaults.nominal;
+    document.getElementById('lotValue').textContent = defaults.lot;
+  } else if (h) {
+    document.getElementById('availLabel').textContent = 'В наличии';
+    document.getElementById('availValue').textContent = h.qty + ' шт';
+    document.getElementById('nominalValue').textContent = h.nominal.toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + h.currency;
+    document.getElementById('lotValue').textContent = h.lot + ' шт';
+  }
+
+  // 4. Рыночная форма: в покупке — Сумма ₸, в продаже — Количество шт
+  if (isBuy) {
+    document.getElementById('mFieldLabel').textContent = 'Сумма';
+    document.getElementById('mFieldSuffix').textContent = '₸';
+    document.getElementById('mFieldHint').textContent = 'по рыночной цене 100.45%';
+    document.getElementById('mSumInput').inputMode = 'numeric';
+    document.getElementById('mSumInput').placeholder = '0';
+  } else if (h) {
+    document.getElementById('mFieldLabel').textContent = 'Количество';
+    document.getElementById('mFieldSuffix').textContent = 'шт';
+    document.getElementById('mFieldHint').textContent = `по рыночной цене ${h.currentPrice.toFixed(2)}% · доступно ${h.qty} шт`;
+    document.getElementById('mSumInput').inputMode = 'numeric';
+    document.getElementById('mSumInput').placeholder = '0';
+  }
+
+  // 5. Лимитная — подсказка по цене
+  const priceHint = document.querySelector('#limitForm .dual-field:first-child .dual-hint');
+  if (priceHint) {
+    const mkt = (isBuy ? 100.45 : (h ? h.currentPrice : 100.45)).toFixed(2);
+    priceHint.textContent = `рынок: ${mkt}`;
+  }
+  const qtyHint = document.getElementById('qtyHint');
+  if (qtyHint) {
+    const lot = isBuy ? 10 : (h ? h.lot : 10);
+    if (lot === 1) qtyHint.textContent = 'по 1 шт';
+    else qtyHint.textContent = `кратно ${lot} шт (лот)`;
+  }
+
+  // 6. Кнопки
+  document.getElementById('continueBtn').textContent = isBuy ? 'Купить' : 'Продать';
+  document.getElementById('confirmBtn').textContent = isBuy ? 'Подтвердить покупку' : 'Подтвердить продажу';
+  document.getElementById('successSecondaryBtn').textContent = isBuy ? 'Купить ещё облигации' : 'Вернуться в Портфель';
+  document.getElementById('successSecondaryBtn').setAttribute('onclick', isBuy ? "goTo('bonds-list')" : "goTo('portfolio')");
+
+  // 7. Confirm bond name + ticker
+  if (isBuy) {
+    document.getElementById('confirmBondName').textContent = defaults.shortName;
+    document.getElementById('confirmBondTicker').textContent = defaults.ticker;
+    document.getElementById('successBondName').textContent = defaults.shortName;
+    document.getElementById('successBondTicker').textContent = defaults.ticker;
+  } else if (h) {
+    document.getElementById('confirmBondName').textContent = h.name;
+    document.getElementById('confirmBondTicker').textContent = h.ticker;
+    document.getElementById('successBondName').textContent = h.name;
+    document.getElementById('successBondTicker').textContent = h.ticker;
+  }
+
+  // 8. Confirm total label
+  document.getElementById('confirmTotalLabel').textContent = isBuy ? 'Итого сумма' : 'Итого к получению';
+  document.getElementById('confirmWarningText').innerHTML = isBuy
+    ? 'После подтверждения заявка будет принята в работу. Статус можно отслеживать в <b>Истории</b> — облигация поступит на счёт в течение <b>1 рабочего дня (T+1)</b>.'
+    : 'После подтверждения заявка будет принята в работу. Статус можно отслеживать в <b>Истории</b> — деньги поступят на счёт в течение <b>1 рабочего дня (T+1)</b>.';
 }
 
 function resetOrderForm() {
@@ -2132,8 +2437,10 @@ function resetCalc() {
   syncBuyButton();
 }
 
-// ===== MARKET CALC: только сумма, в расчёте только комиссия =====
+// ===== MARKET CALC =====
 function recalcMarket() {
+  if (state.flow === 'sell') return recalcMarketSell();
+  // Покупка по сумме
   const sum = num('mSumInput');
   if (!sum) { resetCalc(); return; }
 
@@ -2153,10 +2460,9 @@ function recalcMarket() {
 
   const fee = Math.round(sum * state.feeRate);
   const total = sum + fee;
-  state.qty = null; // неизвестно
+  state.qty = null;
   state.execPrice = null;
 
-  // В рыночной показываем ТОЛЬКО комиссию и итого
   document.getElementById('rowQty').style.display = 'none';
   document.getElementById('rowPrice').style.display = 'none';
   document.getElementById('rowCoupon').style.display = 'none';
@@ -2166,7 +2472,6 @@ function recalcMarket() {
   document.getElementById('warningBox').style.display = 'flex';
   calcValid = true; syncBuyButton();
 
-  // confirm + success
   document.getElementById('confirmType').textContent = 'Рыночная';
   document.getElementById('confirmQty').textContent = 'по рынку';
   document.getElementById('confirmPrice').textContent = 'рыночная';
@@ -2178,6 +2483,69 @@ function recalcMarket() {
   document.getElementById('successType').textContent = 'Рыночная';
   document.getElementById('successQty').textContent = 'по рынку';
   document.getElementById('successTotal').textContent = fmt(total);
+}
+
+// Рыночная продажа — по количеству, лотность учитывается
+function recalcMarketSell() {
+  const h = state.currentHolding; if (!h) return;
+  const qty = num('mSumInput');
+  const wrap = document.getElementById('mSumWrap');
+  const errBox = document.getElementById('mQtyError');
+  errBox.classList.remove('show'); errBox.textContent = '';
+  wrap.classList.remove('error');
+
+  if (!qty) { resetCalc(); return; }
+
+  // Лотность
+  if (qty % h.lot !== 0) {
+    wrap.classList.add('error');
+    errBox.classList.add('show');
+    errBox.textContent = `Количество должно быть кратно ${h.lot} (лот). Ближайшие: ${Math.floor(qty/h.lot)*h.lot} или ${Math.ceil(qty/h.lot)*h.lot}`;
+    resetCalc(); return;
+  }
+  // Больше чем в наличии
+  if (qty > h.qty) {
+    document.getElementById('errorBox').innerHTML = `
+      <div class="error-banner">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01" stroke-linecap="round"/></svg>
+        <div><b>Недостаточно бумаг</b>В наличии только ${h.qty} шт</div>
+      </div>`;
+    resetCalc(); return;
+  }
+  document.getElementById('errorBox').innerHTML = '';
+
+  // По рыночной цене — мы не знаем точную цену, но для демо считаем по текущей
+  const clean = qty * (h.currentPrice / 100) * h.nominal;
+  const fee = Math.round(clean * state.feeRate);
+  const total = clean - fee;
+  state.qty = qty; state.execPrice = h.currentPrice;
+
+  document.getElementById('rowQty').style.display = 'flex';
+  document.getElementById('rowPrice').style.display = 'none';
+  document.getElementById('rowCoupon').style.display = 'none';
+  document.getElementById('calcQty').textContent = qty + ' шт';
+  document.getElementById('calcFee').textContent = fmtCur(fee, h.currency);
+  document.getElementById('calcTotal').textContent = fmtCur(total, h.currency);
+  document.getElementById('calcBox').style.display = 'block';
+  document.getElementById('warningBox').style.display = 'flex';
+  calcValid = true; syncBuyButton();
+
+  // Confirm
+  document.getElementById('confirmType').textContent = 'Рыночная';
+  document.getElementById('confirmQty').textContent = qty + ' шт';
+  document.getElementById('confirmPrice').textContent = 'рыночная';
+  document.getElementById('confirmClean').textContent = fmtCur(clean, h.currency);
+  document.getElementById('confirmNkd').textContent = '~ при исполнении';
+  document.getElementById('confirmFee').textContent = fmtCur(fee, h.currency);
+  document.getElementById('confirmTotal').textContent = fmtCur(total, h.currency);
+
+  document.getElementById('successType').textContent = 'Рыночная';
+  document.getElementById('successQty').textContent = qty + ' шт';
+  document.getElementById('successTotal').textContent = fmtCur(total, h.currency);
+}
+
+function fmtCur(n, cur) {
+  return Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + cur;
 }
 
 // ===== LIMIT CALC =====
@@ -2232,12 +2600,32 @@ function computeLimit(qty, price) {
 
   if (!qty || qty < 1) { resetCalc(); return; }
 
+  const isBuy = state.flow === 'buy';
+  const h = state.currentHolding;
+  const currency = isBuy ? '₸' : (h ? h.currency : '₸');
+
+  // В продаже — проверяем что не больше чем в наличии
+  if (!isBuy && h && qty > h.qty) {
+    errorBox.innerHTML = `
+      <div class="error-banner">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01" stroke-linecap="round"/></svg>
+        <div><b>Недостаточно бумаг</b>В наличии только ${h.qty} шт</div>
+      </div>`;
+    calcBox.style.display = 'none'; warningBox.style.display = 'none';
+    calcValid = false; syncBuyButton();
+    return;
+  }
+
   const clean = qty * price;
   const nkd = qty * state.nkdPerBond;
-  const fee = Math.round((clean + nkd) * state.feeRate);
-  const total = clean + nkd + fee;
+  const grossForBuy = clean + nkd;
+  const fee = Math.round(grossForBuy * state.feeRate);
+  // Покупка: списание = clean + nkd + fee
+  // Продажа: получение = clean + nkd - fee (НКД при продаже получаем)
+  const total = isBuy ? (clean + nkd + fee) : (clean + nkd - fee);
 
-  if (total > state.available) {
+  // В покупке проверяем достаточность средств
+  if (isBuy && total > state.available) {
     const need = total - state.available;
     errorBox.innerHTML = `
       <div class="error-banner">
@@ -2254,12 +2642,25 @@ function computeLimit(qty, price) {
   document.getElementById('rowCoupon').style.display = 'flex';
   document.getElementById('calcQty').textContent = qty + ' шт';
   document.getElementById('calcPrice').textContent = state.execPrice.toFixed(2) + '%';
-  document.getElementById('calcCoupon').textContent = '+' + fmt(nkd);
-  document.getElementById('calcFee').textContent = fmt(fee);
-  document.getElementById('calcTotal').textContent = fmt(total);
+  document.getElementById('calcCoupon').textContent = '+' + fmtCur(nkd, currency);
+  document.getElementById('calcFee').textContent = fmtCur(fee, currency);
+  document.getElementById('calcTotal').textContent = fmtCur(total, currency);
   calcBox.style.display = 'block';
   warningBox.style.display = 'none';
   calcValid = true; syncBuyButton();
+
+  document.getElementById('confirmType').textContent = 'Лимитная';
+  document.getElementById('confirmQty').textContent = qty + ' шт';
+  document.getElementById('confirmPrice').textContent = state.execPrice.toFixed(2) + '%';
+  document.getElementById('confirmClean').textContent = fmtCur(clean, currency);
+  document.getElementById('confirmNkd').textContent = '+' + fmtCur(nkd, currency);
+  document.getElementById('confirmFee').textContent = fmtCur(fee, currency);
+  document.getElementById('confirmTotal').textContent = fmtCur(total, currency);
+
+  document.getElementById('successType').textContent = 'Лимитная';
+  document.getElementById('successQty').textContent = qty + ' шт';
+  document.getElementById('successTotal').textContent = fmtCur(total, currency);
+}
 
   document.getElementById('confirmType').textContent = 'Лимитная';
   document.getElementById('confirmQty').textContent = qty + ' шт';
@@ -2369,23 +2770,33 @@ function executeOrder() { goTo('success'); }
 
 // ===== HISTORY =====
 function addHistoryItem() {
-  if (state.hasHistoryItem) return;
-  state.hasHistoryItem = true;
+  // Можно делать сколько угодно записей
   const total = document.getElementById('successTotal').textContent;
-  const qty = state.qty;
+  const qty = state.qty || 'по рынку';
+  const qtyText = (typeof qty === 'number' ? (qty + ' шт') : qty);
   const type = document.getElementById('successType').textContent;
   const validity = state.validity;
+  const isBuy = state.flow === 'buy';
+  const h = state.currentHolding;
+  const opLabel = isBuy ? 'Покупка' : 'Продажа';
+  const bondName = isBuy ? 'МЕККАМ-60' : (h ? h.name : '—');
+  const ticker = isBuy ? 'MOM_KZT_05.27' : (h ? h.ticker : '');
+  // Иконка: для покупки стрелка вниз (приток бумаг), для продажи — вверх
+  const icon = isBuy
+    ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round"/></svg>`
+    : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round"/></svg>`;
+  const iconCls = isBuy ? '' : 'sell';
   const host = document.getElementById('historyToday');
-  host.innerHTML = `
+  // Не дублируем одинаковую последнюю запись подряд (защита от двойного клика)
+  const existing = host.querySelector('.history-item:first-child');
+  const html = `
     <div class="history-item new">
       <div class="hi-top">
         <div class="hi-op">
-          <div class="hi-op-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round"/></svg>
-          </div>
+          <div class="hi-op-icon ${iconCls}">${icon}</div>
           <div class="hi-op-text">
-            <div class="label">Покупка · МЕККАМ-60</div>
-            <div class="sub">MOM_KZT_05.27 · ${qty} шт · ${type}</div>
+            <div class="label">${opLabel} · ${bondName}</div>
+            <div class="sub">${ticker} · ${qtyText} · ${type}</div>
           </div>
         </div>
         <div class="hi-amount">
@@ -2398,6 +2809,8 @@ function addHistoryItem() {
         <span class="hi-eta">Срок действия: ${validity}</span>
       </div>
     </div>`;
+  host.insertAdjacentHTML('afterbegin', html);
+  state.hasHistoryItem = true;
 }
 
 // Init on load
