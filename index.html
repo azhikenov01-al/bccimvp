@@ -2662,19 +2662,6 @@ function computeLimit(qty, price) {
   document.getElementById('successTotal').textContent = fmtCur(total, currency);
 }
 
-  document.getElementById('confirmType').textContent = 'Лимитная';
-  document.getElementById('confirmQty').textContent = qty + ' шт';
-  document.getElementById('confirmPrice').textContent = state.execPrice.toFixed(2) + '%';
-  document.getElementById('confirmClean').textContent = fmt(clean);
-  document.getElementById('confirmNkd').textContent = '+' + fmt(nkd);
-  document.getElementById('confirmFee').textContent = fmt(fee);
-  document.getElementById('confirmTotal').textContent = fmt(total);
-
-  document.getElementById('successType').textContent = 'Лимитная';
-  document.getElementById('successQty').textContent = qty + ' шт';
-  document.getElementById('successTotal').textContent = fmt(total);
-}
-
 // ===== CALENDAR =====
 const monthsRu = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 const monthsShort = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
