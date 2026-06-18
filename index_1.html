@@ -107,70 +107,6 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 }
 .list-header h1 { font-size: 22px; letter-spacing: -0.02em; flex: 1; }
 
-/* INSTRUMENT TYPE TABS */
-.instrument-tabs {
-  display: flex; gap: 6px; padding: 0 20px 14px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.instrument-tabs::-webkit-scrollbar { display: none; }
-.instrument-tab {
-  padding: 8px 14px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  font-size: 13px; font-weight: 600; color: var(--text-dim);
-  cursor: pointer; white-space: nowrap;
-  display: inline-flex; align-items: center; gap: 6px;
-  transition: all 0.2s;
-}
-.instrument-tab.active {
-  background: var(--accent); border-color: var(--accent); color: var(--on-accent);
-}
-.instrument-tab.disabled {
-  opacity: 0.5; cursor: not-allowed; color: var(--text-mute);
-}
-.instrument-soon {
-  font-size: 9px; font-weight: 700;
-  background: rgba(217,164,65,0.18); color: var(--yellow);
-  padding: 2px 6px; border-radius: 5px;
-  text-transform: uppercase; letter-spacing: 0.04em;
-}
-
-/* INSTRUMENT EMPTY STATE */
-.empty-instrument {
-  padding: 32px 24px 40px; text-align: center;
-}
-.empty-instrument-icon {
-  width: 72px; height: 72px; border-radius: 20px;
-  background: var(--accent-tint); color: var(--accent-soft);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 20px;
-}
-.empty-instrument h2 {
-  font-size: 22px; letter-spacing: -0.02em; margin-bottom: 8px;
-}
-.empty-desc {
-  font-size: 13px; color: var(--text-dim); line-height: 1.5;
-  max-width: 300px; margin: 0 auto 24px;
-}
-.empty-info {
-  display: flex; gap: 10px; align-items: flex-start;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 14px; padding: 14px;
-  text-align: left;
-}
-.empty-info-icon {
-  width: 28px; height: 28px; border-radius: 8px;
-  background: rgba(91,151,196,0.12); color: var(--blue);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.empty-info-text {
-  font-size: 12.5px; line-height: 1.55; color: var(--text); flex: 1;
-}
-.empty-cta {
-  margin-top: 18px; padding: 12px; border-radius: 12px;
-  background: var(--surface-2); border: 1px dashed var(--border);
-  font-size: 12px; font-weight: 600; color: var(--text-mute);
-}
-
 .market-tabs {
   display: flex; gap: 6px; padding: 0 20px 14px;
 }
@@ -268,18 +204,6 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 .bond-mini-change.up .abs { color: var(--green); }
 .bond-mini-change.down .abs { color: var(--red); }
 
-/* FAV STAR */
-.bond-fav {
-  width: 28px; height: 28px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  background: transparent; color: var(--text-mute);
-  cursor: pointer; flex-shrink: 0; transition: all 0.2s;
-  margin-left: 2px;
-}
-.bond-fav:active { transform: scale(0.85); }
-.bond-fav.on { color: var(--yellow); }
-.bond-fav.on svg { fill: var(--yellow); stroke: var(--yellow); }
-
 /* ============ FILTER BOTTOM SHEET ============ */
 .sheet-overlay {
   position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(2px);
@@ -352,32 +276,6 @@ input[type=range]::-webkit-slider-thumb {
   background: var(--accent); cursor: pointer; border: 3px solid var(--bg);
 }
 .sheet-footer { padding: 12px 20px 24px; border-top: 1px solid var(--border); background: var(--bg); }
-
-/* Тип облигации — верхнеуровневый фильтр */
-.filter-group-top {
-  background: var(--accent-tint);
-  margin: -8px -20px 0; padding: 16px 20px;
-  border-bottom: 1px solid rgba(31,138,91,0.18);
-}
-.filter-group-top .filter-group-title { color: var(--accent-soft); }
-.filter-bondtype-hint {
-  margin-top: 10px; font-size: 11px; color: var(--text-dim); font-style: italic;
-}
-.bondtype-empty {
-  padding: 32px 20px; text-align: center;
-}
-.bondtype-empty-icon {
-  width: 56px; height: 56px; border-radius: 16px;
-  background: var(--accent-tint); color: var(--accent-soft);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 14px;
-}
-.bondtype-empty h3 {
-  font-size: 15px; margin-bottom: 6px;
-}
-.bondtype-empty p {
-  font-size: 12px; color: var(--text-dim); line-height: 1.55; max-width: 280px; margin: 0 auto;
-}
 
 /* ============ BOND DETAIL ============ */
 .detail-header {
@@ -997,63 +895,6 @@ input[type=range]::-webkit-slider-thumb {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .pc-meta-cell .value.green { color: var(--accent-soft); }
-
-/* ============ FAVORITES ============ */
-.fav-type-chips { padding: 0 20px 12px; }
-.fav-list {
-  padding: 0 20px 20px; display: flex; flex-direction: column; gap: 8px;
-}
-.fav-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-  padding: 14px; cursor: pointer; transition: transform 0.12s, border-color 0.2s;
-  display: flex; align-items: center; gap: 12px;
-}
-.fav-card:active { transform: scale(0.99); border-color: var(--surface-3); }
-.fav-card .bond-logo { flex-shrink: 0; }
-.fav-card-left { min-width: 0; flex: 1; }
-.fav-card-name {
-  font-size: 14px; font-weight: 700; margin-bottom: 4px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.fav-card-meta {
-  display: flex; align-items: center; gap: 6px; min-width: 0;
-}
-.fav-card-ticker {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px;
-  color: var(--text-dim); font-weight: 500;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;
-}
-.fav-card-right { text-align: right; flex-shrink: 0; }
-.fav-card-price {
-  font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700;
-  margin-bottom: 3px;
-}
-.fav-card-change {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
-  display: inline-flex; align-items: center; gap: 3px;
-  padding: 2px 7px; border-radius: 6px;
-}
-.fav-card-change.up { color: var(--green); background: rgba(56,178,119,0.10); }
-.fav-card-change.down { color: var(--red); background: rgba(224,115,107,0.10); }
-
-/* Цветная мини-метка типа — в строке с тикером, не перекрывается */
-.type-tag {
-  font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 5px;
-  text-transform: uppercase; letter-spacing: 0.04em;
-  flex-shrink: 0;
-}
-.type-tag.bonds { background: rgba(31,138,91,0.16); color: var(--accent-soft); }
-.type-tag.stocks { background: rgba(91,151,196,0.16); color: var(--blue); }
-.type-tag.etf { background: rgba(139,109,196,0.16); color: #a988dc; }
-.type-tag.ipif { background: rgba(217,164,65,0.16); color: var(--yellow); }
-.type-tag.notes { background: rgba(150,150,150,0.16); color: var(--text-mute); }
-
-.fav-empty {
-  padding: 60px 24px; text-align: center; color: var(--text-dim);
-}
-.fav-empty svg { margin-bottom: 16px; }
-.fav-empty h3 { font-size: 16px; color: var(--text); margin-bottom: 8px; }
-.fav-empty p { font-size: 13px; line-height: 1.5; max-width: 280px; margin: 0 auto; }
 .history-tabs {
   display: flex; gap: 6px; padding: 0 20px 16px;
 }
@@ -1158,34 +999,8 @@ input[type=range]::-webkit-slider-thumb {
         <!-- ===== VIEW: BONDS LIST (now the market hub) ===== -->
         <div class="view active" id="view-bonds-list">
           <div class="list-header">
-            <h1 id="instrumentTitle">Облигации</h1>
-            <div class="icon-btn" onclick="goTo('favorites')" id="favHeaderBtn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>
-            </div>
+            <h1>Облигации</h1>
           </div>
-
-          <!-- INSTRUMENT TYPE TABS -->
-          <div class="instrument-tabs">
-            <div class="instrument-tab" onclick="switchInstrument(this, 'stocks')">
-              <span>Акции</span>
-            </div>
-            <div class="instrument-tab active" onclick="switchInstrument(this, 'bonds')">
-              <span>Облигации</span>
-            </div>
-            <div class="instrument-tab" onclick="switchInstrument(this, 'etf')">
-              <span>ETF</span>
-            </div>
-            <div class="instrument-tab" onclick="switchInstrument(this, 'ipif')">
-              <span>ИПИФ</span>
-            </div>
-            <div class="instrument-tab disabled">
-              <span>Структурные ноты</span>
-              <span class="instrument-soon">скоро</span>
-            </div>
-          </div>
-
-          <!-- BONDS SECTION (default) -->
-          <div id="bondsSection">
 
           <!-- MARKET TABS -->
           <div class="market-tabs">
@@ -1373,25 +1188,6 @@ input[type=range]::-webkit-slider-thumb {
                   <span class="abs">−0.27 $</span>
                   <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>0.27%</span>
                 </div>
-              </div>
-            </div>
-          </div>
-          </div><!-- /bondsSection -->
-
-          <!-- INSTRUMENT EMPTY STATES -->
-          <div id="emptyInstrumentSection" style="display:none;">
-            <div class="empty-instrument">
-              <div class="empty-instrument-icon" id="emptyIcon"></div>
-              <h2 id="emptyTitle"></h2>
-              <div class="empty-desc" id="emptyDesc"></div>
-              <div class="empty-info">
-                <div class="empty-info-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01" stroke-linecap="round"/></svg>
-                </div>
-                <div class="empty-info-text" id="emptyInfo"></div>
-              </div>
-              <div class="empty-cta">
-                <span>Раздел в разработке</span>
               </div>
             </div>
           </div>
@@ -1864,45 +1660,6 @@ input[type=range]::-webkit-slider-thumb {
           </div>
         </div>
 
-        <!-- ===== VIEW: FAVORITES ===== -->
-        <div class="view" id="view-favorites">
-          <div class="portfolio-header">
-            <h1>Избранное</h1>
-          </div>
-
-          <div class="search-row">
-            <div class="search-bar">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-              <input placeholder="Поиск по избранному" />
-            </div>
-            <div class="filter-btn" id="favSortBtn" onclick="openFavSort()">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
-            </div>
-          </div>
-
-          <!-- Type filter — стиль как у витрины -->
-          <div class="instrument-tabs fav-type-tabs">
-            <div class="instrument-tab active" data-favtype="all" onclick="filterFavByType(this, 'all')"><span>Все</span></div>
-            <div class="instrument-tab" data-favtype="bonds" onclick="filterFavByType(this, 'bonds')"><span>Облигации</span></div>
-            <div class="instrument-tab" data-favtype="stocks" onclick="filterFavByType(this, 'stocks')"><span>Акции</span></div>
-            <div class="instrument-tab" data-favtype="etf" onclick="filterFavByType(this, 'etf')"><span>ETF</span></div>
-            <div class="instrument-tab" data-favtype="ipif" onclick="filterFavByType(this, 'ipif')"><span>ИПИФ</span></div>
-          </div>
-
-          <div class="sort-bar" style="margin-bottom: 4px;">
-            <span class="count" id="favCount">0 в избранном</span>
-            <span class="count" id="favSortLabel" style="color: var(--text-dim);">Без сортировки</span>
-          </div>
-
-          <div class="fav-list" id="favList"></div>
-
-          <div class="fav-empty" id="favEmpty" style="display:none;">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:0.4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>
-            <h3>Здесь пока пусто</h3>
-            <p>Добавьте бумаги в избранное звёздочкой ★ на карточке инструмента</p>
-          </div>
-        </div>
-
         <div class="view" id="view-history">
           <div class="history-header">
             <h1>История</h1>
@@ -1960,9 +1717,9 @@ input[type=range]::-webkit-slider-thumb {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2" stroke-linecap="round"/></svg>
           <span>Портфель</span>
         </div>
-        <div class="nav-item" onclick="goTo('favorites')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>
-          <span>Избранное</span>
+        <div class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>
+          <span>Профиль</span>
         </div>
       </div>
 
@@ -1975,19 +1732,6 @@ input[type=range]::-webkit-slider-thumb {
           <span class="reset" onclick="resetFilters()">Сбросить</span>
         </div>
         <div class="sheet-body">
-          <!-- TYPE OF BOND (top-level) -->
-          <div class="filter-group filter-group-top">
-            <div class="filter-group-title">Тип облигации</div>
-            <div class="filter-options" id="bondTypeOpts">
-              <div class="filter-opt" data-bondtype="ipo" onclick="selectBondType(this, 'ipo')">IPO-облигации</div>
-              <div class="filter-opt" data-bondtype="vdo" onclick="selectBondType(this, 'vdo')">ВДО · высокая доходность</div>
-              <div class="filter-opt" data-bondtype="add" onclick="selectBondType(this, 'add')">Доп. размещение</div>
-            </div>
-            <div class="filter-bondtype-hint" id="bondTypeHint">Все облигации. Выберите тип, чтобы увидеть специальные фильтры</div>
-          </div>
-
-          <!-- STANDARD FILTERS (default) -->
-          <div id="standardFilterGroups">
           <div class="filter-group">
             <div class="filter-group-title">Валюта торгов</div>
             <div class="filter-options">
@@ -2079,18 +1823,6 @@ input[type=range]::-webkit-slider-thumb {
               <div class="filter-opt" onclick="toggleOpt(this)">Низкий</div>
               <div class="filter-opt" onclick="toggleOpt(this)">Средний</div>
               <div class="filter-opt" onclick="toggleOpt(this)">Высокий</div>
-            </div>
-          </div>
-          </div><!-- /standardFilterGroups -->
-
-          <!-- BONDTYPE SPECIFIC EMPTY -->
-          <div id="bondtypeEmptyFilters" style="display:none;">
-            <div class="bondtype-empty">
-              <div class="bondtype-empty-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
-              </div>
-              <h3 id="bondtypeEmptyTitle">Дополнительные фильтры</h3>
-              <p>Специальные фильтры для этого типа облигаций пока в разработке. Сейчас вы видите все облигации выбранного типа.</p>
             </div>
           </div>
         </div>
@@ -2206,48 +1938,6 @@ input[type=range]::-webkit-slider-thumb {
         </div>
       </div>
 
-      <!-- FAV SORT BOTTOM SHEET -->
-      <div class="sheet-overlay" id="favSortOverlay" onclick="closeFavSort()"></div>
-      <div class="bottom-sheet" id="favSortSheet">
-        <div class="sheet-handle"></div>
-        <div class="sheet-header"><h2>Сортировка</h2></div>
-        <div class="sheet-body">
-          <div class="sort-list">
-            <div class="sort-row" data-favsort="name-asc" onclick="selectFavSort(this)">
-              <div class="sort-row-left">
-                <div class="sort-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h13M3 12h9M3 17h6"/></svg></div>
-                <span>А-Я</span>
-              </div>
-              <div class="sort-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round"/></svg></div>
-            </div>
-            <div class="sort-row" data-favsort="name-desc" onclick="selectFavSort(this)">
-              <div class="sort-row-left">
-                <div class="sort-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17h13M3 12h9M3 7h6"/></svg></div>
-                <span>Я-А</span>
-              </div>
-              <div class="sort-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round"/></svg></div>
-            </div>
-            <div class="sort-row" data-favsort="chg-desc" onclick="selectFavSort(this)">
-              <div class="sort-row-left">
-                <div class="sort-row-icon" style="color: var(--green);"><svg width="14" height="14" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg></div>
-                <span>Взлёт · по убыванию роста</span>
-              </div>
-              <div class="sort-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round"/></svg></div>
-            </div>
-            <div class="sort-row" data-favsort="chg-asc" onclick="selectFavSort(this)">
-              <div class="sort-row-left">
-                <div class="sort-row-icon" style="color: var(--red);"><svg width="14" height="14" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg></div>
-                <span>Падение · по убыванию падения</span>
-              </div>
-              <div class="sort-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round"/></svg></div>
-            </div>
-          </div>
-        </div>
-        <div class="sheet-footer">
-          <button class="btn btn-primary" onclick="closeFavSort()">Применить</button>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -2352,68 +2042,6 @@ const state = {
   currentHolding: null, // выбранная для продажи
 };
 
-// ===== ИЗБРАННОЕ =====
-// Каждый элемент: { type, ticker, issuer, name, price, changeAbs, changePct, currency, logoClass, logoText }
-const FAVORITES_INITIAL = [
-  // Несколько фейковых элементов разных типов для демонстрации
-  { type: 'stocks', ticker: 'HSBK', issuer: 'Halyk Bank', name: 'Halyk Bank · АО',
-    price: '198.45', changeAbs: '+2.10', changePct: 1.07, currency: '₸', logoClass: 'halyk', logoText: 'H' },
-  { type: 'etf', ticker: 'FXUS', issuer: 'FinEx', name: 'FinEx · US Stocks',
-    price: '92.30', changeAbs: '−0.45', changePct: -0.49, currency: '$', logoClass: 'ust', logoText: 'FX' },
-  { type: 'ipif', ticker: 'BCC_PIF_24', issuer: 'BCC Asset', name: 'БЦК · Сбалансированный',
-    price: '1 250', changeAbs: '+15', changePct: 1.21, currency: '₸', logoClass: 'kaf', logoText: 'БЦК' },
-];
-// Map ticker -> bond data (для облигаций которые можно добавить из списка)
-const BONDS_CATALOG = {
-  'MOM_KZT_05.27': { type: 'bonds', issuer: 'Минфин РК', name: 'Минфин РК · МЕККАМ-60', logoClass: 'minfin', logoText: 'МФ', currency: '₸', price: '100.45', changeAbs: '+0.32', changePct: 0.32 },
-  'HSBK_KZT_03.28': { type: 'bonds', issuer: 'Halyk Bank', name: 'Halyk Bank', logoClass: 'halyk', logoText: 'H', currency: '₸', price: '98.70', changeAbs: '−0.18', changePct: -0.18 },
-  'KSPI_KZT_06.29': { type: 'bonds', issuer: 'Kaspi.kz', name: 'Kaspi.kz', logoClass: 'kaspi', logoText: 'K', currency: '₸', price: '101.20', changeAbs: '+0.54', changePct: 0.54 },
-  'KAFI_KZT_11.27': { type: 'bonds', issuer: 'КазАгроФинанс', name: 'КазАгроФинанс', logoClass: 'kaf', logoText: 'КА', currency: '₸', price: '99.85', changeAbs: '−0.05', changePct: -0.05 },
-  'SNRG_KZT_04.30': { type: 'bonds', issuer: 'Самрук-Энерго', name: 'Самрук-Энерго', logoClass: 'snrg', logoText: 'СЭ', currency: '₸', price: '100.10', changeAbs: '+0.11', changePct: 0.11 },
-  'KMG_USD_09.30':  { type: 'bonds', issuer: 'KazMunayGas', name: 'KazMunayGas', logoClass: 'kmg', logoText: 'KMG', currency: '$', price: '96.40', changeAbs: '+0.21', changePct: 0.22 },
-  'UST_USD_05.35':  { type: 'bonds', issuer: 'US Treasury', name: 'US Treasury 10Y', logoClass: 'ust', logoText: 'US', currency: '$', price: '99.05', changeAbs: '−0.12', changePct: -0.12 },
-  'AAPL_USD_08.31': { type: 'bonds', issuer: 'Apple Inc.', name: 'Apple Inc.', logoClass: 'aapl', logoText: 'AAPL', currency: '$', price: '94.80', changeAbs: '+0.08', changePct: 0.08 },
-  'AIRA_USD_07.29': { type: 'bonds', issuer: 'Air Astana', name: 'Air Astana', logoClass: 'aira', logoText: 'AA', currency: '$', price: '97.60', changeAbs: '+0.40', changePct: 0.41 },
-  'KAP_USD_12.32':  { type: 'bonds', issuer: 'Kazatomprom', name: 'Kazatomprom', logoClass: 'kap', logoText: 'KAP', currency: '$', price: '100.90', changeAbs: '−0.27', changePct: -0.27 },
-};
-const favorites = new Map(); // ticker -> item
-FAVORITES_INITIAL.forEach(it => favorites.set(it.ticker, it));
-// Добавляю одну облигацию в избранное по умолчанию для демо
-favorites.set('MOM_KZT_05.27', { ...BONDS_CATALOG['MOM_KZT_05.27'], ticker: 'MOM_KZT_05.27' });
-
-function isFavorite(ticker) { return favorites.has(ticker); }
-function toggleFavorite(ticker, event) {
-  if (event) event.stopPropagation();
-  if (favorites.has(ticker)) {
-    favorites.delete(ticker);
-  } else {
-    const data = BONDS_CATALOG[ticker];
-    if (data) favorites.set(ticker, { ...data, ticker });
-  }
-  // Перерисовываю все звёздочки
-  document.querySelectorAll('.bond-fav[data-ticker]').forEach(el => {
-    el.classList.toggle('on', isFavorite(el.getAttribute('data-ticker')));
-  });
-  // Если открыта страница избранного — обновляю
-  if (state.currentView === 'favorites') renderFavorites();
-}
-
-// Добавляю звёздочки в каждую bond-mini после загрузки
-function injectFavStars() {
-  document.querySelectorAll('#view-bonds-list .bond-mini').forEach(card => {
-    if (card.querySelector('.bond-fav')) return;
-    const tickerEl = card.querySelector('.bond-mini-ticker');
-    if (!tickerEl) return;
-    const ticker = tickerEl.textContent.trim();
-    const star = document.createElement('div');
-    star.className = 'bond-fav' + (isFavorite(ticker) ? ' on' : '');
-    star.setAttribute('data-ticker', ticker);
-    star.setAttribute('onclick', "toggleFavorite('" + ticker + "', event)");
-    star.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>';
-    card.appendChild(star);
-  });
-}
-
 function goTo(viewId) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   const target = document.getElementById('view-' + viewId);
@@ -2422,7 +2050,7 @@ function goTo(viewId) {
   document.getElementById('appContent').scrollTop = 0;
 
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  const navMap = { 'bonds-list': 0, 'bond-detail': 0, 'order-amount': 0, 'order-confirm': 0, 'success': 0, 'history': 1, 'portfolio': 2, 'favorites': 3 };
+  const navMap = { 'bonds-list': 0, 'bond-detail': 0, 'order-amount': 0, 'order-confirm': 0, 'success': 0, 'history': 1, 'portfolio': 2 };
   const idx = navMap[viewId];
   if (idx !== undefined) document.querySelectorAll('.nav-item')[idx].classList.add('active');
 
@@ -2432,7 +2060,6 @@ function goTo(viewId) {
 
   // Рендер портфеля при заходе
   if (viewId === 'portfolio') renderPortfolio();
-  if (viewId === 'favorites') renderFavorites();
   // При возврате в список облигаций / в портфель — сбрасываем форму, возвращаем flow на buy для дальнейших покупок
   if (viewId === 'bonds-list') { state.flow = 'buy'; resetOrderForm(); applyFlowUI(); }
 }
@@ -2628,136 +2255,6 @@ function resetOrderForm() {
 function openBond() { goTo('bond-detail'); }
 
 // ===== MARKET TABS =====
-// ===== FAVORITES PAGE =====
-let favFilterType = 'all';
-let favSortKey = null;
-
-const TYPE_LABELS = { bonds: 'Облиг.', stocks: 'Акции', etf: 'ETF', ipif: 'ИПИФ', notes: 'Структ.' };
-
-function renderFavorites() {
-  let items = Array.from(favorites.values());
-  if (favFilterType !== 'all') items = items.filter(it => it.type === favFilterType);
-  // sort
-  if (favSortKey === 'name-asc') items.sort((a,b) => a.name.localeCompare(b.name, 'ru'));
-  else if (favSortKey === 'name-desc') items.sort((a,b) => b.name.localeCompare(a.name, 'ru'));
-  else if (favSortKey === 'chg-desc') items.sort((a,b) => b.changePct - a.changePct);
-  else if (favSortKey === 'chg-asc') items.sort((a,b) => a.changePct - b.changePct);
-
-  const list = document.getElementById('favList');
-  const empty = document.getElementById('favEmpty');
-  const count = document.getElementById('favCount');
-  count.textContent = items.length + ' в избранном';
-  list.innerHTML = '';
-  if (items.length === 0) {
-    empty.style.display = 'block';
-    return;
-  }
-  empty.style.display = 'none';
-  items.forEach(it => {
-    const isUp = it.changePct >= 0;
-    const arrow = isUp
-      ? '<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>'
-      : '<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>';
-    const card = document.createElement('div');
-    card.className = 'fav-card';
-    // Только для облигаций — клик открывает карточку; для остальных — заглушка
-    if (it.type === 'bonds') {
-      card.onclick = () => goTo('bond-detail');
-    }
-    card.innerHTML = `
-      <div class="bond-logo ${it.logoClass}">${it.logoText}</div>
-      <div class="fav-card-left">
-        <div class="fav-card-name">${it.name}</div>
-        <div class="fav-card-meta">
-          <span class="type-tag ${it.type}">${TYPE_LABELS[it.type] || it.type}</span>
-          <span class="fav-card-ticker">${it.ticker}</span>
-        </div>
-      </div>
-      <div class="fav-card-right">
-        <div class="fav-card-price">${it.price}</div>
-        <div class="fav-card-change ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(it.changePct).toFixed(2)}%</div>
-      </div>
-    `;
-    list.appendChild(card);
-  });
-}
-
-function filterFavByType(el, type) {
-  document.querySelectorAll('.fav-type-tabs .instrument-tab').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  favFilterType = type;
-  renderFavorites();
-}
-
-const FAV_SORT_LABELS = {
-  'name-asc': 'А-Я',
-  'name-desc': 'Я-А',
-  'chg-desc': 'Взлёт ↑',
-  'chg-asc': 'Падение ↓',
-};
-function openFavSort() {
-  document.getElementById('favSortOverlay').classList.add('open');
-  document.getElementById('favSortSheet').classList.add('open');
-}
-function closeFavSort() {
-  document.getElementById('favSortOverlay').classList.remove('open');
-  document.getElementById('favSortSheet').classList.remove('open');
-}
-function selectFavSort(row) {
-  document.querySelectorAll('#favSortSheet .sort-row').forEach(r => r.classList.remove('active'));
-  row.classList.add('active');
-  favSortKey = row.getAttribute('data-favsort');
-  document.getElementById('favSortLabel').textContent = 'Сортировка: ' + FAV_SORT_LABELS[favSortKey];
-  document.getElementById('favSortLabel').style.color = 'var(--accent-soft)';
-  renderFavorites();
-}
-
-// ===== INSTRUMENT TABS =====
-const INSTRUMENT_INFO = {
-  stocks: {
-    title: 'Акции',
-    icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18l6-6 4 4 8-8M14 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    desc: 'Долевые ценные бумаги. Покупая акцию, вы становитесь совладельцем компании.',
-    info: 'Акции дают право на часть прибыли (дивиденды) и голос на собрании акционеров. Цена меняется в зависимости от результатов компании и настроений рынка. Потенциальная доходность выше облигаций, но и риски больше.',
-  },
-  bonds: null,
-  etf: {
-    title: 'ETF',
-    icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
-    desc: 'Биржевые инвестиционные фонды. Готовый портфель из десятков ценных бумаг в одной покупке.',
-    info: 'ETF (Exchange Traded Fund) — фонд, торгующийся на бирже как обычная акция. Покупая ETF, вы вкладываетесь сразу в индекс, отрасль или регион. Хороший способ диверсификации с низкой комиссией.',
-  },
-  ipif: {
-    title: 'ИПИФ',
-    icon: '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>',
-    desc: 'Интервальные паевые инвестиционные фонды. Активы, доступные к покупке/продаже в определённые периоды.',
-    info: 'Пай ИПИФ можно купить или погасить только в открытые интервалы — обычно несколько раз в год. Управляет фондом профессиональная управляющая компания. Подходит для долгосрочных инвестиций с потенциалом доходности выше депозита.',
-  },
-};
-function switchInstrument(el, type) {
-  if (el.classList.contains('disabled')) return;
-  document.querySelectorAll('.instrument-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-
-  const bondsSection = document.getElementById('bondsSection');
-  const emptySection = document.getElementById('emptyInstrumentSection');
-
-  if (type === 'bonds') {
-    bondsSection.style.display = '';
-    emptySection.style.display = 'none';
-    document.getElementById('instrumentTitle').textContent = 'Облигации';
-  } else {
-    const info = INSTRUMENT_INFO[type];
-    bondsSection.style.display = 'none';
-    emptySection.style.display = 'block';
-    document.getElementById('instrumentTitle').textContent = info.title;
-    document.getElementById('emptyIcon').innerHTML = info.icon;
-    document.getElementById('emptyTitle').textContent = info.title;
-    document.getElementById('emptyDesc').textContent = info.desc;
-    document.getElementById('emptyInfo').textContent = info.info;
-  }
-}
-
 function switchMarket(el, market) {
   state.market = market;
   document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
@@ -2801,43 +2298,9 @@ function resetFilters() {
   document.getElementById('couponTo').value = '';
   document.getElementById('nominalFrom').value = '';
   document.getElementById('nominalTo').value = '';
-  // Сброс типа облигации
-  const std = document.getElementById('standardFilterGroups');
-  const empty = document.getElementById('bondtypeEmptyFilters');
-  if (std) std.style.display = '';
-  if (empty) empty.style.display = 'none';
-  const hint = document.getElementById('bondTypeHint');
-  if (hint) hint.textContent = 'Все облигации. Выберите тип, чтобы увидеть специальные фильтры';
   updateFilterCount();
 }
 function applyFilters() { updateFilterCount(); closeFilters(); }
-
-// ===== Тип облигации (верхнеуровневый) =====
-function selectBondType(el, type) {
-  const opts = document.querySelectorAll('#bondTypeOpts .filter-opt');
-  const wasActive = el.classList.contains('active');
-  // Single-select
-  opts.forEach(o => o.classList.remove('active'));
-  if (!wasActive) el.classList.add('active');
-
-  const std = document.getElementById('standardFilterGroups');
-  const empty = document.getElementById('bondtypeEmptyFilters');
-  const hint = document.getElementById('bondTypeHint');
-  const emptyTitle = document.getElementById('bondtypeEmptyTitle');
-
-  if (el.classList.contains('active')) {
-    std.style.display = 'none';
-    empty.style.display = 'block';
-    const labels = { ipo: 'IPO-облигации', vdo: 'ВДО · высокая доходность', add: 'Доп. размещение' };
-    hint.textContent = 'Фильтрация по типу: ' + labels[type];
-    emptyTitle.textContent = 'Фильтры для «' + labels[type] + '»';
-  } else {
-    std.style.display = '';
-    empty.style.display = 'none';
-    hint.textContent = 'Все облигации. Выберите тип, чтобы увидеть специальные фильтры';
-  }
-  updateFilterCount();
-}
 
 // ===== SORT =====
 const SORT_LABELS = {
@@ -3341,8 +2804,6 @@ function addHistoryItem() {
 window.addEventListener('DOMContentLoaded', () => {
   // pre-render calendar so first open is instant
   renderCalendar();
-  // добавить звёздочки в карточки облигаций
-  injectFavStars();
 });
 </script>
 
