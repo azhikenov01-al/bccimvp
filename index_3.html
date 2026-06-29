@@ -114,7 +114,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 }
 .instrument-tabs::-webkit-scrollbar { display: none; }
 .instrument-tab {
-  padding: 8px 12px; border-radius: 10px;
+  padding: 8px 14px; border-radius: 10px;
   background: var(--surface); border: 1px solid var(--border);
   font-size: 13px; font-weight: 600; color: var(--text-dim);
   cursor: pointer; white-space: nowrap;
@@ -133,16 +133,6 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
   padding: 2px 6px; border-radius: 5px;
   text-transform: uppercase; letter-spacing: 0.04em;
 }
-.tab-count {
-  display: none;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; font-weight: 700;
-  padding: 1px 6px; border-radius: 10px; min-width: 18px;
-  background: rgba(31,138,91,0.9); color: #fff;
-  text-align: center;
-}
-.instrument-tab.active .tab-count { background: rgba(255,255,255,0.28); color: var(--on-accent); }
-.instrument-tab.disabled .tab-count { display: none !important; }
 
 /* INSTRUMENT EMPTY STATE */
 .empty-instrument {
@@ -183,38 +173,17 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 
 .market-tabs {
   display: flex; gap: 6px; padding: 0 20px 14px;
-  overflow-x: auto; scrollbar-width: none;
 }
-.market-tabs::-webkit-scrollbar { display: none; }
 .market-tab {
-  flex-shrink: 0; width: 104px; text-align: center; padding: 10px 6px; border-radius: 12px;
+  flex: 1; text-align: center; padding: 10px 6px; border-radius: 12px;
   background: var(--surface); border: 1px solid var(--border);
   cursor: pointer; transition: all 0.2s;
-  position: relative;
 }
-.market-tab .code {
-  font-size: 14px; font-weight: 700; color: var(--text-dim); display: block;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.market-tab .desc {
-  font-size: 9px; color: var(--text-mute); font-weight: 600; letter-spacing: 0.02em;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
+.market-tab .code { font-size: 14px; font-weight: 700; color: var(--text-dim); display: block; }
+.market-tab .desc { font-size: 9px; color: var(--text-mute); font-weight: 600; letter-spacing: 0.02em; }
 .market-tab.active { background: var(--accent); border-color: var(--accent); }
 .market-tab.active .code { color: var(--on-accent); }
-.market-tab.active .desc { color: rgba(255,255,255,0.65); }
-.market-count {
-  display: none;
-  position: absolute; top: 4px; right: 5px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; font-weight: 700;
-  min-width: 14px; height: 14px; padding: 0 4px;
-  border-radius: 7px;
-  background: rgba(31,138,91,0.9); color: #fff;
-  align-items: center; justify-content: center;
-  line-height: 1;
-}
-.market-tab.active .market-count { background: rgba(255,255,255,0.3); color: var(--on-accent); }
+.market-tab.active .desc { color: rgba(10,14,26,0.6); }
 
 .search-row {
   display: flex; gap: 10px; padding: 0 20px 14px;
@@ -465,99 +434,10 @@ input[type=range]::-webkit-slider-thumb {
 .dib-keychip .value { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; }
 .dib-keychip .value.accent { color: var(--accent-soft); }
 
-/* IN PORTFOLIO BLOCK */
-.in-portfolio-block {
-  margin: 0 20px 16px; padding: 16px;
-  background: linear-gradient(135deg, rgba(31,138,91,0.10), var(--surface));
-  border: 1px solid rgba(31,138,91,0.25); border-radius: 18px;
-}
-.ipb-title {
-  display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;
-  color: var(--accent-soft); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px;
-}
-.ipb-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;
-}
-.ipb-cell {
-  background: var(--surface-2); border-radius: 12px; padding: 10px 12px; min-width: 0;
-}
-.ipb-cell .label {
-  font-size: 10px; color: var(--text-mute); font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.03em; margin-bottom: 3px;
-}
-.ipb-cell .value {
-  font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.ipb-pl-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 0; border-top: 1px dashed rgba(31,138,91,0.2); margin-bottom: 12px;
-}
-.ipb-pl-row .label { font-size: 12px; color: var(--text-dim); font-weight: 600; }
-.ipb-pl-row .value { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 800; }
-.ipb-pl-row .value.up { color: var(--green); }
-.ipb-pl-row .value.down { color: var(--red); }
-
 /* CHART */
 .chart-section { margin: 0 20px 16px; }
-.chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .chart-header h3 { font-size: 14px; }
-.chart-view-tabs { display: flex; gap: 4px; }
-.chart-view-tab {
-  padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 700;
-  color: var(--text-dim); cursor: pointer; background: var(--surface); border: 1px solid var(--border);
-}
-.chart-view-tab.active { background: var(--surface-3); color: var(--text); }
-
-/* STATS GRID under chart */
-.chart-stats-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
-  margin-top: 12px;
-}
-.cs-cell {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-  padding: 8px 9px; min-width: 0;
-}
-.cs-label {
-  font-size: 9px; color: var(--text-mute); font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.03em; margin-bottom: 3px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.cs-value {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-
-/* ORDERBOOK */
-.orderbook-box {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
-  padding: 12px; min-height: 180px;
-}
-.ob-header {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;
-  font-size: 10px; font-weight: 700; color: var(--text-mute);
-  text-transform: uppercase; letter-spacing: 0.03em; padding-bottom: 8px;
-  border-bottom: 1px solid var(--border); margin-bottom: 4px;
-}
-.ob-row {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center;
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 0;
-  position: relative;
-}
-.ob-bid { color: var(--green); text-align: left; font-weight: 700; padding-left: 4px; }
-.ob-price { text-align: center; font-weight: 700; color: var(--text); }
-.ob-ask { color: var(--red); text-align: right; font-weight: 700; padding-right: 4px; }
-.ob-bid-bar, .ob-ask-bar {
-  position: absolute; top: 0; bottom: 0; opacity: 0.10; z-index: 0;
-}
-.ob-bid-bar { left: 0; background: var(--green); }
-.ob-ask-bar { right: 0; background: var(--red); }
-.ob-spread {
-  text-align: center; padding-top: 10px; margin-top: 6px;
-  border-top: 1px dashed var(--border);
-  font-size: 11px; color: var(--text-dim);
-}
-.ob-spread b { color: var(--text); font-family: 'JetBrains Mono', monospace; }
 .chart-ranges { display: flex; gap: 4px; }
 .chart-range {
   padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 700;
@@ -642,9 +522,6 @@ input[type=range]::-webkit-slider-thumb {
   background: rgba(31,138,91,0.18); color: var(--accent-soft);
   text-transform: uppercase; letter-spacing: 0.04em;
 }
-.div-no-dividends {
-  padding: 24px 16px; text-align: center; color: var(--text-dim); font-size: 13px;
-}
 .coupon-expand-trigger {
   display: flex; justify-content: space-between; align-items: center;
   padding: 12px 14px; margin-top: 10px;
@@ -708,9 +585,7 @@ input[type=range]::-webkit-slider-thumb {
 .sticky-cta {
   position: sticky; bottom: 0; padding: 16px 20px 20px;
   background: linear-gradient(to top, var(--bg) 60%, transparent); z-index: 20;
-  display: flex; gap: 10px;
 }
-.sticky-cta .btn { flex: 1; }
 
 /* ============ ORDER FLOW ============ */
 .order-progress { display: flex; gap: 6px; padding: 0 20px 20px; }
@@ -731,9 +606,6 @@ input[type=range]::-webkit-slider-thumb {
 .available-row {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
   margin: 0 20px 18px;
-}
-.available-row.two-col {
-  grid-template-columns: 1fr;
 }
 .available-block {
   display: flex; flex-direction: column; gap: 4px;
@@ -1292,37 +1164,18 @@ input[type=range]::-webkit-slider-thumb {
             </div>
           </div>
 
-          <!-- TOP SEARCH ROW (общая, всегда наверху) -->
-          <div class="search-row">
-            <div class="search-bar">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-              <input id="searchInput" placeholder="Тикер, эмитент или ISIN" oninput="recalcAll()" />
-            </div>
-            <div class="filter-btn" id="filterBtn" onclick="openFilters()">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
-              <span class="filter-badge" id="filterBadge" style="display:none;">0</span>
-            </div>
-            <div class="filter-btn" id="sortBtn" onclick="openSort()">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
-              <span class="filter-badge" id="sortBadge" style="display:none;">!</span>
-            </div>
-          </div>
-
-          <!-- INSTRUMENT TYPE TABS (с бейджами кол-ва) -->
+          <!-- INSTRUMENT TYPE TABS -->
           <div class="instrument-tabs">
-            <div class="instrument-tab" data-itype="stocks" onclick="switchInstrument(this, 'stocks')">
+            <div class="instrument-tab" onclick="switchInstrument(this, 'stocks')">
               <span>Акции</span>
-              <span class="tab-count" data-itype-count="stocks">0</span>
             </div>
-            <div class="instrument-tab active" data-itype="bonds" onclick="switchInstrument(this, 'bonds')">
+            <div class="instrument-tab active" onclick="switchInstrument(this, 'bonds')">
               <span>Облигации</span>
-              <span class="tab-count" data-itype-count="bonds">0</span>
             </div>
-            <div class="instrument-tab" data-itype="etf" onclick="switchInstrument(this, 'etf')">
-              <span>Фонды</span>
-              <span class="tab-count" data-itype-count="etf">0</span>
+            <div class="instrument-tab" onclick="switchInstrument(this, 'etf')">
+              <span>ETF</span>
             </div>
-            <div class="instrument-tab" data-itype="ipif" onclick="switchInstrument(this, 'ipif')">
+            <div class="instrument-tab" onclick="switchInstrument(this, 'ipif')">
               <span>ИПИФ</span>
             </div>
             <div class="instrument-tab disabled">
@@ -1331,43 +1184,11 @@ input[type=range]::-webkit-slider-thumb {
             </div>
           </div>
 
-          <!-- MARKET TABS (общие для всех типов ЦБ, с бейджами кол-ва) -->
-          <div class="market-tabs" id="marketTabs">
-            <div class="market-tab" data-market="primary" onclick="switchMarket(this, 'primary')">
-              <span class="code">Special</span>
-              <span class="desc">Размещения</span>
-              <span class="market-count" data-market-count="primary">0</span>
-            </div>
-            <div class="market-tab active" data-market="KASE" onclick="switchMarket(this, 'KASE')">
-              <span class="code">KASE</span>
-              <span class="desc">Казахстан</span>
-              <span class="market-count" data-market-count="KASE">0</span>
-            </div>
-            <div class="market-tab" data-market="INTL" onclick="switchMarket(this, 'INTL')">
-              <span class="code">INTL</span>
-              <span class="desc">Международный</span>
-              <span class="market-count" data-market-count="INTL">0</span>
-            </div>
-            <div class="market-tab" data-market="AIX" onclick="switchMarket(this, 'AIX')">
-              <span class="code">AIX</span>
-              <span class="desc">Astana Intl</span>
-              <span class="market-count" data-market-count="AIX">0</span>
-            </div>
-          </div>
-
-          <div class="sort-bar">
-            <span class="count" id="resultCount">0 инструментов</span>
-            <span class="count" id="sortActive" style="color: var(--text-dim);">Без сортировки</span>
-          </div>
-
-          <!-- UNIVERSAL LIST (заменяет bondsSection / stocksSection / etfSection) -->
-          <div id="universalList" class="bond-list"></div>
-
-          <!-- BONDS SECTION (default) - больше не используется, оставлен пустым для совместимости -->
-          <div id="bondsSection" style="display:none;">
+          <!-- BONDS SECTION (default) -->
+          <div id="bondsSection">
 
           <!-- MARKET TABS -->
-          <div class="market-tabs" style="display:none;">
+          <div class="market-tabs">
             <div class="market-tab active" onclick="switchMarket(this, 'KASE')">
               <span class="code">KASE</span>
               <span class="desc">Казахстан</span>
@@ -1382,21 +1203,24 @@ input[type=range]::-webkit-slider-thumb {
             </div>
           </div>
 
-          <div class="search-row" style="display:none;">
+          <div class="search-row">
             <div class="search-bar">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
               <input placeholder="Тикер, эмитент или ISIN" />
             </div>
-            <div class="filter-btn">
+            <div class="filter-btn" id="filterBtn" onclick="openFilters()">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
+              <span class="filter-badge" id="filterBadge" style="display:none;">0</span>
             </div>
-            <div class="filter-btn">
+            <div class="filter-btn" id="sortBtn" onclick="openSort()">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
+              <span class="filter-badge" id="sortBadge" style="display:none;">!</span>
             </div>
           </div>
 
-          <div class="sort-bar" style="display:none;">
+          <div class="sort-bar">
             <span class="count" id="bondCount">5 облигаций · KASE</span>
+            <span class="count" id="sortActive" style="color: var(--text-dim);">Без сортировки</span>
           </div>
 
           <!-- KASE LIST -->
@@ -1589,7 +1413,7 @@ input[type=range]::-webkit-slider-thumb {
               </div>
             </div>
             <div class="sort-bar">
-              <span class="count" id="etfCount">6 фондов</span>
+              <span class="count" id="etfCount">6 ETF</span>
             </div>
             <div class="bond-list" id="etfList"></div>
           </div>
@@ -1619,7 +1443,7 @@ input[type=range]::-webkit-slider-thumb {
             <div class="icon-btn" onclick="goTo('bonds-list')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" stroke-linecap="round"/></svg>
             </div>
-            <h1 id="bondDetailTitle">Облигация</h1>
+            <h1>Облигация</h1>
             <div class="icon-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
             </div>
@@ -1629,148 +1453,96 @@ input[type=range]::-webkit-slider-thumb {
           <div class="detail-info-block">
             <div class="dib-top">
               <div class="dib-top-left">
-                <div class="bond-logo minfin" id="bdLogo" style="width:42px;height:42px;font-size:12px;">МФ</div>
+                <div class="bond-logo minfin" style="width:42px;height:42px;font-size:12px;">МФ</div>
                 <div>
-                  <div class="dib-issuer" id="bdIssuer">Министерство финансов РК</div>
-                  <div class="dib-name" id="bdName">МЕККАМ-60</div>
-                  <div class="dib-ticker" id="bdTicker">MOM_KZT_05.27 · KASE · KZT</div>
+                  <div class="dib-issuer">Министерство финансов РК</div>
+                  <div class="dib-name">МЕККАМ-60</div>
+                  <div class="dib-ticker">MOM_KZT_05.27 · KASE · KZT</div>
                 </div>
               </div>
             </div>
             <div class="dib-price-row">
-              <div class="dib-price" id="bdPrice">100.45</div>
-              <div class="dib-change up" id="bdChange">
-                <span class="abs" id="bdChangeAbs">+0.32 ₸</span>
-                <span class="pct" id="bdChangePct"><svg width="9" height="9" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.32%</span>
+              <div class="dib-price">100.45</div>
+              <div class="dib-change up">
+                <span class="abs">+0.32 ₸</span>
+                <span class="pct"><svg width="9" height="9" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.32%</span>
               </div>
             </div>
             <!-- Key chips (как в v1) -->
             <div class="dib-keychips">
-              <div class="dib-keychip" id="kcYtm">
+              <div class="dib-keychip">
                 <div class="label">YTM</div>
-                <div class="value accent" id="bdYtm">14.2%</div>
+                <div class="value accent">14.2%</div>
               </div>
-              <div class="dib-keychip" id="kcCoupon">
+              <div class="dib-keychip">
                 <div class="label">Купон</div>
-                <div class="value" id="bdCoupon">13.5%</div>
+                <div class="value">13.5%</div>
               </div>
-              <div class="dib-keychip" id="kcMaturity">
+              <div class="dib-keychip">
                 <div class="label">Погашение</div>
-                <div class="value" id="bdMaturity">15.05.27</div>
+                <div class="value">15.05.27</div>
               </div>
-              <div class="dib-keychip" id="kcMinBuy">
+              <div class="dib-keychip">
                 <div class="label">Мин. покупка</div>
-                <div class="value" id="bdMinBuy">1 000 ₸</div>
+                <div class="value">1 000 ₸</div>
               </div>
-              <div class="dib-keychip" id="kcLot">
+              <div class="dib-keychip">
                 <div class="label">Лот</div>
-                <div class="value" id="bdLot">10 шт</div>
+                <div class="value">10 шт</div>
               </div>
-              <div class="dib-keychip" id="kcRisk">
+              <div class="dib-keychip">
                 <div class="label">Риск</div>
-                <div class="value" id="bdRisk" style="color: var(--green);">Низкий</div>
+                <div class="value" style="color: var(--green);">Низкий</div>
               </div>
             </div>
           </div>
 
-          <!-- IN PORTFOLIO BLOCK (показывается если ЦБ есть в портфеле) -->
-          <div class="in-portfolio-block" id="inPortfolioBlock" style="display:none;">
-            <div class="ipb-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2" stroke-linecap="round"/></svg>
-              В моём портфеле
-            </div>
-            <div class="ipb-grid">
-              <div class="ipb-cell"><div class="label">Текущая стоимость</div><div class="value" id="ipbCurrentValue">—</div></div>
-              <div class="ipb-cell"><div class="label">Сред. цена покупки</div><div class="value" id="ipbAvgPrice">—</div></div>
-              <div class="ipb-cell"><div class="label">Количество</div><div class="value" id="ipbQty">—</div></div>
-              <div class="ipb-cell"><div class="label">Общая стоимость</div><div class="value" id="ipbTotalValue">—</div></div>
-            </div>
-            <div class="ipb-pl-row">
-              <span class="label">Доходность</span>
-              <span class="value" id="ipbPL">—</span>
-            </div>
-          </div>
-
-          <!-- CHART / ORDERBOOK with axes -->
+          <!-- CHART with axes -->
           <div class="chart-section">
             <div class="chart-header">
-              <div class="chart-view-tabs">
-                <div class="chart-view-tab active" onclick="switchChartView(this, 'chart')">График</div>
-                <div class="chart-view-tab" onclick="switchChartView(this, 'orderbook')">Стакан</div>
-              </div>
-              <div class="chart-ranges" id="chartRanges">
-                <div class="chart-range" onclick="setChartRange(this)">Н</div>
+              <h3>Динамика цены</h3>
+              <div class="chart-ranges">
                 <div class="chart-range" onclick="setChartRange(this)">1М</div>
                 <div class="chart-range active" onclick="setChartRange(this)">6М</div>
                 <div class="chart-range" onclick="setChartRange(this)">1Г</div>
                 <div class="chart-range" onclick="setChartRange(this)">Все</div>
               </div>
             </div>
-
-            <div id="chartViewPane">
-              <div class="chart-box">
-                <svg viewBox="0 0 350 180" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="rgba(31,138,91,0.30)"/>
-                      <stop offset="100%" stop-color="rgba(31,138,91,0)"/>
-                    </linearGradient>
-                  </defs>
-                  <!-- Y-axis labels -->
-                  <text x="6" y="20" class="ax-y">101</text>
-                  <text x="6" y="65" class="ax-y">100.5</text>
-                  <text x="6" y="110" class="ax-y">100</text>
-                  <text x="6" y="155" class="ax-y">99.5</text>
-                  <!-- Grid -->
-                  <line x1="38" y1="18" x2="345" y2="18" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
-                  <line x1="38" y1="63" x2="345" y2="63" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
-                  <line x1="38" y1="108" x2="345" y2="108" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
-                  <line x1="38" y1="153" x2="345" y2="153" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
-                  <!-- Chart path -->
-                  <path d="M40,130 C70,124 90,135 110,118 C130,105 150,112 175,90 C200,72 225,80 250,55 C275,35 295,42 320,28 C335,22 342,26 345,24 L345,160 L40,160 Z" fill="url(#chartFill)"/>
-                  <path d="M40,130 C70,124 90,135 110,118 C130,105 150,112 175,90 C200,72 225,80 250,55 C275,35 295,42 320,28 C335,22 342,26 345,24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="345" cy="24" r="3.5" fill="var(--accent)"/>
-                  <!-- X-axis labels -->
-                  <text x="50" y="175" class="ax-x">дек</text>
-                  <text x="105" y="175" class="ax-x">янв</text>
-                  <text x="160" y="175" class="ax-x">фев</text>
-                  <text x="215" y="175" class="ax-x">мар</text>
-                  <text x="270" y="175" class="ax-x">апр</text>
-                  <text x="320" y="175" class="ax-x">май</text>
-                </svg>
-              </div>
-
-              <!-- STATS GRID under chart -->
-              <div class="chart-stats-grid" id="chartStatsGrid">
-                <div class="cs-cell"><div class="cs-label">Цена</div><div class="cs-value" id="csPrice">100.45</div></div>
-                <div class="cs-cell"><div class="cs-label">Открытие</div><div class="cs-value" id="csOpen">100.10</div></div>
-                <div class="cs-cell"><div class="cs-label">Закрытие</div><div class="cs-value" id="csClose">100.13</div></div>
-                <div class="cs-cell"><div class="cs-label">Максимум</div><div class="cs-value" id="csHigh">100.80</div></div>
-                <div class="cs-cell"><div class="cs-label">Минимум</div><div class="cs-value" id="csLow">99.95</div></div>
-                <div class="cs-cell"><div class="cs-label">52 нед. макс.</div><div class="cs-value" id="cs52High">102.30</div></div>
-                <div class="cs-cell"><div class="cs-label">52 нед. мин.</div><div class="cs-value" id="cs52Low">97.40</div></div>
-                <div class="cs-cell"><div class="cs-label">Объём торгов</div><div class="cs-value" id="csVolume">1.2M</div></div>
-              </div>
-            </div>
-
-            <!-- ORDERBOOK PANE -->
-            <div id="orderbookPane" style="display:none;">
-              <div class="orderbook-box">
-                <div class="ob-header">
-                  <span>Покупка</span>
-                  <span>Цена</span>
-                  <span>Продажа</span>
-                </div>
-                <div class="ob-rows" id="obRows"></div>
-                <div class="ob-spread">
-                  <span>Спред: <b id="obSpread">0.05%</b></span>
-                </div>
-              </div>
+            <div class="chart-box">
+              <svg viewBox="0 0 350 180" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(31,138,91,0.30)"/>
+                    <stop offset="100%" stop-color="rgba(31,138,91,0)"/>
+                  </linearGradient>
+                </defs>
+                <!-- Y-axis labels -->
+                <text x="6" y="20" class="ax-y">101</text>
+                <text x="6" y="65" class="ax-y">100.5</text>
+                <text x="6" y="110" class="ax-y">100</text>
+                <text x="6" y="155" class="ax-y">99.5</text>
+                <!-- Grid -->
+                <line x1="38" y1="18" x2="345" y2="18" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
+                <line x1="38" y1="63" x2="345" y2="63" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
+                <line x1="38" y1="108" x2="345" y2="108" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
+                <line x1="38" y1="153" x2="345" y2="153" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3"/>
+                <!-- Chart path -->
+                <path d="M40,130 C70,124 90,135 110,118 C130,105 150,112 175,90 C200,72 225,80 250,55 C275,35 295,42 320,28 C335,22 342,26 345,24 L345,160 L40,160 Z" fill="url(#chartFill)"/>
+                <path d="M40,130 C70,124 90,135 110,118 C130,105 150,112 175,90 C200,72 225,80 250,55 C275,35 295,42 320,28 C335,22 342,26 345,24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="345" cy="24" r="3.5" fill="var(--accent)"/>
+                <!-- X-axis labels -->
+                <text x="50" y="175" class="ax-x">дек</text>
+                <text x="105" y="175" class="ax-x">янв</text>
+                <text x="160" y="175" class="ax-x">фев</text>
+                <text x="215" y="175" class="ax-x">мар</text>
+                <text x="270" y="175" class="ax-x">апр</text>
+                <text x="320" y="175" class="ax-x">май</text>
+              </svg>
             </div>
           </div>
 
-          <!-- MINI CALCULATOR (только для облигаций) -->
-          <div class="calc-mini" id="calcMiniBlock">
+          <!-- MINI CALCULATOR -->
+          <div class="calc-mini">
             <div class="calc-mini-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5" stroke-linecap="round"/></svg>
               Калькулятор доходности
@@ -1798,94 +1570,69 @@ input[type=range]::-webkit-slider-thumb {
             </div>
           </div>
 
-          <!-- TABS: О выпуске / Об эмитенте / Купоны (Дивиденды для акций/фондов) -->
+          <!-- TABS: О выпуске / Об эмитенте / Купоны -->
           <div class="segmented">
-            <div class="segmented-tab active" onclick="switchTab(this, 'tab-about')" id="tabAboutLabel">О выпуске</div>
-            <div class="segmented-tab" onclick="switchTab(this, 'tab-issuer')" id="tabIssuerLabel">Об эмитенте</div>
-            <div class="segmented-tab" onclick="switchTab(this, 'tab-coupons')" id="tabCouponsLabel">Купоны</div>
+            <div class="segmented-tab active" onclick="switchTab(this, 'tab-about')">О выпуске</div>
+            <div class="segmented-tab" onclick="switchTab(this, 'tab-issuer')">Об эмитенте</div>
+            <div class="segmented-tab" onclick="switchTab(this, 'tab-coupons')">Купоны</div>
           </div>
 
           <div class="tab-content">
             <div class="tab-pane active" id="tab-about">
-              <p class="about-text" id="tabAboutText">
+              <p class="about-text">
                 Государственные купонные облигации <b style="color:var(--text);">МЕККАМ-60</b> выпущены Министерством финансов Республики Казахстан 15 мая 2022 года и обращаются до мая 2027 года. Купонные выплаты производятся два раза в год по фиксированной ставке 13.5%. Облигация торгуется на бирже KASE и доступна для покупки всем категориям инвесторов.
               </p>
             </div>
             <div class="tab-pane" id="tab-issuer">
-              <p class="about-text" id="tabIssuerText">
+              <p class="about-text">
                 <b style="color:var(--text);">Министерство финансов РК</b> — главный заёмщик государственного уровня. Кредитный рейтинг S&amp;P: <b style="color:var(--text);">BBB</b> (стабильный), Moody's: <b style="color:var(--text);">Baa2</b>. Облигации Минфина считаются эталоном надёжности на казахстанском рынке и используются как бенчмарк для оценки других выпусков.
               </p>
             </div>
             <div class="tab-pane" id="tab-coupons">
-              <!-- BOND COUPONS VIEW -->
-              <div id="couponsBondView">
-                <!-- Ближайшая выплата -->
-                <div class="coupon-item upcoming">
-                  <div>
-                    <div class="coupon-date">15.11.2026</div>
-                    <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Ближайшая выплата</div>
-                  </div>
-                  <div style="text-align:right;">
-                    <div class="coupon-amount">~6 750 ₸</div>
-                    <span class="coupon-status">Ожидается</span>
-                  </div>
+              <!-- Ближайшая выплата -->
+              <div class="coupon-item upcoming">
+                <div>
+                  <div class="coupon-date">15.11.2026</div>
+                  <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Ближайшая выплата</div>
                 </div>
-
-                <!-- Раскрывающийся блок «Следующие выплаты» -->
-                <div class="coupon-expand-trigger" onclick="toggleCouponNext(this)">
-                  <span>Следующие выплаты</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round"/></svg>
-                </div>
-                <div class="coupon-expand-content">
-                  <div class="coupon-item"><div class="coupon-date">15.05.2027</div><div class="coupon-amount">6 750 ₸</div></div>
-                  <div class="coupon-item"><div class="coupon-date">15.11.2027</div><div class="coupon-amount">6 750 ₸</div></div>
-                  <div class="coupon-item"><div class="coupon-date">15.05.2028</div><div class="coupon-amount">6 750 ₸</div></div>
-                  <div class="coupon-item"><div class="coupon-date">15.11.2028</div><div class="coupon-amount">6 750 ₸</div></div>
-                  <div class="coupon-item"><div class="coupon-date">15.05.2029</div><div class="coupon-amount">6 750 ₸</div></div>
-
-                  <!-- Скрытые до «показать все» -->
-                  <div class="coupon-extra">
-                    <div class="coupon-item"><div class="coupon-date">15.11.2029</div><div class="coupon-amount">6 750 ₸</div></div>
-                    <div class="coupon-item"><div class="coupon-date">15.05.2030</div><div class="coupon-amount">6 750 ₸</div></div>
-                    <div class="coupon-item"><div class="coupon-date">15.11.2030</div><div class="coupon-amount">6 750 ₸</div></div>
-                    <div class="coupon-item"><div class="coupon-date">15.05.2031</div><div class="coupon-amount">6 750 ₸</div></div>
-                  </div>
-
-                  <div class="coupon-show-all" onclick="toggleCouponAll(this)">
-                    Показать все
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round"/></svg>
-                  </div>
-
-                  <!-- Погашение в конце -->
-                  <div class="coupon-item" style="border-top: 1px solid var(--border); padding-top: 14px; margin-top: 6px;">
-                    <div>
-                      <div class="coupon-date">15.05.2027</div>
-                      <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Погашение номинала</div>
-                    </div>
-                    <div class="coupon-amount">100 000 ₸</div>
-                  </div>
+                <div style="text-align:right;">
+                  <div class="coupon-amount">~6 750 ₸</div>
+                  <span class="coupon-status">Ожидается</span>
                 </div>
               </div>
 
-              <!-- STOCK/FUND DIVIDENDS VIEW -->
-              <div id="dividendsView" style="display:none;">
-                <div class="coupon-item upcoming" id="divUpcomingRow">
+              <!-- Раскрывающийся блок «Следующие выплаты» -->
+              <div class="coupon-expand-trigger" onclick="toggleCouponNext(this)">
+                <span>Следующие выплаты</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="coupon-expand-content">
+                <div class="coupon-item"><div class="coupon-date">15.05.2027</div><div class="coupon-amount">6 750 ₸</div></div>
+                <div class="coupon-item"><div class="coupon-date">15.11.2027</div><div class="coupon-amount">6 750 ₸</div></div>
+                <div class="coupon-item"><div class="coupon-date">15.05.2028</div><div class="coupon-amount">6 750 ₸</div></div>
+                <div class="coupon-item"><div class="coupon-date">15.11.2028</div><div class="coupon-amount">6 750 ₸</div></div>
+                <div class="coupon-item"><div class="coupon-date">15.05.2029</div><div class="coupon-amount">6 750 ₸</div></div>
+
+                <!-- Скрытые до «показать все» -->
+                <div class="coupon-extra">
+                  <div class="coupon-item"><div class="coupon-date">15.11.2029</div><div class="coupon-amount">6 750 ₸</div></div>
+                  <div class="coupon-item"><div class="coupon-date">15.05.2030</div><div class="coupon-amount">6 750 ₸</div></div>
+                  <div class="coupon-item"><div class="coupon-date">15.11.2030</div><div class="coupon-amount">6 750 ₸</div></div>
+                  <div class="coupon-item"><div class="coupon-date">15.05.2031</div><div class="coupon-amount">6 750 ₸</div></div>
+                </div>
+
+                <div class="coupon-show-all" onclick="toggleCouponAll(this)">
+                  Показать все
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round"/></svg>
+                </div>
+
+                <!-- Погашение в конце -->
+                <div class="coupon-item" style="border-top: 1px solid var(--border); padding-top: 14px; margin-top: 6px;">
                   <div>
-                    <div class="coupon-date" id="divNextDate">15.09.2026</div>
-                    <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Ближайшая выплата</div>
+                    <div class="coupon-date">15.05.2027</div>
+                    <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Погашение номинала</div>
                   </div>
-                  <div style="text-align:right;">
-                    <div class="coupon-amount" id="divNextAmount">~1 200 ₸</div>
-                    <span class="coupon-status">Ожидается</span>
-                  </div>
-                </div>
-                <div id="divHistoryRows">
-                  <div class="coupon-item"><div class="coupon-date">15.03.2026</div><div class="coupon-amount">1 150 ₸</div></div>
-                  <div class="coupon-item"><div class="coupon-date">15.09.2025</div><div class="coupon-amount">1 080 ₸</div></div>
-                  <div class="coupon-item"><div class="coupon-date">15.03.2025</div><div class="coupon-amount">1 020 ₸</div></div>
-                </div>
-                <div class="div-no-dividends" id="divNoDividends" style="display:none;">
-                  Эмитент не выплачивает дивиденды по этой бумаге.
+                  <div class="coupon-amount">100 000 ₸</div>
                 </div>
               </div>
             </div>
@@ -1897,37 +1644,26 @@ input[type=range]::-webkit-slider-thumb {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round"/></svg>
           </div>
           <div class="accordion-content">
-            <!-- BOND PARAMS -->
-            <div id="paramsBondView">
-              <div class="param-row"><span class="param-label">Тип бумаги</span><span class="param-value">Купонная</span></div>
-              <div class="param-row"><span class="param-label">Тикер</span><span class="param-value">MOM_KZT_05.27</span></div>
-              <div class="param-row"><span class="param-label">ISIN <span class="tooltip-icon" title="Международный идентификатор">?</span></span><span class="param-value">KZ_MF_2705BB1</span></div>
-              <div class="param-row"><span class="param-label">Валюта торгов / номинала</span><span class="param-value">KZT / KZT</span></div>
-              <div class="param-row"><span class="param-label">Купонная ставка</span><span class="param-value">13.5%</span></div>
-              <div class="param-row"><span class="param-label">Тип купонной ставки</span><span class="param-value">Фиксированная</span></div>
-              <div class="param-row"><span class="param-label">Срок обращения</span><span class="param-value">15.05.2022 — 15.05.2027</span></div>
-              <div class="param-row"><span class="param-label">Номинал</span><span class="param-value">1 000 ₸</span></div>
-              <div class="param-row"><span class="param-label">Лотность</span><span class="param-value">10 шт</span></div>
-            </div>
-            <!-- STOCK/FUND PARAMS (первые 4) -->
-            <div id="paramsStockView" style="display:none;">
-              <div class="param-row"><span class="param-label" id="psLabel1">Тип бумаги</span><span class="param-value" id="psValue1">Акция</span></div>
-              <div class="param-row"><span class="param-label" id="psLabel2">Тикер</span><span class="param-value" id="psValue2">—</span></div>
-              <div class="param-row"><span class="param-label" id="psLabel3">Сектор</span><span class="param-value" id="psValue3">—</span></div>
-              <div class="param-row"><span class="param-label" id="psLabel4">Валюта торгов</span><span class="param-value" id="psValue4">—</span></div>
-            </div>
+            <div class="param-row"><span class="param-label">Тип бумаги</span><span class="param-value">Купонная</span></div>
+            <div class="param-row"><span class="param-label">Тикер</span><span class="param-value">MOM_KZT_05.27</span></div>
+            <div class="param-row"><span class="param-label">ISIN <span class="tooltip-icon" title="Международный идентификатор">?</span></span><span class="param-value">KZ_MF_2705BB1</span></div>
+            <div class="param-row"><span class="param-label">Валюта торгов / номинала</span><span class="param-value">KZT / KZT</span></div>
+            <div class="param-row"><span class="param-label">Купонная ставка</span><span class="param-value">13.5%</span></div>
+            <div class="param-row"><span class="param-label">Тип купонной ставки</span><span class="param-value">Фиксированная</span></div>
+            <div class="param-row"><span class="param-label">Срок обращения</span><span class="param-value">15.05.2022 — 15.05.2027</span></div>
+            <div class="param-row"><span class="param-label">Номинал</span><span class="param-value">1 000 ₸</span></div>
+            <div class="param-row"><span class="param-label">Лотность</span><span class="param-value">10 шт</span></div>
           </div>
 
-          <div class="sticky-cta" id="detailStickyCta">
-            <button class="btn btn-secondary" id="ipbSellBtn" onclick="sellFromDetail()" style="display:none;">Продать</button>
-            <button class="btn btn-primary" onclick="buyCurrentBond()">Купить</button>
+          <div class="sticky-cta">
+            <button class="btn btn-primary" onclick="state.flow='buy'; state.pricePerBond=100.45; state.nominal=1000; state.couponRate=0.135; state.ytm=0.142; state.nkdPerBond=12; applyFlowUI(); goTo('order-amount');">Купить</button>
           </div>
         </div>
 
         <!-- ===== VIEW: ORDER ===== -->
         <div class="view" id="view-order-amount">
           <div class="detail-header">
-            <div class="icon-btn" onclick="goBackFromOrder()">
+            <div class="icon-btn" onclick="goTo('bond-detail')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" stroke-linecap="round"/></svg>
             </div>
             <h1 id="orderTitle">Покупка</h1>
@@ -2091,7 +1827,7 @@ input[type=range]::-webkit-slider-thumb {
           </div>
 
           <div class="confirm-summary">
-            <div class="row"><span class="label" id="confirmBondLabel">Облигация</span><span class="value" id="confirmBondName">МЕККАМ-60</span></div>
+            <div class="row"><span class="label">Облигация</span><span class="value" id="confirmBondName">МЕККАМ-60</span></div>
             <div class="row"><span class="label">Тикер</span><span class="value" id="confirmBondTicker">MOM_KZT_05.27</span></div>
             <div class="row"><span class="label">Тип заявки</span><span class="value" id="confirmType">Рыночная</span></div>
             <div class="row"><span class="label">Количество</span><span class="value" id="confirmQty">100 шт</span></div>
@@ -2160,7 +1896,7 @@ input[type=range]::-webkit-slider-thumb {
             <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'all')">Все</div>
             <div class="portfolio-tab active" onclick="filterPortfolioByType(this, 'bonds')">Облигации</div>
             <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'stocks')">Акции</div>
-            <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'etf')">Фонды</div>
+            <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'etf')">ETF</div>
             <div class="portfolio-tab">Денежные</div>
           </div>
 
@@ -2190,7 +1926,7 @@ input[type=range]::-webkit-slider-thumb {
             <div class="instrument-tab active" data-favtype="all" onclick="filterFavByType(this, 'all')"><span>Все</span></div>
             <div class="instrument-tab" data-favtype="bonds" onclick="filterFavByType(this, 'bonds')"><span>Облигации</span></div>
             <div class="instrument-tab" data-favtype="stocks" onclick="filterFavByType(this, 'stocks')"><span>Акции</span></div>
-            <div class="instrument-tab" data-favtype="etf" onclick="filterFavByType(this, 'etf')"><span>Фонды</span></div>
+            <div class="instrument-tab" data-favtype="etf" onclick="filterFavByType(this, 'etf')"><span>ETF</span></div>
             <div class="instrument-tab" data-favtype="ipif" onclick="filterFavByType(this, 'ipif')"><span>ИПИФ</span></div>
           </div>
 
@@ -2284,9 +2020,8 @@ input[type=range]::-webkit-slider-thumb {
           <div id="bondsFilterBody">
           <!-- TYPE OF BOND (top-level) -->
           <div class="filter-group filter-group-top">
-            <div class="filter-group-title">Тип размещения</div>
+            <div class="filter-group-title">Тип облигации</div>
             <div class="filter-options" id="bondTypeOpts">
-              <div class="filter-opt" data-bondtype="secondary" onclick="selectBondType(this, 'secondary')">Вторичные торги</div>
               <div class="filter-opt" data-bondtype="ipo" onclick="selectBondType(this, 'ipo')">IPO-облигации</div>
               <div class="filter-opt" data-bondtype="vdo" onclick="selectBondType(this, 'vdo')">ВДО · высокая доходность</div>
               <div class="filter-opt" data-bondtype="add" onclick="selectBondType(this, 'add')">Доп. размещение</div>
@@ -2297,14 +2032,6 @@ input[type=range]::-webkit-slider-thumb {
           <!-- STANDARD FILTERS (default) -->
           <div id="standardFilterGroups">
           <div class="filter-group">
-            <div class="filter-group-title">Тип облигации</div>
-            <div class="filter-options">
-              <div class="filter-opt" onclick="toggleOpt(this)">Гос. облигации</div>
-              <div class="filter-opt" onclick="toggleOpt(this)">Корпоративные</div>
-              <div class="filter-opt" onclick="toggleOpt(this)">Еврооблигации</div>
-            </div>
-          </div>
-          <div class="filter-group" data-curr-group="trade">
             <div class="filter-group-title">Валюта торгов</div>
             <div class="filter-options">
               <div class="filter-opt" onclick="toggleOpt(this)">KZT</div>
@@ -2314,7 +2041,7 @@ input[type=range]::-webkit-slider-thumb {
             </div>
           </div>
           <div class="filter-group">
-            <div class="filter-group-title">Валюта выпуска</div>
+            <div class="filter-group-title">Валюта номинала</div>
             <div class="filter-options">
               <div class="filter-opt" onclick="toggleOpt(this)">KZT</div>
               <div class="filter-opt" onclick="toggleOpt(this)">USD</div>
@@ -2425,23 +2152,32 @@ input[type=range]::-webkit-slider-thumb {
               </div>
             </div>
             <div class="filter-group">
-              <div class="filter-group-title">Страна</div>
+              <div class="filter-group-title">Капитализация</div>
               <div class="filter-options">
-                <div class="filter-opt" data-country="kz" onclick="toggleOpt(this)">Казахстан</div>
-                <div class="filter-opt" data-country="us" onclick="toggleOpt(this)">США</div>
-                <div class="filter-opt" data-country="eu" onclick="toggleOpt(this)">Европа</div>
-                <div class="filter-opt" data-country="other" onclick="toggleOpt(this)">Прочие</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Крупная</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Средняя</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Малая</div>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Дивидендная доходность, %</div>
+              <div class="filter-options">
+                <div class="filter-opt" onclick="toggleOpt(this)">0</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">1–5</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">5–10</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">10+</div>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">P/E коэффициент</div>
+              <div class="filter-options">
+                <div class="filter-opt" onclick="toggleOpt(this)">до 10</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">10–20</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">20+</div>
               </div>
             </div>
             <div class="filter-group">
               <div class="filter-group-title">Валюта торгов</div>
-              <div class="filter-options">
-                <div class="filter-opt" onclick="toggleOpt(this)">KZT</div>
-                <div class="filter-opt" onclick="toggleOpt(this)">USD</div>
-              </div>
-            </div>
-            <div class="filter-group">
-              <div class="filter-group-title">Валюта выпуска</div>
               <div class="filter-options">
                 <div class="filter-opt" onclick="toggleOpt(this)">KZT</div>
                 <div class="filter-opt" onclick="toggleOpt(this)">USD</div>
@@ -2459,12 +2195,20 @@ input[type=range]::-webkit-slider-thumb {
               </div>
             </div>
             <div class="filter-group">
-              <div class="filter-group-title">Страна</div>
+              <div class="filter-group-title">География / Индекс</div>
               <div class="filter-options">
-                <div class="filter-opt" data-country="kz" onclick="toggleOpt(this)">Казахстан</div>
-                <div class="filter-opt" data-country="us" onclick="toggleOpt(this)">США</div>
-                <div class="filter-opt" data-country="eu" onclick="toggleOpt(this)">Европа</div>
-                <div class="filter-opt" data-country="other" onclick="toggleOpt(this)">Прочие</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Казахстан</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">США</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Развив. рынки</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Глобальный</div>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-group-title">Комиссия (TER), %</div>
+              <div class="filter-options">
+                <div class="filter-opt" onclick="toggleOpt(this)">до 0.3</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">0.3–0.7</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">0.7+</div>
               </div>
             </div>
             <div class="filter-group">
@@ -2476,17 +2220,10 @@ input[type=range]::-webkit-slider-thumb {
               </div>
             </div>
             <div class="filter-group">
-              <div class="filter-group-title">Валюта торгов</div>
+              <div class="filter-group-title">Выплата дивидендов</div>
               <div class="filter-options">
-                <div class="filter-opt" onclick="toggleOpt(this)">KZT</div>
-                <div class="filter-opt" onclick="toggleOpt(this)">USD</div>
-              </div>
-            </div>
-            <div class="filter-group">
-              <div class="filter-group-title">Валюта выпуска</div>
-              <div class="filter-options">
-                <div class="filter-opt" onclick="toggleOpt(this)">KZT</div>
-                <div class="filter-opt" onclick="toggleOpt(this)">USD</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Распределяющий</div>
+                <div class="filter-opt" onclick="toggleOpt(this)">Накопительный</div>
               </div>
             </div>
           </div>
@@ -2700,8 +2437,6 @@ const state = {
   validity: '1 июня 2026',
   hasHistoryItem: false,
   activeInstrument: 'bonds', // выбранная вкладка типа ЦБ на витрине
-  activeMarket: 'KASE',       // выбранная биржа по умолчанию
-  sortKey: null,              // ключ сортировки
   instrumentType: 'bonds', // тип инструмента в текущем ордере
   currentInstrument: null,
   // Готовые позиции в портфеле
@@ -2809,53 +2544,40 @@ const FAVORITES_INITIAL = [
 ];
 // Map ticker -> bond data (для облигаций которые можно добавить из списка)
 const BONDS_CATALOG = {
-  // Размещения (IPO)
-  'BCC_PRIM_06.31': { type: 'bonds', issuer: 'BCC Group', name: 'BCC Group · IPO выпуск', logoClass: 'minfin', logoText: 'BCC', currency: '₸', price: '100.00', changeAbs: '0.00', changePct: 0, market: 'primary', bondType: 'ipo', ytm: 15.8, coupon: 15.0, maturity: '01.06.2031', lot: 10, risk: 'Средний', nominalDisplay: '1 000 ₸' },
-  'KEGOC_PRIM_09.32': { type: 'bonds', issuer: 'KEGOC', name: 'KEGOC · IPO выпуск', logoClass: 'snrg', logoText: 'KEG', currency: '₸', price: '100.00', changeAbs: '0.00', changePct: 0, market: 'primary', bondType: 'ipo', ytm: 14.9, coupon: 14.2, maturity: '01.09.2032', lot: 10, risk: 'Низкий', nominalDisplay: '1 000 ₸' },
-  // KASE
-  'MOM_KZT_05.27': { type: 'bonds', issuer: 'Минфин РК', name: 'Минфин РК · МЕККАМ-60', logoClass: 'minfin', logoText: 'МФ', currency: '₸', price: '100.45', changeAbs: '+0.32', changePct: 0.32, market: 'KASE', bondType: 'secondary', ytm: 14.2, coupon: 13.5, maturity: '15.05.2027', lot: 10, risk: 'Низкий', nominalDisplay: '1 000 ₸' },
-  'HSBK_KZT_03.28': { type: 'bonds', issuer: 'Halyk Bank', name: 'Halyk Bank', logoClass: 'halyk', logoText: 'H', currency: '₸', price: '98.70', changeAbs: '−0.18', changePct: -0.18, market: 'KASE', bondType: 'secondary', ytm: 16.4, coupon: 15.5, maturity: '20.03.2028', lot: 10, risk: 'Низкий', nominalDisplay: '1 000 ₸' },
-  'KSPI_KZT_06.29': { type: 'bonds', issuer: 'Kaspi.kz', name: 'Kaspi.kz', logoClass: 'kaspi', logoText: 'K', currency: '₸', price: '101.20', changeAbs: '+0.54', changePct: 0.54, market: 'KASE', bondType: 'secondary', ytm: 13.9, coupon: 14.0, maturity: '10.06.2029', lot: 10, risk: 'Низкий', nominalDisplay: '1 000 ₸' },
-  'KAFI_KZT_11.27': { type: 'bonds', issuer: 'КазАгроФинанс', name: 'КазАгроФинанс', logoClass: 'kaf', logoText: 'КА', currency: '₸', price: '99.85', changeAbs: '−0.05', changePct: -0.05, market: 'KASE', bondType: 'vdo', ytm: 19.6, coupon: 18.0, maturity: '05.11.2027', lot: 10, risk: 'Высокий', nominalDisplay: '1 000 ₸' },
-  'SNRG_KZT_04.30': { type: 'bonds', issuer: 'Самрук-Энерго', name: 'Самрук-Энерго', logoClass: 'snrg', logoText: 'СЭ', currency: '₸', price: '100.10', changeAbs: '+0.11', changePct: 0.11, market: 'KASE', bondType: 'secondary', ytm: 13.4, coupon: 13.0, maturity: '12.04.2030', lot: 10, risk: 'Низкий', nominalDisplay: '1 000 ₸' },
-  // INTL
-  'KMG_USD_09.30':  { type: 'bonds', issuer: 'KazMunayGas', name: 'KazMunayGas', logoClass: 'kmg', logoText: 'KMG', currency: '$', price: '96.40', changeAbs: '+0.21', changePct: 0.22, market: 'INTL', bondType: 'secondary', ytm: 6.8, coupon: 6.4, maturity: '25.09.2030', lot: 1, risk: 'Средний', nominalDisplay: '$1 000' },
-  'UST_USD_05.35':  { type: 'bonds', issuer: 'US Treasury', name: 'US Treasury 10Y', logoClass: 'ust', logoText: 'US', currency: '$', price: '99.05', changeAbs: '−0.12', changePct: -0.12, market: 'INTL', bondType: 'secondary', ytm: 4.3, coupon: 4.1, maturity: '15.05.2035', lot: 1, risk: 'Низкий', nominalDisplay: '$1 000' },
-  'AAPL_USD_08.31': { type: 'bonds', issuer: 'Apple Inc.', name: 'Apple Inc.', logoClass: 'aapl', logoText: 'AAPL', currency: '$', price: '94.80', changeAbs: '+0.08', changePct: 0.08, market: 'INTL', bondType: 'secondary', ytm: 5.2, coupon: 4.8, maturity: '10.08.2031', lot: 1, risk: 'Низкий', nominalDisplay: '$1 000' },
-  // AIX
-  'AIRA_USD_07.29': { type: 'bonds', issuer: 'Air Astana', name: 'Air Astana', logoClass: 'aira', logoText: 'AA', currency: '$', price: '97.60', changeAbs: '+0.40', changePct: 0.41, market: 'AIX', bondType: 'secondary', ytm: 7.9, coupon: 7.5, maturity: '18.07.2029', lot: 1, risk: 'Средний', nominalDisplay: '$1 000' },
-  'KAP_USD_12.32':  { type: 'bonds', issuer: 'Kazatomprom', name: 'Kazatomprom', logoClass: 'kap', logoText: 'KAP', currency: '$', price: '100.90', changeAbs: '−0.27', changePct: -0.27, market: 'AIX', bondType: 'secondary', ytm: 6.1, coupon: 6.2, maturity: '01.12.2032', lot: 1, risk: 'Низкий', nominalDisplay: '$1 000' },
+  'MOM_KZT_05.27': { type: 'bonds', issuer: 'Минфин РК', name: 'Минфин РК · МЕККАМ-60', logoClass: 'minfin', logoText: 'МФ', currency: '₸', price: '100.45', changeAbs: '+0.32', changePct: 0.32 },
+  'HSBK_KZT_03.28': { type: 'bonds', issuer: 'Halyk Bank', name: 'Halyk Bank', logoClass: 'halyk', logoText: 'H', currency: '₸', price: '98.70', changeAbs: '−0.18', changePct: -0.18 },
+  'KSPI_KZT_06.29': { type: 'bonds', issuer: 'Kaspi.kz', name: 'Kaspi.kz', logoClass: 'kaspi', logoText: 'K', currency: '₸', price: '101.20', changeAbs: '+0.54', changePct: 0.54 },
+  'KAFI_KZT_11.27': { type: 'bonds', issuer: 'КазАгроФинанс', name: 'КазАгроФинанс', logoClass: 'kaf', logoText: 'КА', currency: '₸', price: '99.85', changeAbs: '−0.05', changePct: -0.05 },
+  'SNRG_KZT_04.30': { type: 'bonds', issuer: 'Самрук-Энерго', name: 'Самрук-Энерго', logoClass: 'snrg', logoText: 'СЭ', currency: '₸', price: '100.10', changeAbs: '+0.11', changePct: 0.11 },
+  'KMG_USD_09.30':  { type: 'bonds', issuer: 'KazMunayGas', name: 'KazMunayGas', logoClass: 'kmg', logoText: 'KMG', currency: '$', price: '96.40', changeAbs: '+0.21', changePct: 0.22 },
+  'UST_USD_05.35':  { type: 'bonds', issuer: 'US Treasury', name: 'US Treasury 10Y', logoClass: 'ust', logoText: 'US', currency: '$', price: '99.05', changeAbs: '−0.12', changePct: -0.12 },
+  'AAPL_USD_08.31': { type: 'bonds', issuer: 'Apple Inc.', name: 'Apple Inc.', logoClass: 'aapl', logoText: 'AAPL', currency: '$', price: '94.80', changeAbs: '+0.08', changePct: 0.08 },
+  'AIRA_USD_07.29': { type: 'bonds', issuer: 'Air Astana', name: 'Air Astana', logoClass: 'aira', logoText: 'AA', currency: '$', price: '97.60', changeAbs: '+0.40', changePct: 0.41 },
+  'KAP_USD_12.32':  { type: 'bonds', issuer: 'Kazatomprom', name: 'Kazatomprom', logoClass: 'kap', logoText: 'KAP', currency: '$', price: '100.90', changeAbs: '−0.27', changePct: -0.27 },
 };
 
 // Каталог акций
 const STOCKS_CATALOG = {
-  // Размещения (IPO акций)
-  'BCC_IPO':{ type: 'stocks', issuer: 'BCC Group', name: 'BCC Group · IPO', logoClass: 'minfin', logoText: 'BCC', currency: '₸', price: '850', changeAbs: '0', changePct: 0, sector: 'finance', mcap: 'mid', divYield: 0, pe: 0, market: 'primary', country: 'kz', risk: 'Высокий' },
-  // KASE
-  'HSBK':   { type: 'stocks', issuer: 'Halyk Bank', name: 'Halyk Bank', logoClass: 'halyk', logoText: 'H', currency: '₸', price: '198.45', changeAbs: '+2.10', changePct: 1.07, sector: 'finance', mcap: 'large', divYield: 8.2, pe: 5.4, market: 'KASE', country: 'kz', risk: 'Низкий' },
-  'KMG':    { type: 'stocks', issuer: 'KazMunayGas', name: 'КазМунайГаз', logoClass: 'kmg', logoText: 'KMG', currency: '₸', price: '13 480', changeAbs: '+180', changePct: 1.35, sector: 'energy', mcap: 'large', divYield: 6.1, pe: 4.2, market: 'KASE', country: 'kz', risk: 'Низкий' },
-  'KCEL':   { type: 'stocks', issuer: 'Kcell', name: 'Kcell', logoClass: 'aira', logoText: 'KC', currency: '₸', price: '1 695', changeAbs: '−15', changePct: -0.88, sector: 'telecom', mcap: 'mid', divYield: 11.4, pe: 6.7, market: 'KASE', country: 'kz', risk: 'Средний' },
-  'KZTK':   { type: 'stocks', issuer: 'Казахтелеком', name: 'Казахтелеком', logoClass: 'snrg', logoText: 'КТ', currency: '₸', price: '34 200', changeAbs: '−180', changePct: -0.52, sector: 'telecom', mcap: 'mid', divYield: 9.5, pe: 5.9, market: 'KASE', country: 'kz', risk: 'Средний' },
-  // AIX
-  'KZAP':   { type: 'stocks', issuer: 'Kazatomprom', name: 'Казатомпром', logoClass: 'kap', logoText: 'KAP', currency: '₸', price: '52 100', changeAbs: '+420', changePct: 0.81, sector: 'industrial', mcap: 'large', divYield: 7.8, pe: 8.1, market: 'AIX', country: 'kz', risk: 'Низкий' },
-  // INTL
-  'AAPL':   { type: 'stocks', issuer: 'Apple Inc.', name: 'Apple Inc.', logoClass: 'aapl', logoText: 'AAPL', currency: '$', price: '192.45', changeAbs: '+1.20', changePct: 0.63, sector: 'tech', mcap: 'large', divYield: 0.5, pe: 28.4, market: 'INTL', country: 'us', risk: 'Низкий' },
-  'TSLA':   { type: 'stocks', issuer: 'Tesla Inc.', name: 'Tesla Inc.', logoClass: 'kaspi', logoText: 'TSLA', currency: '$', price: '248.50', changeAbs: '−3.40', changePct: -1.35, sector: 'consumer', mcap: 'large', divYield: 0, pe: 65.2, market: 'INTL', country: 'us', risk: 'Высокий' },
-  'JPM':    { type: 'stocks', issuer: 'JPMorgan Chase', name: 'JPMorgan', logoClass: 'minfin', logoText: 'JPM', currency: '$', price: '215.80', changeAbs: '+0.95', changePct: 0.44, sector: 'finance', mcap: 'large', divYield: 2.1, pe: 12.1, market: 'INTL', country: 'us', risk: 'Низкий' },
-  'XOM':    { type: 'stocks', issuer: 'ExxonMobil', name: 'ExxonMobil', logoClass: 'kmg', logoText: 'XOM', currency: '$', price: '109.20', changeAbs: '+0.85', changePct: 0.78, sector: 'energy', mcap: 'large', divYield: 3.7, pe: 13.6, market: 'INTL', country: 'us', risk: 'Низкий' },
-  'KO':     { type: 'stocks', issuer: 'The Coca-Cola Company', name: 'Coca-Cola', logoClass: 'kaspi', logoText: 'KO', currency: '$', price: '65.30', changeAbs: '+0.15', changePct: 0.23, sector: 'consumer', mcap: 'large', divYield: 3.0, pe: 24.8, market: 'INTL', country: 'us', risk: 'Низкий' },
+  'HSBK':   { type: 'stocks', issuer: 'Halyk Bank', name: 'Halyk Bank', logoClass: 'halyk', logoText: 'H', currency: '₸', price: '198.45', changeAbs: '+2.10', changePct: 1.07, sector: 'finance', mcap: 'large', divYield: 8.2, pe: 5.4 },
+  'KMG':    { type: 'stocks', issuer: 'KazMunayGas', name: 'КазМунайГаз', logoClass: 'kmg', logoText: 'KMG', currency: '₸', price: '13 480', changeAbs: '+180', changePct: 1.35, sector: 'energy', mcap: 'large', divYield: 6.1, pe: 4.2 },
+  'KCEL':   { type: 'stocks', issuer: 'Kcell', name: 'Kcell', logoClass: 'aira', logoText: 'KC', currency: '₸', price: '1 695', changeAbs: '−15', changePct: -0.88, sector: 'telecom', mcap: 'mid', divYield: 11.4, pe: 6.7 },
+  'KZAP':   { type: 'stocks', issuer: 'Kazatomprom', name: 'Казатомпром', logoClass: 'kap', logoText: 'KAP', currency: '₸', price: '52 100', changeAbs: '+420', changePct: 0.81, sector: 'industrial', mcap: 'large', divYield: 7.8, pe: 8.1 },
+  'KZTK':   { type: 'stocks', issuer: 'Казахтелеком', name: 'Казахтелеком', logoClass: 'snrg', logoText: 'КТ', currency: '₸', price: '34 200', changeAbs: '−180', changePct: -0.52, sector: 'telecom', mcap: 'mid', divYield: 9.5, pe: 5.9 },
+  'AAPL':   { type: 'stocks', issuer: 'Apple Inc.', name: 'Apple Inc.', logoClass: 'aapl', logoText: 'AAPL', currency: '$', price: '192.45', changeAbs: '+1.20', changePct: 0.63, sector: 'tech', mcap: 'large', divYield: 0.5, pe: 28.4 },
+  'TSLA':   { type: 'stocks', issuer: 'Tesla Inc.', name: 'Tesla Inc.', logoClass: 'kaspi', logoText: 'TSLA', currency: '$', price: '248.50', changeAbs: '−3.40', changePct: -1.35, sector: 'consumer', mcap: 'large', divYield: 0, pe: 65.2 },
+  'JPM':    { type: 'stocks', issuer: 'JPMorgan Chase', name: 'JPMorgan', logoClass: 'minfin', logoText: 'JPM', currency: '$', price: '215.80', changeAbs: '+0.95', changePct: 0.44, sector: 'finance', mcap: 'large', divYield: 2.1, pe: 12.1 },
+  'XOM':    { type: 'stocks', issuer: 'ExxonMobil', name: 'ExxonMobil', logoClass: 'kmg', logoText: 'XOM', currency: '$', price: '109.20', changeAbs: '+0.85', changePct: 0.78, sector: 'energy', mcap: 'large', divYield: 3.7, pe: 13.6 },
+  'KO':     { type: 'stocks', issuer: 'The Coca-Cola Company', name: 'Coca-Cola', logoClass: 'kaspi', logoText: 'KO', currency: '$', price: '65.30', changeAbs: '+0.15', changePct: 0.23, sector: 'consumer', mcap: 'large', divYield: 3.0, pe: 24.8 },
 };
 
 // Каталог ETF
 const ETF_CATALOG = {
-  // KASE
-  'FXKZ':   { type: 'etf', issuer: 'BCC Asset', name: 'BCC · Казахстан', logoClass: 'snrg', logoText: 'KZ', currency: '₸', price: '1 250', changeAbs: '+8', changePct: 0.64, asset: 'stocks', region: 'kz', ter: 0.8, aum: 'small', distrib: 'distrib', market: 'KASE', country: 'kz', risk: 'Средний' },
-  // INTL
-  'FXUS':   { type: 'etf', issuer: 'FinEx', name: 'FinEx · US Stocks', logoClass: 'ust', logoText: 'FX', currency: '$', price: '92.30', changeAbs: '−0.45', changePct: -0.49, asset: 'stocks', region: 'usa', ter: 0.9, aum: 'mid', distrib: 'accum', market: 'INTL', country: 'us', risk: 'Низкий' },
-  'VOO':    { type: 'etf', issuer: 'Vanguard', name: 'Vanguard · S&P 500', logoClass: 'aapl', logoText: 'VOO', currency: '$', price: '485.20', changeAbs: '+2.10', changePct: 0.43, asset: 'stocks', region: 'usa', ter: 0.03, aum: 'large', distrib: 'accum', market: 'INTL', country: 'us', risk: 'Низкий' },
-  'BND':    { type: 'etf', issuer: 'Vanguard', name: 'Vanguard · Total Bond', logoClass: 'minfin', logoText: 'BND', currency: '$', price: '76.85', changeAbs: '+0.12', changePct: 0.16, asset: 'bonds', region: 'global', ter: 0.03, aum: 'large', distrib: 'distrib', market: 'INTL', country: 'other', risk: 'Низкий' },
-  'AGG':    { type: 'etf', issuer: 'iShares', name: 'iShares · Core US Bond', logoClass: 'ust', logoText: 'AGG', currency: '$', price: '98.40', changeAbs: '−0.08', changePct: -0.08, asset: 'bonds', region: 'usa', ter: 0.03, aum: 'large', distrib: 'distrib', market: 'INTL', country: 'us', risk: 'Низкий' },
-  'EEM':    { type: 'etf', issuer: 'iShares', name: 'iShares · Emerging Markets', logoClass: 'kap', logoText: 'EEM', currency: '$', price: '42.15', changeAbs: '+0.35', changePct: 0.84, asset: 'stocks', region: 'em', ter: 0.7, aum: 'large', distrib: 'distrib', market: 'INTL', country: 'other', risk: 'Высокий' },
+  'FXUS':   { type: 'etf', issuer: 'FinEx', name: 'FinEx · US Stocks', logoClass: 'ust', logoText: 'FX', currency: '$', price: '92.30', changeAbs: '−0.45', changePct: -0.49, asset: 'stocks', region: 'usa', ter: 0.9, aum: 'mid', distrib: 'accum' },
+  'FXKZ':   { type: 'etf', issuer: 'BCC Asset', name: 'BCC · Казахстан', logoClass: 'snrg', logoText: 'KZ', currency: '₸', price: '1 250', changeAbs: '+8', changePct: 0.64, asset: 'stocks', region: 'kz', ter: 0.8, aum: 'small', distrib: 'distrib' },
+  'VOO':    { type: 'etf', issuer: 'Vanguard', name: 'Vanguard · S&P 500', logoClass: 'aapl', logoText: 'VOO', currency: '$', price: '485.20', changeAbs: '+2.10', changePct: 0.43, asset: 'stocks', region: 'usa', ter: 0.03, aum: 'large', distrib: 'accum' },
+  'BND':    { type: 'etf', issuer: 'Vanguard', name: 'Vanguard · Total Bond', logoClass: 'minfin', logoText: 'BND', currency: '$', price: '76.85', changeAbs: '+0.12', changePct: 0.16, asset: 'bonds', region: 'global', ter: 0.03, aum: 'large', distrib: 'distrib' },
+  'AGG':    { type: 'etf', issuer: 'iShares', name: 'iShares · Core US Bond', logoClass: 'ust', logoText: 'AGG', currency: '$', price: '98.40', changeAbs: '−0.08', changePct: -0.08, asset: 'bonds', region: 'usa', ter: 0.03, aum: 'large', distrib: 'distrib' },
+  'EEM':    { type: 'etf', issuer: 'iShares', name: 'iShares · Emerging Markets', logoClass: 'kap', logoText: 'EEM', currency: '$', price: '42.15', changeAbs: '+0.35', changePct: 0.84, asset: 'stocks', region: 'em', ter: 0.7, aum: 'large', distrib: 'distrib' },
 };
 
 // Объединённый каталог для избранного и т.д.
@@ -2997,7 +2719,7 @@ function renderPortfolio() {
   });
 }
 
-function openSell(holdingId, fromDetail) {
+function openSell(holdingId) {
   const h = state.holdings.find(x => x.id === holdingId);
   if (!h) return;
   state.flow = 'sell';
@@ -3008,26 +2730,8 @@ function openSell(holdingId, fromDetail) {
   state.couponRate = h.coupon10 || 0;
   state.ytm = (h.ytm || 0) / 100;
   state.nkdPerBond = h.nkdPerBond || 0;
-  state.sellEntryPoint = fromDetail ? 'detail' : 'portfolio';
   applyFlowUI();
   goTo('order-amount');
-}
-
-// Возврат с экрана покупки/продажи туда, откуда реально пришли
-function goBackFromOrder() {
-  if (state.flow === 'sell') {
-    if (state.sellEntryPoint === 'detail' && state.currentDetailTicker) {
-      openInstrumentDetail(state.currentDetailTicker);
-    } else {
-      goTo('portfolio');
-    }
-  } else if (state.currentDetailTicker) {
-    // Покупка с карточки инструмента (облигация / акция / фонд) — возвращаемся на неё
-    openInstrumentDetail(state.currentDetailTicker);
-  } else {
-    // Нет карточки — пришли прямо со списка
-    goTo('bonds-list');
-  }
 }
 
 function applyFlowUI() {
@@ -3054,10 +2758,10 @@ function applyFlowUI() {
     document.getElementById('orderInstrumentName').textContent = h.name;
     document.getElementById('orderInstrumentTicker').textContent = h.ticker;
     document.getElementById('orderInstrumentPrice').textContent = isBond ? (h.currentPrice.toFixed(2) + '%') : (h.currentPrice + ' ' + cur);
-  } else if (isBuy && ci) {
+  } else if (isBuy && !isBond && ci) {
     document.getElementById('orderInstrumentName').textContent = ci.name;
     document.getElementById('orderInstrumentTicker').textContent = ci.ticker;
-    document.getElementById('orderInstrumentPrice').textContent = isBond ? (ci.price + '%') : (ci.price + ' ' + cur);
+    document.getElementById('orderInstrumentPrice').textContent = ci.price + ' ' + cur;
   } else {
     document.getElementById('orderInstrumentName').textContent = defaults.name;
     document.getElementById('orderInstrumentTicker').textContent = defaults.ticker;
@@ -3066,7 +2770,6 @@ function applyFlowUI() {
 
   const nominalBlock = document.getElementById('nominalValue').parentElement;
   const lotBlock = document.getElementById('lotValue').parentElement;
-  const availableRow = document.querySelector('.available-row');
   if (isBuy) {
     document.getElementById('availLabel').textContent = '\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u043E';
     document.getElementById('availValue').textContent = defaults.available;
@@ -3074,12 +2777,10 @@ function applyFlowUI() {
       nominalBlock.style.display = ''; lotBlock.style.display = '';
       document.getElementById('nominalValue').textContent = defaults.nominal;
       document.getElementById('lotValue').textContent = defaults.lot;
-      if (availableRow) availableRow.classList.remove('two-col');
     } else {
-      // У акций и фондов нет номинала и лотности — убираем оба блока
       nominalBlock.style.display = 'none';
-      lotBlock.style.display = 'none';
-      if (availableRow) availableRow.classList.add('two-col');
+      lotBlock.style.display = '';
+      document.getElementById('lotValue').textContent = '1 \u0448\u0442';
     }
   } else if (h) {
     document.getElementById('availLabel').textContent = '\u0412 \u043D\u0430\u043B\u0438\u0447\u0438\u0438';
@@ -3088,18 +2789,17 @@ function applyFlowUI() {
       nominalBlock.style.display = ''; lotBlock.style.display = '';
       document.getElementById('nominalValue').textContent = h.nominal.toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + cur;
       document.getElementById('lotValue').textContent = h.lot + ' \u0448\u0442';
-      if (availableRow) availableRow.classList.remove('two-col');
     } else {
       nominalBlock.style.display = 'none';
-      lotBlock.style.display = 'none';
-      if (availableRow) availableRow.classList.add('two-col');
+      lotBlock.style.display = '';
+      document.getElementById('lotValue').textContent = '1 \u0448\u0442';
     }
   }
 
   if (isBuy) {
     document.getElementById('mFieldLabel').textContent = '\u0421\u0443\u043C\u043C\u0430';
     document.getElementById('mFieldSuffix').textContent = cur;
-    const mktPrice = ci ? (isBond ? ci.price + '%' : ci.price + ' ' + cur) : defaults.price;
+    const mktPrice = isBond ? '100.45%' : (ci ? (ci.price + ' ' + cur) : defaults.price);
     document.getElementById('mFieldHint').textContent = '\u043F\u043E \u0440\u044B\u043D\u043E\u0447\u043D\u043E\u0439 \u0446\u0435\u043D\u0435 ' + mktPrice;
   } else if (h) {
     document.getElementById('mFieldLabel').textContent = '\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E';
@@ -3111,7 +2811,7 @@ function applyFlowUI() {
   const priceHint = document.querySelector('#limitForm .dual-field:first-child .dual-hint');
   const priceUnit = document.querySelector('#limitForm .dual-field:first-child .dual-input-wrap span');
   const ciPriceNum = ci ? parseFloat(String(ci.price).replace(/\s/g,'')) : 100.45;
-  const mktNum = isBuy ? ciPriceNum : (h ? h.currentPrice : 100.45);
+  const mktNum = isBond ? 100.45 : (isBuy ? ciPriceNum : (h ? h.currentPrice : 100.45));
   if (priceHint) priceHint.textContent = '\u0440\u044B\u043D\u043E\u043A: ' + mktNum + (isBond ? '%' : ' ' + cur);
   if (priceUnit) priceUnit.textContent = isBond ? '%' : cur;
   const yieldFieldBlock = document.querySelector('#limitForm .dual-field:nth-child(2)');
@@ -3129,22 +2829,20 @@ function applyFlowUI() {
   document.getElementById('continueBtn').textContent = isBuy ? '\u041A\u0443\u043F\u0438\u0442\u044C' : '\u041F\u0440\u043E\u0434\u0430\u0442\u044C';
   document.getElementById('confirmBtn').textContent = isBuy ? '\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0443' : '\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C \u043F\u0440\u043E\u0434\u0430\u0436\u0443';
   const backLabel = isBuy
-    ? (isBond ? '\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0449\u0451 \u043E\u0431\u043B\u0438\u0433\u0430\u0446\u0438\u0438' : (itype === 'stocks' ? '\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0449\u0451 \u0430\u043A\u0446\u0438\u0438' : '\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0449\u0451 \u0444\u043E\u043D\u0434\u044B'))
+    ? (isBond ? '\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0449\u0451 \u043E\u0431\u043B\u0438\u0433\u0430\u0446\u0438\u0438' : (itype === 'stocks' ? '\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0449\u0451 \u0430\u043A\u0446\u0438\u0438' : '\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0449\u0451 ETF'))
     : '\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u0432 \u041F\u043E\u0440\u0442\u0444\u0435\u043B\u044C';
   document.getElementById('successSecondaryBtn').textContent = backLabel;
   document.getElementById('successSecondaryBtn').setAttribute('onclick', isBuy ? "goTo('bonds-list')" : "goTo('portfolio')");
 
   let cName, cTicker;
-  if (isBuy && ci) { cName = ci.shortName || ci.name; cTicker = ci.ticker; }
+  if (isBuy && isBond) { cName = defaults.shortName; cTicker = defaults.ticker; }
+  else if (isBuy && !isBond && ci) { cName = ci.name; cTicker = ci.ticker; }
   else if (!isBuy && h) { cName = h.name; cTicker = h.ticker; }
   else { cName = defaults.shortName; cTicker = defaults.ticker; }
   document.getElementById('confirmBondName').textContent = cName;
   document.getElementById('confirmBondTicker').textContent = cTicker;
   document.getElementById('successBondName').textContent = cName;
   document.getElementById('successBondTicker').textContent = cTicker;
-  const labelByType = { bonds: '\u041E\u0431\u043B\u0438\u0433\u0430\u0446\u0438\u044F', stocks: '\u0410\u043A\u0446\u0438\u044F', etf: '\u0424\u043E\u043D\u0434' };
-  const confirmLabelEl = document.getElementById('confirmBondLabel');
-  if (confirmLabelEl) confirmLabelEl.textContent = labelByType[itype] || '\u0418\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442';
 
   document.getElementById('confirmTotalLabel').textContent = isBuy ? '\u0418\u0442\u043E\u0433\u043E \u0441\u0443\u043C\u043C\u0430' : '\u0418\u0442\u043E\u0433\u043E \u043A \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044E';
   const nkdEl = document.getElementById('confirmNkd');
@@ -3191,217 +2889,12 @@ function resetOrderForm() {
 
 function openBond() { goTo('bond-detail'); }
 
-// Кнопка "Купить" на карточке облигации — использует данные текущей открытой облигации
-function buyCurrentBond() {
-  const ticker = state.currentDetailTicker || state.currentBondTicker || 'MOM_KZT_05.27';
-  const it = INSTRUMENTS_CATALOG[ticker];
-  if (!it) return;
-  state.flow = 'buy';
-  state.instrumentType = it.type;
-  const pNum = parseFloat(String(it.price).replace(/\s/g,'').replace(',', '.'));
-  state.pricePerBond = pNum;
-  if (it.type === 'bonds') {
-    state.nominal = 1000;
-    state.nkdPerBond = 12;
-    state.couponRate = (it.coupon || 13.5) / 100;
-    state.ytm = (it.ytm || 14.2) / 100;
-  } else {
-    state.nominal = 100;
-    state.nkdPerBond = 0;
-    state.couponRate = 0;
-    state.ytm = 0;
-  }
-  state.currentInstrument = { ...it, ticker };
-  applyFlowUI();
-  goTo('order-amount');
-}
-
-// Продать текущую открытую в карточке бумагу (если есть в портфеле)
-function sellFromDetail() {
-  const ticker = state.currentDetailTicker;
-  const h = state.holdings.find(x => x.ticker === ticker);
-  if (!h) return;
-  openSell(h.id, true);
-}
-
-// Открыть детальную карточку любой бумаги (облигация / акция / фонд)
-function openInstrumentDetail(ticker) {
-  const it = INSTRUMENTS_CATALOG[ticker];
-  if (!it) { goTo('bond-detail'); return; }
-  state.currentDetailTicker = ticker;
-  state.currentBondTicker = ticker; // для обратной совместимости с goBackFromOrder
-
-  const isBondNow = it.type === 'bonds';
-
-  // ШАПКА
-  document.getElementById('bdLogo').className = 'bond-logo ' + it.logoClass;
-  document.getElementById('bdLogo').textContent = it.logoText;
-  document.getElementById('bdIssuer').textContent = it.issuer;
-  document.getElementById('bdName').textContent = it.name;
-  const marketLabel = it.market === 'primary' ? 'Special' : it.market;
-  const curLabel = it.currency === '$' ? 'USD' : 'KZT';
-  document.getElementById('bdTicker').textContent = ticker + ' · ' + marketLabel + ' · ' + curLabel;
-  document.getElementById('bdPrice').textContent = it.price;
-  const isUp = it.changePct >= 0;
-  const changeEl = document.getElementById('bdChange');
-  changeEl.className = 'dib-change ' + (isUp ? 'up' : 'down');
-  document.getElementById('bdChangeAbs').textContent = it.changeAbs + ' ' + it.currency;
-  const arrowSvg = isUp
-    ? '<svg width="9" height="9" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>'
-    : '<svg width="9" height="9" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>';
-  document.getElementById('bdChangePct').innerHTML = arrowSvg + Math.abs(it.changePct).toFixed(2) + '%';
-
-  // KEY CHIPS — для облигаций полный набор, для акций/фондов только Риск
-  const kcIds = ['kcYtm','kcCoupon','kcMaturity','kcMinBuy','kcLot'];
-  const kcGrid = document.querySelector('.dib-keychips');
-  if (isBondNow) {
-    kcIds.forEach(id => { const el = document.getElementById(id); if (el) el.style.display = ''; });
-    if (kcGrid) kcGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-    document.getElementById('bdYtm').textContent = (it.ytm || 0) + '%';
-    document.getElementById('bdCoupon').textContent = (it.coupon || 0) + '%';
-    document.getElementById('bdMaturity').textContent = it.maturity || '—';
-    document.getElementById('bdMinBuy').textContent = it.nominalDisplay || '1 000 ₸';
-    document.getElementById('bdLot').textContent = (it.lot || 10) + ' шт';
-  } else {
-    kcIds.forEach(id => { const el = document.getElementById(id); if (el) el.style.display = 'none'; });
-    if (kcGrid) kcGrid.style.gridTemplateColumns = '1fr';
-  }
-  const riskEl = document.getElementById('bdRisk');
-  riskEl.textContent = it.risk || 'Низкий';
-  riskEl.style.color = it.risk === 'Высокий' ? 'var(--red)' : (it.risk === 'Средний' ? 'var(--yellow)' : 'var(--green)');
-
-  // КАЛЬКУЛЯТОР — только для облигаций
-  const calcBlock = document.getElementById('calcMiniBlock');
-  if (calcBlock) calcBlock.style.display = isBondNow ? '' : 'none';
-
-  // ВКЛАДКИ: О выпуске / Об эмитенте / Купоны→Дивиденды
-  document.getElementById('tabCouponsLabel').textContent = isBondNow ? 'Купоны' : 'Дивиденды';
-  document.getElementById('couponsBondView').style.display = isBondNow ? '' : 'none';
-  document.getElementById('dividendsView').style.display = isBondNow ? 'none' : '';
-  if (!isBondNow) {
-    const divYield = it.divYield || 0;
-    if (divYield > 0) {
-      document.getElementById('divUpcomingRow').style.display = '';
-      document.getElementById('divHistoryRows').style.display = '';
-      document.getElementById('divNoDividends').style.display = 'none';
-      const pNum2 = parseFloat(String(it.price).replace(/\s/g,'').replace(',', '.')) || 0;
-      const divAmount = Math.round(pNum2 * divYield / 100 / 2);
-      document.getElementById('divNextAmount').textContent = '~' + divAmount.toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + it.currency;
-    } else {
-      document.getElementById('divUpcomingRow').style.display = 'none';
-      document.getElementById('divHistoryRows').style.display = 'none';
-      document.getElementById('divNoDividends').style.display = 'block';
-    }
-  }
-  // Тексты "О выпуске"/"Об эмитенте"
-  if (isBondNow) {
-    document.getElementById('tabAboutLabel').textContent = 'О выпуске';
-    document.getElementById('tabAboutText').innerHTML = `Государственные купонные облигации <b style="color:var(--text);">${it.name}</b> выпущены эмитентом <b style="color:var(--text);">${it.issuer}</b> и обращаются до ${it.maturity || '—'}. Купонные выплаты производятся по ставке ${(it.coupon||0)}%. Облигация торгуется на бирже ${marketLabel}.`;
-    document.getElementById('tabIssuerText').innerHTML = `<b style="color:var(--text);">${it.issuer}</b> — эмитент облигации. Уровень риска: <b style="color:var(--text);">${it.risk || 'Низкий'}</b>.`;
-  } else {
-    document.getElementById('tabAboutLabel').textContent = isBondNow ? 'О выпуске' : 'Об инструменте';
-    const typeLabel = it.type === 'stocks' ? 'Акция' : 'Фонд (ETF)';
-    document.getElementById('tabAboutText').innerHTML = `<b style="color:var(--text);">${it.name}</b> — ${typeLabel.toLowerCase()}, торгуется на бирже ${marketLabel} в валюте ${curLabel}. Текущая цена: <b style="color:var(--text);">${it.price} ${it.currency}</b>.`;
-    document.getElementById('tabIssuerText').innerHTML = `<b style="color:var(--text);">${it.issuer}</b> — эмитент. Уровень риска инструмента: <b style="color:var(--text);">${it.risk || 'Средний'}</b>.`;
-  }
-
-  // ПАРАМЕТРЫ (полные для облигаций, первые 4 для акций/фондов)
-  document.getElementById('paramsBondView').style.display = isBondNow ? '' : 'none';
-  document.getElementById('paramsStockView').style.display = isBondNow ? 'none' : '';
-  if (!isBondNow) {
-    if (it.type === 'stocks') {
-      document.getElementById('psLabel1').textContent = 'Тип бумаги';
-      document.getElementById('psValue1').textContent = 'Акция';
-      document.getElementById('psLabel2').textContent = 'Тикер';
-      document.getElementById('psValue2').textContent = ticker;
-      document.getElementById('psLabel3').textContent = 'Сектор';
-      const sectorLabels = { finance:'Финансы', energy:'Энергетика', telecom:'Телеком', industrial:'Промышленность', tech:'Технологии', consumer:'Потребит. товары' };
-      document.getElementById('psValue3').textContent = sectorLabels[it.sector] || it.sector || '—';
-      document.getElementById('psLabel4').textContent = 'Валюта торгов';
-      document.getElementById('psValue4').textContent = curLabel;
-    } else {
-      document.getElementById('psLabel1').textContent = 'Тип бумаги';
-      document.getElementById('psValue1').textContent = 'Фонд (ETF)';
-      document.getElementById('psLabel2').textContent = 'Тикер';
-      document.getElementById('psValue2').textContent = ticker;
-      document.getElementById('psLabel3').textContent = 'Класс активов';
-      document.getElementById('psValue3').textContent = it.asset === 'bonds' ? 'Облигации' : 'Акции';
-      document.getElementById('psLabel4').textContent = 'Валюта торгов';
-      document.getElementById('psValue4').textContent = curLabel;
-    }
-  }
-
-  // IN PORTFOLIO BLOCK
-  renderInPortfolioBlock(ticker);
-
-  // Подставляю значения для покупки
-  state.flow = 'buy';
-  state.instrumentType = it.type;
-  const pNum = parseFloat(String(it.price).replace(/\s/g,'').replace(',', '.'));
-  state.pricePerBond = pNum;
-  if (isBondNow) {
-    state.nominal = 1000;
-    state.nkdPerBond = 12;
-    state.couponRate = (it.coupon || 13.5) / 100;
-    state.ytm = (it.ytm || 14.2) / 100;
-  } else {
-    state.nominal = 100;
-    state.nkdPerBond = 0;
-    state.couponRate = 0;
-    state.ytm = 0;
-  }
-  state.currentInstrument = { ...it, ticker };
-
-  // Сбрасываю вид графика на "График" (не Стакан) при открытии новой бумаги
-  const chartTab = document.querySelector('.chart-view-tab');
-  if (chartTab) switchChartView(chartTab, 'chart');
-  // Сворачиваю раскрытые блоки купонов/аккордеона
-  document.querySelectorAll('.coupon-expand-trigger.open, .accordion-trigger.open').forEach(t => t.classList.remove('open'));
-  document.querySelectorAll('.coupon-expand-content.open, .accordion-content.open').forEach(c => c.classList.remove('open'));
-  document.querySelectorAll('.coupon-extra.open').forEach(c => c.classList.remove('open'));
-  // Возвращаю первую вкладку (О выпуске) активной
-  const firstTab = document.querySelector('.segmented-tab');
-  if (firstTab) switchTab(firstTab, 'tab-about');
-
-  goTo('bond-detail');
-}
-
-// Обратная совместимость — старые вызовы openBondDetail работают как раньше
-function openBondDetail(ticker) { openInstrumentDetail(ticker); }
-
-// Рендер блока "В моём портфеле" на карточке
-function renderInPortfolioBlock(ticker) {
-  const block = document.getElementById('inPortfolioBlock');
-  const sellBtn = document.getElementById('ipbSellBtn');
-  const h = state.holdings.find(x => x.ticker === ticker);
-  if (!h) {
-    block.style.display = 'none';
-    if (sellBtn) sellBtn.style.display = 'none';
-    return;
-  }
-  block.style.display = 'block';
-  if (sellBtn) sellBtn.style.display = '';
-  const currentValue = Math.round(h.qty * (h.currentPrice / 100) * h.nominal);
-  const totalValue = currentValue; // общая стоимость = текущая стоимость позиции
-  const purchaseValue = Math.round(h.qty * (h.avgPrice / 100) * h.nominal);
-  const pl = currentValue - purchaseValue;
-  const plPct = purchaseValue ? (pl / purchaseValue * 100) : 0;
-  const plSign = pl >= 0 ? '+' : '−';
-  document.getElementById('ipbCurrentValue').textContent = (h.currentPrice).toLocaleString('ru-RU') + (h.type === 'bonds' ? '%' : ' ' + h.currency);
-  document.getElementById('ipbAvgPrice').textContent = (h.avgPrice).toLocaleString('ru-RU') + (h.type === 'bonds' ? '%' : ' ' + h.currency);
-  document.getElementById('ipbQty').textContent = h.qty + ' шт';
-  document.getElementById('ipbTotalValue').textContent = totalValue.toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + h.currency;
-  const plEl = document.getElementById('ipbPL');
-  plEl.textContent = plSign + Math.abs(pl).toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + h.currency + ' (' + plSign + Math.abs(plPct).toFixed(2) + '%)';
-  plEl.className = 'value ' + (pl >= 0 ? 'up' : 'down');
-}
-
 // ===== MARKET TABS =====
 // ===== FAVORITES PAGE =====
 let favFilterType = 'all';
 let favSortKey = null;
 
-const TYPE_LABELS = { bonds: 'Облиг.', stocks: 'Акции', etf: 'Фонды', ipif: 'ИПИФ', notes: 'Структ.' };
+const TYPE_LABELS = { bonds: 'Облиг.', stocks: 'Акции', etf: 'ETF', ipif: 'ИПИФ', notes: 'Структ.' };
 
 function renderFavorites() {
   let items = Array.from(favorites.values());
@@ -3429,7 +2922,10 @@ function renderFavorites() {
       : '<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>';
     const card = document.createElement('div');
     card.className = 'fav-card';
-    card.onclick = () => openInstrumentDetail(it.ticker);
+    // Только для облигаций — клик открывает карточку; для остальных — заглушка
+    if (it.type === 'bonds') {
+      card.onclick = () => goTo('bond-detail');
+    }
     card.innerHTML = `
       <div class="bond-logo ${it.logoClass}">${it.logoText}</div>
       <div class="fav-card-left">
@@ -3487,222 +2983,72 @@ const INSTRUMENT_INFO = {
     info: 'Пай ИПИФ можно купить или погасить только в открытые интервалы — обычно несколько раз в год. Управляет фондом профессиональная управляющая компания. Подходит для долгосрочных инвестиций с потенциалом доходности выше депозита.',
   },
 };
-
-const CATALOGS_BY_TYPE = { bonds: BONDS_CATALOG, stocks: STOCKS_CATALOG, etf: ETF_CATALOG };
-
-// Получить ВСЕ инструменты типа в виде массива с тикером
-function getInstrumentsOfType(type) {
-  const cat = CATALOGS_BY_TYPE[type];
-  if (!cat) return [];
-  return Object.entries(cat).map(([ticker, it]) => ({ ...it, ticker }));
-}
-
-// Активные фильтры — общие правила, применяемые к ЛЮБОМУ типу + к ЛЮБОЙ бирже
-function getActiveFilters() {
-  const f = { currencies: new Set(), bondType: null, market: state.activeMarket || null, search: '', countries: new Set() };
-  // Поиск
-  const s = document.getElementById('searchInput');
-  if (s) f.search = (s.value || '').trim().toUpperCase();
-  // Валюта (Валюта торгов / Валюта выпуска) — ищу по заголовку группы, независимо от типа ЦБ
-  document.querySelectorAll('.filter-group').forEach(group => {
-    const title = group.querySelector('.filter-group-title');
-    if (!title) return;
-    const t = title.textContent.trim();
-    if (t === 'Валюта торгов' || t === 'Валюта выпуска') {
-      group.querySelectorAll('.filter-opt.active').forEach(o => {
-        const v = o.textContent.trim();
-        if (v === 'KZT') f.currencies.add('₸');
-        if (v === 'USD') f.currencies.add('$');
-      });
-    }
-  });
-  // Страна (Акции/Фонды)
-  document.querySelectorAll('.filter-opt[data-country].active').forEach(o => {
-    f.countries.add(o.getAttribute('data-country'));
-  });
-  // Тип размещения (только для облигаций)
-  const bt = document.querySelector('#bondTypeOpts .filter-opt.active');
-  if (bt) f.bondType = bt.getAttribute('data-bondtype');
-  return f;
-}
-
-// Применить фильтры к массиву инструментов
-function applyFiltersToItems(items, filters, ignoreMarket = false, ignoreType = false) {
-  return items.filter(it => {
-    if (filters.search) {
-      const hay = (it.ticker + ' ' + it.name + ' ' + it.issuer).toUpperCase();
-      if (!hay.includes(filters.search)) return false;
-    }
-    if (filters.currencies.size > 0 && !filters.currencies.has(it.currency)) return false;
-    if (filters.countries && filters.countries.size > 0 && !filters.countries.has(it.country)) return false;
-    if (!ignoreMarket && filters.market && it.market !== filters.market) return false;
-    if (!ignoreType && it.type === 'bonds' && filters.bondType && it.bondType !== filters.bondType) return false;
-    return true;
-  });
-}
-
-// Пересчёт всех счётчиков на вкладках + перерисовка списка
-function recalcAll() {
-  const filters = getActiveFilters();
-  const hasSearch = !!filters.search;
-
-  // Счётчики типов ЦБ — показываем ТОЛЬКО при активном поиске (где есть совпадения)
-  ['bonds','stocks','etf'].forEach(type => {
-    const el = document.querySelector(`[data-itype-count="${type}"]`);
-    if (!el) return;
-    if (!hasSearch) {
-      el.style.display = 'none';
-      return;
-    }
-    const items = getInstrumentsOfType(type);
-    // При поиске считаем совпадения только по тексту, без других фильтров — наглядно "где нашлось"
-    const matches = items.filter(it => {
-      const hay = (it.ticker + ' ' + it.name + ' ' + it.issuer).toUpperCase();
-      return hay.includes(filters.search);
-    });
-    el.textContent = matches.length;
-    el.style.display = matches.length > 0 ? 'inline-flex' : 'none';
-  });
-
-  // Счётчики бирж — также только при поиске, для текущего активного типа ЦБ
-  const activeType = state.activeInstrument || 'bonds';
-  const itemsForType = (activeType === 'ipif') ? [] : getInstrumentsOfType(activeType);
-  ['primary','KASE','INTL','AIX'].forEach(market => {
-    const el = document.querySelector(`[data-market-count="${market}"]`);
-    if (!el) return;
-    if (!hasSearch) {
-      el.style.display = 'none';
-      return;
-    }
-    const matches = itemsForType.filter(it => {
-      if (it.market !== market) return false;
-      const hay = (it.ticker + ' ' + it.name + ' ' + it.issuer).toUpperCase();
-      return hay.includes(filters.search);
-    });
-    el.textContent = matches.length;
-    el.style.display = matches.length > 0 ? 'inline-flex' : 'none';
-  });
-
-  // Финальный список — все фильтры (поиск + валюта + тип размещения + биржа)
-  renderUniversalList(filters);
-}
-
-function renderUniversalList(filters) {
-  const activeType = state.activeInstrument || 'bonds';
-  const listEl = document.getElementById('universalList');
-  const emptyEl = document.getElementById('emptyInstrumentSection');
-  const marketTabs = document.getElementById('marketTabs');
-  const sortBar = document.querySelector('#view-bonds-list > .sort-bar');
-
-  if (activeType === 'ipif') {
-    listEl.style.display = 'none';
-    marketTabs.style.display = 'none';
-    if (sortBar) sortBar.style.display = 'none';
-    emptyEl.style.display = 'block';
-    const info = INSTRUMENT_INFO.ipif;
-    document.getElementById('emptyIcon').innerHTML = info.icon;
-    document.getElementById('emptyTitle').textContent = info.title;
-    document.getElementById('emptyDesc').textContent = info.desc;
-    document.getElementById('emptyInfo').textContent = info.info;
-    return;
-  }
-
-  listEl.style.display = '';
-  marketTabs.style.display = '';
-  if (sortBar) sortBar.style.display = '';
-  emptyEl.style.display = 'none';
-
-  let items = getInstrumentsOfType(activeType);
-  items = applyFiltersToItems(items, filters);
-
-  // Сортировка
-  if (state.sortKey) {
-    const parsePrice = v => parseFloat(String(v).replace(/\s/g,'').replace(',','.')) || 0;
-    if (state.sortKey === 'name-asc') items.sort((a,b) => a.name.localeCompare(b.name, 'ru'));
-    else if (state.sortKey === 'name-desc') items.sort((a,b) => b.name.localeCompare(a.name, 'ru'));
-    else if (state.sortKey === 'price-asc') items.sort((a,b) => parsePrice(a.price) - parsePrice(b.price));
-    else if (state.sortKey === 'price-desc') items.sort((a,b) => parsePrice(b.price) - parsePrice(a.price));
-    else if (state.sortKey === 'chg-asc') items.sort((a,b) => (a.changePct||0) - (b.changePct||0));
-    else if (state.sortKey === 'chg-desc') items.sort((a,b) => (b.changePct||0) - (a.changePct||0));
-  }
-
-  document.getElementById('resultCount').textContent = items.length + ' инструментов';
-
-  listEl.innerHTML = '';
-  if (items.length === 0) {
-    listEl.innerHTML = '<div class="fav-empty" style="padding:40px 24px;"><h3>Ничего не найдено</h3><p>Измените фильтры или поиск</p></div>';
-    return;
-  }
-  items.forEach(it => {
-    const isUp = it.changePct >= 0;
-    const arrow = isUp
-      ? '<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>'
-      : '<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>';
-    const card = document.createElement('div');
-    card.className = 'bond-mini';
-    card.onclick = () => openInstrumentDetail(it.ticker);
-    const changeBlock = (it.changeAbs && it.changeAbs !== '0' && it.changeAbs !== '0.00')
-      ? `<div class="bond-mini-change ${isUp ? 'up' : 'down'}">
-          <span class="abs">${it.changeAbs} ${it.currency}</span>
-          <span class="pct">${arrow}${Math.abs(it.changePct).toFixed(2)}%</span>
-        </div>`
-      : `<div class="bond-mini-change" style="color:var(--text-mute);"><span class="abs">первичное</span></div>`;
-    card.innerHTML = `
-      <div class="bond-logo ${it.logoClass}">${it.logoText}</div>
-      <div class="bond-mini-left">
-        <div class="bond-mini-name">${it.name}</div>
-        <div class="bond-mini-ticker">${it.ticker}</div>
-      </div>
-      <div class="bond-mini-right">
-        <div class="bond-mini-price">${it.price}</div>
-        ${changeBlock}
-      </div>
-      <div class="bond-fav ${isFavorite(it.ticker) ? 'on' : ''}" data-ticker="${it.ticker}" onclick="toggleFavorite('${it.ticker}', event)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>
-      </div>
-    `;
-    listEl.appendChild(card);
-  });
-}
-
 function switchInstrument(el, type) {
   if (el.classList.contains('disabled')) return;
   document.querySelectorAll('.instrument-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   state.activeInstrument = type;
 
-  const titles = { bonds: 'Облигации', stocks: 'Акции', etf: 'Фонды', ipif: 'ИПИФ' };
+  const sections = {
+    bonds: document.getElementById('bondsSection'),
+    stocks: document.getElementById('stocksSection'),
+    etf: document.getElementById('etfSection'),
+  };
+  const empty = document.getElementById('emptyInstrumentSection');
+  // Скрываю все
+  Object.values(sections).forEach(s => s.style.display = 'none');
+  empty.style.display = 'none';
+
+  const titles = { bonds: 'Облигации', stocks: 'Акции', etf: 'ETF', ipif: 'ИПИФ' };
   document.getElementById('instrumentTitle').textContent = titles[type];
 
-  // Если биржа уже выбрана, но в новом типе нет ни одного инструмента на этой бирже —
-  // автоматом переключаемся на первую доступную
-  if (type !== 'ipif') {
-    const items = getInstrumentsOfType(type);
-    if (!items.some(it => it.market === state.activeMarket)) {
-      // выбираем первую биржу с инструментами
-      for (const m of ['KASE','INTL','AIX','primary']) {
-        if (items.some(it => it.market === m)) {
-          state.activeMarket = m;
-          document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
-          const target = document.querySelector(`.market-tab[data-market="${m}"]`);
-          if (target) target.classList.add('active');
-          break;
-        }
-      }
-    }
+  if (sections[type]) {
+    sections[type].style.display = '';
+    if (type === 'stocks') renderInstrumentList('stocks');
+    if (type === 'etf') renderInstrumentList('etf');
+  } else if (type === 'ipif') {
+    const info = INSTRUMENT_INFO.ipif;
+    empty.style.display = 'block';
+    document.getElementById('emptyIcon').innerHTML = info.icon;
+    document.getElementById('emptyTitle').textContent = info.title;
+    document.getElementById('emptyDesc').textContent = info.desc;
+    document.getElementById('emptyInfo').textContent = info.info;
   }
-  recalcAll();
 }
 
-function switchMarket(el, market) {
-  document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  state.activeMarket = market;
-  recalcAll();
+// Рендерю карточки stocks/etf
+function renderInstrumentList(type) {
+  const catalog = type === 'stocks' ? STOCKS_CATALOG : ETF_CATALOG;
+  const listEl = document.getElementById(type === 'stocks' ? 'stocksList' : 'etfList');
+  listEl.innerHTML = '';
+  Object.entries(catalog).forEach(([ticker, it]) => {
+    const isUp = it.changePct >= 0;
+    const arrow = isUp
+      ? '<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>'
+      : '<svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>';
+    const card = document.createElement('div');
+    card.className = 'bond-mini';
+    card.onclick = () => openInstrument(ticker);
+    card.innerHTML = `
+      <div class="bond-logo ${it.logoClass}">${it.logoText}</div>
+      <div class="bond-mini-left">
+        <div class="bond-mini-name">${it.name}</div>
+        <div class="bond-mini-ticker">${ticker}</div>
+      </div>
+      <div class="bond-mini-right">
+        <div class="bond-mini-price">${it.price}</div>
+        <div class="bond-mini-change ${isUp ? 'up' : 'down'}">
+          <span class="abs">${it.changeAbs} ${it.currency}</span>
+          <span class="pct">${arrow}${Math.abs(it.changePct).toFixed(2)}%</span>
+        </div>
+      </div>
+      <div class="bond-fav ${isFavorite(ticker) ? 'on' : ''}" data-ticker="${ticker}" onclick="toggleFavorite('${ticker}', event)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>
+      </div>
+    `;
+    listEl.appendChild(card);
+  });
 }
-
-// Рендерю карточки stocks/etf (deprecated, заменено renderUniversalList)
-function renderInstrumentList(type) { /* no-op */ }
 
 // Открытие инструмента — для акций/ETF сразу переходим в покупку (без карточки)
 function openInstrument(ticker) {
@@ -3722,6 +3068,17 @@ function openInstrument(ticker) {
   goTo('order-amount');
 }
 
+function switchMarket(el, market) {
+  state.market = market;
+  document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  ['KASE','INTL','AIX'].forEach(m => {
+    document.getElementById('list-' + m).style.display = (m === market) ? 'flex' : 'none';
+  });
+  const counts = { KASE: '5 облигаций · KASE', INTL: '3 облигации · INTL', AIX: '2 облигации · AIX' };
+  document.getElementById('bondCount').textContent = counts[market];
+}
+
 // ===== FILTERS =====
 function openFilters() {
   // По умолчанию открываем тот, что соответствует текущему типу
@@ -3738,7 +3095,7 @@ function closeFilters() {
   document.getElementById('sheetOverlay').classList.remove('open');
   document.getElementById('filterSheet').classList.remove('open');
 }
-function toggleOpt(el) { el.classList.toggle('active'); updateFilterCount(); recalcAll(); }
+function toggleOpt(el) { el.classList.toggle('active'); updateFilterCount(); }
 function updateFilterCount() {
   let count = document.querySelectorAll('.filter-opt.active').length;
   const cFrom = (document.getElementById('couponFrom').value || '').trim();
@@ -3769,14 +3126,14 @@ function resetFilters() {
   const hint = document.getElementById('bondTypeHint');
   if (hint) hint.textContent = 'Все облигации. Выберите тип, чтобы увидеть специальные фильтры';
   updateFilterCount();
-  recalcAll();
 }
-function applyFilters() { updateFilterCount(); recalcAll(); closeFilters(); }
+function applyFilters() { updateFilterCount(); closeFilters(); }
 
 // ===== Тип облигации (верхнеуровневый) =====
 function selectBondType(el, type) {
   const opts = document.querySelectorAll('#bondTypeOpts .filter-opt');
   const wasActive = el.classList.contains('active');
+  // Single-select
   opts.forEach(o => o.classList.remove('active'));
   if (!wasActive) el.classList.add('active');
 
@@ -3786,25 +3143,17 @@ function selectBondType(el, type) {
   const emptyTitle = document.getElementById('bondtypeEmptyTitle');
 
   if (el.classList.contains('active')) {
-    const labels = { secondary: 'Вторичные торги', ipo: 'IPO-облигации', vdo: 'ВДО · высокая доходность', add: 'Доп. размещение' };
+    std.style.display = 'none';
+    empty.style.display = 'block';
+    const labels = { ipo: 'IPO-облигации', vdo: 'ВДО · высокая доходность', add: 'Доп. размещение' };
     hint.textContent = 'Фильтрация по типу: ' + labels[type];
-    if (type === 'secondary') {
-      // У вторичных торгов есть стандартные параметры — оставляем фильтры видимыми
-      std.style.display = '';
-      empty.style.display = 'none';
-    } else {
-      // Для IPO/ВДО/Доп.размещения специальные фильтры пока в разработке
-      std.style.display = 'none';
-      empty.style.display = 'block';
-      emptyTitle.textContent = 'Фильтры для «' + labels[type] + '»';
-    }
+    emptyTitle.textContent = 'Фильтры для «' + labels[type] + '»';
   } else {
     std.style.display = '';
     empty.style.display = 'none';
     hint.textContent = 'Все облигации. Выберите тип, чтобы увидеть специальные фильтры';
   }
   updateFilterCount();
-  recalcAll();
 }
 
 // ===== SORT =====
@@ -3828,21 +3177,17 @@ function selectSort(row) {
   document.querySelectorAll('.sort-row').forEach(r => r.classList.remove('active'));
   row.classList.add('active');
   const key = row.getAttribute('data-sort');
-  state.sortKey = key;
   document.getElementById('sortActive').textContent = 'Сортировка: ' + SORT_LABELS[key];
   document.getElementById('sortActive').style.color = 'var(--accent-soft)';
   document.getElementById('sortBadge').style.display = 'flex';
   document.getElementById('sortBtn').classList.add('has-filters');
-  recalcAll();
 }
 function resetSort() {
   document.querySelectorAll('.sort-row').forEach(r => r.classList.remove('active'));
-  state.sortKey = null;
   document.getElementById('sortActive').textContent = 'Без сортировки';
   document.getElementById('sortActive').style.color = 'var(--text-dim)';
   document.getElementById('sortBadge').style.display = 'none';
   document.getElementById('sortBtn').classList.remove('has-filters');
-  recalcAll();
 }
 
 // ===== ACCORDION & CHART =====
@@ -3893,69 +3238,6 @@ function toggleLimitTip(e) {
 function setChartRange(el) {
   el.parentElement.querySelectorAll('.chart-range').forEach(r => r.classList.remove('active'));
   el.classList.add('active');
-}
-function switchChartView(el, view) {
-  document.querySelectorAll('.chart-view-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  const isChart = view === 'chart';
-  document.getElementById('chartViewPane').style.display = isChart ? '' : 'none';
-  document.getElementById('orderbookPane').style.display = isChart ? 'none' : '';
-  document.getElementById('chartRanges').style.display = isChart ? '' : 'none';
-  if (!isChart) renderOrderbook();
-}
-function renderOrderbook() {
-  const ticker = state.currentDetailTicker;
-  const item = (ticker && INSTRUMENTS_CATALOG[ticker]) || BONDS_CATALOG['MOM_KZT_05.27'];
-  const isBondNow = item.type === 'bonds';
-  const basePrice = parseFloat(String(item.price).replace(/\s/g,'').replace(',','.')) || 100;
-  const step = isBondNow ? 0.05 : Math.max(basePrice * 0.0015, 0.01);
-  const rows = document.getElementById('obRows');
-  rows.innerHTML = '';
-  const levels = 6;
-  let maxVol = 0;
-  const bids = [], asks = [];
-  for (let i = 0; i < levels; i++) {
-    const bidPrice = basePrice - step * (i + 1);
-    const askPrice = basePrice + step * (i + 1);
-    const bidVol = Math.round(50 + Math.random() * 450);
-    const askVol = Math.round(50 + Math.random() * 450);
-    bids.push({ price: bidPrice, vol: bidVol });
-    asks.push({ price: askPrice, vol: askVol });
-    maxVol = Math.max(maxVol, bidVol, askVol);
-  }
-  for (let i = 0; i < levels; i++) {
-    const bidPct = Math.round(bids[i].vol / maxVol * 100);
-    const askPct = Math.round(asks[i].vol / maxVol * 100);
-    const fmt2 = isBondNow ? 2 : (basePrice < 10 ? 4 : 2);
-    const row = document.createElement('div');
-    row.className = 'ob-row';
-    row.innerHTML = `
-      <div class="ob-bid-bar" style="width:${bidPct}%"></div>
-      <span class="ob-bid">${bids[i].vol}</span>
-      <span class="ob-price" style="color:var(--green)">${bids[i].price.toFixed(fmt2)}</span>
-      <span></span>
-    `;
-    rows.appendChild(row);
-  }
-  const sepRow = document.createElement('div');
-  sepRow.style.cssText = 'text-align:center;font-family:JetBrains Mono,monospace;font-weight:800;font-size:13px;padding:6px 0;color:var(--text);border-top:1px dashed var(--border);border-bottom:1px dashed var(--border);margin:2px 0;';
-  sepRow.textContent = basePrice.toFixed(isBondNow ? 2 : (basePrice < 10 ? 4 : 2));
-  rows.appendChild(sepRow);
-  for (let i = 0; i < levels; i++) {
-    const askPct = Math.round(asks[i].vol / maxVol * 100);
-    const fmt2 = isBondNow ? 2 : (basePrice < 10 ? 4 : 2);
-    const row = document.createElement('div');
-    row.className = 'ob-row';
-    row.innerHTML = `
-      <span></span>
-      <span class="ob-price" style="color:var(--red)">${asks[i].price.toFixed(fmt2)}</span>
-      <span class="ob-ask">${asks[i].vol}</span>
-      <div class="ob-ask-bar" style="width:${askPct}%"></div>
-    `;
-    rows.appendChild(row);
-  }
-  const spreadPct = ((asks[0].price - bids[0].price) / basePrice * 100).toFixed(2);
-  document.getElementById('obSpread').textContent = spreadPct + '%';
 }
 function switchTab(el, paneId) {
   el.parentElement.querySelectorAll('.segmented-tab').forEach(t => t.classList.remove('active'));
@@ -4125,31 +3407,28 @@ function recalcLimit(driver) {
   const priceFilled = (document.getElementById('lPriceInput').value || '').trim() !== '';
   const yieldFilled = (document.getElementById('lYieldInput').value || '').trim() !== '';
 
-  const isBondNow = (state.instrumentType || 'bonds') === 'bonds';
-  const lotNow = isBondNow ? LOT : 1;
-
   let priceP = fnum('lPriceInput');
-  if (isBondNow && driver === 'yield' && yieldFilled) {
+  if (driver === 'yield' && yieldFilled) {
     const y = fnum('lYieldInput');
     priceP = (100.45 + (14.35 - y) * 2.0);
     document.getElementById('lPriceInput').value = priceP.toFixed(2);
-  } else if (isBondNow && driver === 'price' && priceFilled) {
+  } else if (driver === 'price' && priceFilled) {
     const y = (14.35 + (100.45 - priceP) / 2.0);
     document.getElementById('lYieldInput').value = y.toFixed(2);
   }
 
-  const price = isBondNow ? (priceP / 100 * state.nominal) : priceP;
+  const price = priceP / 100 * state.nominal;
   const qty = num('lQtyInput');
   state.qty = qty; state.execPrice = priceP;
 
   const qtyWrap = document.getElementById('lQtyWrap');
   const qtyErr = document.getElementById('qtyError');
 
-  // Лотность — только для облигаций
-  if (lotNow > 1 && qty > 0 && qty % lotNow !== 0) {
+  // Лотность
+  if (qty > 0 && qty % LOT !== 0) {
     qtyWrap.classList.add('error');
     qtyErr.classList.add('show');
-    qtyErr.textContent = `Количество должно быть кратно ${lotNow} (лот). Ближайшие: ${Math.floor(qty/lotNow)*lotNow} или ${Math.ceil(qty/lotNow)*lotNow}`;
+    qtyErr.textContent = `Количество должно быть кратно ${LOT} (лот). Ближайшие: ${Math.floor(qty/LOT)*LOT} или ${Math.ceil(qty/LOT)*LOT}`;
     resetCalc();
     return;
   } else {
@@ -4158,7 +3437,7 @@ function recalcLimit(driver) {
   }
 
   // Если цена/доходность или количество не заполнены — блокируем кнопку
-  const hasPriceOrYield = priceFilled || (isBondNow && yieldFilled);
+  const hasPriceOrYield = priceFilled || yieldFilled;
   if (!hasPriceOrYield || !qty || qty < 1) {
     resetCalc();
     return;
@@ -4177,8 +3456,7 @@ function computeLimit(qty, price) {
 
   const isBuy = state.flow === 'buy';
   const h = state.currentHolding;
-  const isBondNow = (state.instrumentType || 'bonds') === 'bonds';
-  const currency = isBondNow ? '₸' : ((h && h.currency) || (state.currentInstrument && state.currentInstrument.currency) || '$');
+  const currency = isBuy ? '₸' : (h ? h.currency : '₸');
 
   // В продаже — проверяем что не больше чем в наличии
   if (!isBuy && h && qty > h.qty) {
@@ -4193,15 +3471,15 @@ function computeLimit(qty, price) {
   }
 
   const clean = qty * price;
-  const nkd = isBondNow ? qty * state.nkdPerBond : 0;
+  const nkd = qty * state.nkdPerBond;
   const grossForBuy = clean + nkd;
   const fee = Math.round(grossForBuy * state.feeRate);
   // Покупка: списание = clean + nkd + fee
   // Продажа: получение = clean + nkd - fee (НКД при продаже получаем)
   const total = isBuy ? (clean + nkd + fee) : (clean + nkd - fee);
 
-  // В покупке проверяем достаточность средств (только для облигаций — у акций/фондов лимит не задан в этом MVP)
-  if (isBuy && isBondNow && total > state.available) {
+  // В покупке проверяем достаточность средств
+  if (isBuy && total > state.available) {
     const need = total - state.available;
     errorBox.innerHTML = `
       <div class="error-banner">
@@ -4213,16 +3491,12 @@ function computeLimit(qty, price) {
     return;
   }
 
-  const priceDisplay = isBondNow
-    ? state.execPrice.toFixed(2) + '%'
-    : state.execPrice.toFixed(2) + ' ' + currency;
-
   document.getElementById('rowQty').style.display = 'flex';
   document.getElementById('rowPrice').style.display = 'flex';
-  document.getElementById('rowCoupon').style.display = isBondNow ? 'flex' : 'none';
+  document.getElementById('rowCoupon').style.display = 'flex';
   document.getElementById('calcQty').textContent = qty + ' шт';
-  document.getElementById('calcPrice').textContent = priceDisplay;
-  if (isBondNow) document.getElementById('calcCoupon').textContent = '+' + fmtCur(nkd, currency);
+  document.getElementById('calcPrice').textContent = state.execPrice.toFixed(2) + '%';
+  document.getElementById('calcCoupon').textContent = '+' + fmtCur(nkd, currency);
   document.getElementById('calcFee').textContent = fmtCur(fee, currency);
   document.getElementById('calcTotal').textContent = fmtCur(total, currency);
   calcBox.style.display = 'block';
@@ -4231,7 +3505,7 @@ function computeLimit(qty, price) {
 
   document.getElementById('confirmType').textContent = 'Лимитная';
   document.getElementById('confirmQty').textContent = qty + ' шт';
-  document.getElementById('confirmPrice').textContent = priceDisplay;
+  document.getElementById('confirmPrice').textContent = state.execPrice.toFixed(2) + '%';
   document.getElementById('confirmClean').textContent = fmtCur(clean, currency);
   document.getElementById('confirmNkd').textContent = '+' + fmtCur(nkd, currency);
   document.getElementById('confirmFee').textContent = fmtCur(fee, currency);
@@ -4247,7 +3521,7 @@ const monthsRu = ['Январь','Февраль','Март','Апрель','М�
 const monthsShort = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
 let calCursor = new Date(2026, 5, 1); // June 2026
 let calSelected = new Date(2026, 5, 1);
-const TODAY = new Date(2026, 5, 25); // 25 июня 2026 — актуальная дата
+const TODAY = new Date(2026, 5, 1);
 
 function openCalendar() {
   renderCalendar();
@@ -4260,10 +3534,7 @@ function closeCalendar() {
   applyValidity();
 }
 function changeCalMonth(delta) {
-  const next = new Date(calCursor.getFullYear(), calCursor.getMonth() + delta, 1);
-  const currentMonthStart = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
-  if (next < currentMonthStart) return; // нельзя уйти раньше текущего месяца
-  calCursor = next;
+  calCursor = new Date(calCursor.getFullYear(), calCursor.getMonth() + delta, 1);
   renderCalendar();
 }
 function renderCalendar() {
@@ -4391,9 +3662,10 @@ function addHistoryItem() {
 
 // Init on load
 window.addEventListener('DOMContentLoaded', () => {
+  // pre-render calendar so first open is instant
   renderCalendar();
-  // Применяю фильтры/счётчики/рендер при первой загрузке
-  recalcAll();
+  // добавить звёздочки в карточки облигаций
+  injectFavStars();
 });
 </script>
 
