@@ -251,228 +251,6 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 
 /* ============ MINI BOND CARDS ============ */
 .bond-list { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 8px; }
-/* ============ MARKET PAGE ============ */
-.market-search-trigger {
-  display: flex; align-items: center; gap: 8px; margin: 0 20px 16px;
-  padding: 10px 14px; border-radius: 12px;
-  background: var(--surface); border: 1px solid var(--border);
-  color: var(--text-mute); font-size: 13px; cursor: pointer;
-}
-.market-section { margin-bottom: 4px; }
-.ms-header {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 14px 20px 10px; font-size: 16px; font-weight: 800;
-}
-.ms-title { font-size: 16px; font-weight: 800; }
-.ms-link { font-size: 13px; font-weight: 700; color: var(--accent-soft); cursor: pointer; }
-
-/* HERO БАННЕР */
-.place-hero {
-  margin: 0 20px 12px; border-radius: 20px; padding: 20px;
-  background: linear-gradient(135deg, #1a3a5c, #0C447C, #185FA5);
-  position: relative; overflow: hidden; cursor: pointer;
-}
-.ph-circles { position: absolute; inset: 0; pointer-events: none; }
-.ph-circle { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.06); }
-.ph-c1 { width: 160px; height: 160px; top: -60px; right: -40px; }
-.ph-c2 { width: 90px; height: 90px; bottom: -20px; right: 60px; }
-.ph-badge {
-  display: inline-flex; align-items: center; gap: 4px;
-  font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
-  background: rgba(255,255,255,0.15); color: #fff; padding: 4px 10px; border-radius: 20px;
-  margin-bottom: 10px;
-}
-.ph-name { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 3px; }
-.ph-sub { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
-.ph-stats { display: flex; align-items: center; gap: 12px; }
-.ph-stat { flex: 1; }
-.ph-stat .v { font-size: 15px; font-weight: 800; color: #fff; }
-.ph-stat .l { font-size: 9px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.04em; }
-.ph-btn {
-  padding: 8px 16px; border-radius: 10px; background: rgba(255,255,255,0.2);
-  color: #fff; font-size: 12px; font-weight: 800; border: 1px solid rgba(255,255,255,0.25);
-  cursor: pointer; white-space: nowrap; flex-shrink: 0;
-}
-
-/* КАРТОЧКИ РАЗМЕЩЕНИЙ */
-.place-scroll {
-  display: flex; gap: 10px; padding: 0 20px 4px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.place-scroll::-webkit-scrollbar { display: none; }
-.place-card {
-  flex-shrink: 0; width: 200px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  padding: 14px; cursor: pointer; transition: border-color 0.2s;
-}
-.place-card:active { border-color: var(--accent); }
-.pc-badge {
-  font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
-  padding: 2px 8px; border-radius: 5px; display: inline-block; margin-bottom: 8px;
-}
-.pc-badge.ipo { background: rgba(31,138,91,0.15); color: var(--accent-soft); }
-.pc-badge.vdo { background: rgba(133,79,11,0.15); color: var(--yellow); }
-.pc-badge.gov { background: rgba(44,122,184,0.15); color: #5b97c4; }
-.pc-name { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
-.pc-exchange { font-size: 10px; color: var(--text-mute); margin-bottom: 10px; }
-.pc-bar-wrap { margin-bottom: 10px; }
-.pc-bar-track { height: 4px; background: var(--surface-3); border-radius: 2px; margin-bottom: 5px; }
-.pc-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; }
-.pc-bar-meta { display: flex; justify-content: space-between; font-size: 9px; color: var(--text-mute); }
-.pc-bottom { display: flex; justify-content: space-between; align-items: center; }
-.pc-yield { font-size: 16px; font-weight: 900; color: var(--accent-soft); font-family: 'JetBrains Mono', monospace; }
-.pc-min { font-size: 10px; color: var(--text-mute); }
-
-/* ПИФы */
-.fund-scroll {
-  display: flex; gap: 10px; padding: 0 20px 4px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.fund-scroll::-webkit-scrollbar { display: none; }
-.fund-card {
-  flex-shrink: 0; width: 160px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  padding: 14px; cursor: pointer;
-}
-.fund-icon {
-  width: 38px; height: 38px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; margin-bottom: 10px;
-}
-.fund-name { font-size: 13px; font-weight: 700; margin-bottom: 2px; line-height: 1.3; }
-.fund-type { font-size: 10px; color: var(--text-mute); margin-bottom: 8px; }
-.fund-yield { font-size: 20px; font-weight: 900; color: var(--accent-soft); font-family: 'JetBrains Mono', monospace; }
-.fund-period { font-size: 10px; color: var(--text-mute); }
-
-/* ГОТОВЫЕ ПОРТФЕЛИ */
-.rp-scroll {
-  display: flex; gap: 10px; padding: 0 20px 4px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.rp-scroll::-webkit-scrollbar { display: none; }
-.rp-card {
-  flex-shrink: 0; width: 220px;
-  background: var(--surface); border: 1.5px solid var(--border); border-radius: 18px;
-  padding: 16px; cursor: pointer; display: flex; flex-direction: column; gap: 8px;
-}
-.rp-cons { border-color: #97C459; }
-.rp-head { display: flex; align-items: center; gap: 8px; }
-.rp-icon { font-size: 22px; }
-.rp-badge {
-  font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
-  padding: 2px 8px; border-radius: 5px;
-}
-.rp-badge-green { background: rgba(151,196,89,0.15); color: #97C459; }
-.rp-badge-blue  { background: rgba(44,122,184,0.15); color: #5b97c4; }
-.rp-badge-amber { background: rgba(217,164,65,0.15); color: var(--yellow); }
-.rp-name { font-size: 16px; font-weight: 900; }
-.rp-desc { font-size: 11px; color: var(--text-mute); line-height: 1.4; }
-.rp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 0; border-top: 1px solid var(--border); }
-.rp-grid .label { font-size: 9px; color: var(--text-mute); font-weight: 600; text-transform: uppercase; margin-bottom: 3px; }
-.rp-grid .value { font-size: 13px; font-weight: 800; }
-.rp-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 4px; }
-.rp-min { font-size: 10px; color: var(--text-mute); }
-.rp-btn {
-  padding: 7px 14px; border-radius: 9px; font-size: 12px; font-weight: 800;
-  color: #fff; border: none; cursor: pointer;
-}
-
-/* ТОП / ВЗЛЁТЫ / ПАДЕНИЯ */
-.tp-card {
-  margin: 0 20px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
-  overflow: hidden;
-}
-.tp-tabs {
-  display: flex; border-bottom: 1px solid var(--border);
-}
-.tp-tab {
-  flex: 1; text-align: center; padding: 12px 4px; font-size: 11px; font-weight: 700;
-  color: var(--text-mute); cursor: pointer; white-space: nowrap;
-  border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s;
-}
-.tp-tab.active { color: var(--accent-soft); border-bottom-color: var(--accent); }
-.tp-pane { padding: 4px 0; }
-.tp-row {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px; border-bottom: 1px solid var(--border);
-}
-.tp-row:last-child { border-bottom: none; }
-.tp-num {
-  font-size: 12px; font-weight: 900; width: 18px; text-align: center; flex-shrink: 0;
-  font-family: 'JetBrains Mono', monospace;
-}
-.tp-logo { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; flex-shrink: 0; color: #fff; }
-.tp-info { flex: 1; min-width: 0; }
-.tp-ticker { font-size: 12px; font-weight: 800; }
-.tp-type { font-size: 10px; color: var(--text-mute); }
-.tp-right { text-align: right; flex-shrink: 0; }
-.tp-val { font-size: 12px; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
-.tp-sub { font-size: 10px; color: var(--text-mute); }
-
-/* ПОДБОРКИ */
-.idea-scroll {
-  display: flex; gap: 10px; padding: 0 20px 4px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.idea-scroll::-webkit-scrollbar { display: none; }
-.idea-card {
-  flex-shrink: 0; width: 186px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  padding: 14px; cursor: pointer;
-}
-.idea-badge {
-  font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
-  padding: 2px 8px; border-radius: 5px; display: inline-block; margin-bottom: 8px;
-}
-.idea-green  { background: rgba(31,138,91,0.15); color: var(--accent-soft); }
-.idea-blue   { background: rgba(44,122,184,0.15); color: #5b97c4; }
-.idea-amber  { background: rgba(217,164,65,0.15); color: var(--yellow); }
-.idea-purple { background: rgba(107,78,168,0.15); color: #a978d8; }
-.idea-title { font-size: 14px; font-weight: 800; margin-bottom: 5px; line-height: 1.3; }
-.idea-desc  { font-size: 11px; color: var(--text-mute); line-height: 1.4; margin-bottom: 10px; }
-.idea-chips { display: flex; flex-wrap: wrap; gap: 4px; }
-.idea-chips span {
-  font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
-  background: var(--surface-3); color: var(--text-dim); font-family: 'JetBrains Mono', monospace;
-}
-
-/* БАННЕР РАСШИРЕННОГО ПОИСКА */
-.search-banner {
-  display: flex; align-items: center; gap: 12px;
-  margin: 0 20px; padding: 14px 16px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
-  cursor: pointer;
-}
-.sb-icon {
-  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
-  background: rgba(44,122,184,0.15); display: flex; align-items: center; justify-content: center;
-  color: #5b97c4;
-}
-.sb-text { flex: 1; min-width: 0; }
-.sb-title { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
-.sb-sub { font-size: 11px; color: var(--text-mute); margin-bottom: 8px; }
-.sb-chips { display: flex; flex-wrap: wrap; gap: 4px; }
-.sb-chips span {
-  font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
-  background: var(--surface-3); color: var(--text-dim);
-}
-
-/* SEARCH OVERLAY */
-.search-overlay {
-  position: absolute; inset: 0; background: var(--bg);
-  z-index: 50; display: flex; flex-direction: column;
-  overflow: hidden;
-}
-.so-header {
-  background: var(--bg); border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-.so-search-row {
-  display: flex; align-items: center; gap: 8px; padding: 12px 20px 10px;
-}
-.so-list { flex: 1; overflow-y: auto; }
-
 .bond-mini {
   background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
   padding: 12px 14px; cursor: pointer; transition: transform 0.12s, border-color 0.2s;
@@ -733,74 +511,21 @@ input[type=range]::-webkit-slider-thumb {
 
 /* STATS GRID under chart */
 .chart-stats-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
   margin-top: 12px;
 }
 .cs-cell {
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-  padding: 8px 10px; min-width: 0;
-}
-.cs-cell-wide { grid-column: span 2; }
-.cs-cell-volume .cs-volume-row {
-  display: flex; align-items: baseline; gap: 12px; margin-top: 2px;
-}
-.cs-vol-deals {
-  display: flex; align-items: baseline; gap: 4px;
-}
-.cs-vol-deals span { font-size: 13px; }
-.cs-vol-deals { font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
-.cs-vol-divider {
-  width: 1px; height: 16px; background: var(--border); flex: none; align-self: center;
+  padding: 8px 9px; min-width: 0;
 }
 .cs-label {
   font-size: 9px; color: var(--text-mute); font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.03em; margin-bottom: 4px;
-  display: flex; align-items: center; gap: 4px;
-}
-.cs-badge {
-  font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 4px;
-  background: rgba(31,138,91,0.14); color: var(--accent-soft);
-  text-transform: lowercase; letter-spacing: 0;
-}
-.cs-value {
-  font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.03em; margin-bottom: 3px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.cs-value.up { color: var(--green); }
-.cs-value.down { color: var(--red); }
-
-/* PRICE RANGE BAR (min-max шкала за период) */
-.price-range-bar {
-  display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 0 2px;
-}
-.prb-val {
-  font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
-  color: var(--text-dim); flex-shrink: 0; min-width: 38px;
-}
-.prb-val:last-child { text-align: right; }
-.prb-track {
-  flex: 1; height: 5px; background: var(--surface-3); border-radius: 3px;
-  position: relative; overflow: visible;
-}
-.prb-fill {
-  position: absolute; top: 0; bottom: 0;
-  background: linear-gradient(90deg, var(--accent-soft), var(--accent));
-  border-radius: 3px;
-}
-.prb-thumb {
-  position: absolute; top: 50%; transform: translate(-50%, -50%);
-  width: 11px; height: 11px; border-radius: 50%;
-  background: var(--on-accent); border: 2.5px solid var(--accent);
-  box-shadow: 0 0 0 2px rgba(31,138,91,0.3);
-}
-.prb-labels {
-  display: flex; justify-content: space-between;
-  font-size: 8.5px; color: var(--text-mute); font-weight: 600;
-  margin-top: 3px; text-transform: uppercase; letter-spacing: 0.02em;
-}
-.prb-labels span:nth-child(2) {
-  color: var(--accent-soft); font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; text-transform: none; letter-spacing: 0;
+.cs-value {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
 /* ORDERBOOK */
@@ -1326,259 +1051,8 @@ input[type=range]::-webkit-slider-thumb {
 .history-header h1 { font-size: 26px; letter-spacing: -0.03em; }
 
 /* ============ PORTFOLIO ============ */
-.portfolio-header { padding: 20px 20px 14px; }
-.portfolio-header h1 { font-size: 26px; letter-spacing: -0.03em; }
-.pf-top-row {
-  display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
-}
-.pf-currency-toggle {
-  display: flex; gap: 2px; background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; padding: 3px;
-}
-.pf-cur {
-  padding: 4px 12px; border-radius: 7px; font-size: 12px; font-weight: 700;
-  color: var(--text-dim); cursor: pointer; transition: all 0.18s;
-}
-.pf-cur.active { background: var(--accent); color: var(--on-accent); }
-.pf-breakdown {
-  display: flex; align-items: stretch; gap: 0;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-  padding: 12px 16px; margin-top: 12px;
-}
-.pf-bd-item { flex: 1; min-width: 0; }
-.pf-bd-item .label {
-  font-size: 9px; color: var(--text-mute); font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px;
-}
-.pf-bd-item .value {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.pf-bd-divider {
-  width: 1px; background: var(--border); margin: 0 12px; flex-shrink: 0;
-}
-/* PF ACTIONS */
-.pf-actions {
-  display: flex; justify-content: space-between;
-  padding: 14px 20px 4px;
-}
-.pfa-item {
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  cursor: pointer; min-width: 0;
-}
-.pfa-item span {
-  font-size: 10px; font-weight: 600; color: var(--text-dim);
-  white-space: nowrap; text-align: center;
-}
-.pfa-icon {
-  width: 44px; height: 44px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  transition: transform 0.12s;
-}
-.pfa-item:active .pfa-icon { transform: scale(0.92); }
-.pfa-green  { background: rgba(31,138,91,0.15);  color: var(--accent-soft); }
-.pfa-blue   { background: rgba(44,122,184,0.15); color: #5b97c4; }
-.pfa-accent { background: var(--accent);          color: var(--on-accent); }
-.pfa-amber  { background: rgba(217,164,65,0.15); color: var(--yellow); }
-.pfa-muted  { background: var(--surface);        color: var(--text-dim); border: 1px solid var(--border); }
-
-/* PF MAIN TABS */
-.pf-main-tabs {
-  display: flex; margin: 16px 20px 0;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 3px; gap: 2px;
-}
-.pf-main-tab {
-  flex: 1; text-align: center; padding: 8px 6px; border-radius: 9px;
-  font-size: 13px; font-weight: 700; color: var(--text-dim);
-  cursor: pointer; transition: all 0.18s;
-}
-.pf-main-tab.active { background: var(--accent); color: var(--on-accent); }
-.pf-pane { padding-top: 4px; }
-
-/* Деньги вкладка */
-.pf-cash-inner { padding: 16px 20px; }
-
-/* STATS WRAP */
-.pf-stats-wrap { padding: 0 0 24px; }
-
-/* Период */
-.pfs-period-row {
-  display: flex; gap: 4px; padding: 14px 20px 10px;
-  background: var(--bg); position: sticky; top: 0; z-index: 5;
-  border-bottom: 1px solid var(--border);
-}
-.pfs-per {
-  flex: 1; text-align: center; padding: 6px 2px; border-radius: 8px;
-  font-size: 11px; font-weight: 800; color: var(--text-mute); cursor: pointer;
-  transition: all 0.15s; letter-spacing: 0.02em;
-}
-.pfs-per.active { background: var(--accent); color: var(--on-accent); border-radius: 8px; }
-
-/* Карточки */
-.pfs-card {
-  margin: 12px 20px 0;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
-  padding: 16px;
-}
-.pfs-card-header {
-  font-size: 10px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 0.06em; color: var(--text-mute); margin-bottom: 12px;
-}
-
-/* Блок 1: Доходность */
-.pfs-return-main { display: flex; align-items: center; gap: 10px; margin-bottom: 2px; }
-.pfs-return-pct { font-size: 28px; font-weight: 900; letter-spacing: -0.03em; color: var(--green); }
-.pfs-return-pct.neg { color: var(--red); }
-.pfs-return-badge {
-  font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 8px;
-  background: rgba(56,178,119,0.12); color: var(--green); font-family: 'JetBrains Mono', monospace;
-}
-.pfs-return-badge.neg { background: rgba(224,115,107,0.12); color: var(--red); }
-.pfs-return-sub { font-size: 11px; color: var(--text-mute); margin-bottom: 14px; }
-.pfs-chart-wrap { margin: 0 -4px 6px; }
-.pfs-xlabels {
-  display: flex; justify-content: space-between;
-  font-size: 9px; color: var(--text-mute); font-weight: 600; margin-bottom: 14px;
-}
-.pfs-metrics-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 2px; }
-.pfs-metric .label {
-  font-size: 9px; color: var(--text-mute); font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.03em; margin-bottom: 3px;
-}
-.pfs-metric .value { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 800; }
-.pfs-metric .value.red { color: var(--red); }
-
-/* Блок 2: П/У */
-.pfs-pl-sub { font-size: 10px; color: var(--text-mute); margin: -6px 0 12px; }
-.pfs-pl-row {
-  display: flex; align-items: center; gap: 10px;
-  padding: 9px 0; border-bottom: 1px solid var(--border);
-}
-.pfs-pl-row:last-child { border-bottom: none; padding-bottom: 0; }
-.pfs-pl-icon {
-  width: 32px; height: 32px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 10px; font-weight: 800; flex-shrink: 0; color: #fff;
-}
-.pfs-pl-info { flex: 1; min-width: 0; }
-.pfs-pl-name { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pfs-pl-ticker { font-size: 10px; color: var(--text-mute); font-family: 'JetBrains Mono', monospace; }
-.pfs-pl-vals { text-align: right; flex-shrink: 0; }
-.pfs-pl-pct { font-size: 13px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
-.pfs-pl-abs { font-size: 10px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
-
-/* Блок 3: Аллокация */
-.pfs-alloc-section-label {
-  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-  color: var(--text-mute); margin-bottom: 10px;
-}
-.pfs-alloc-row { margin-bottom: 10px; }
-.pfs-alloc-row:last-child { margin-bottom: 0; }
-.pfs-alloc-meta {
-  display: flex; justify-content: space-between; align-items: baseline;
-  margin-bottom: 5px;
-}
-.pfs-alloc-label { font-size: 12px; font-weight: 700; }
-.pfs-alloc-pct { font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--text-dim); }
-.pfs-alloc-sum { font-size: 10px; color: var(--text-mute); font-family: 'JetBrains Mono', monospace; }
-.pfs-alloc-bar-track {
-  height: 5px; background: var(--surface-3); border-radius: 3px; overflow: hidden;
-}
-.pfs-alloc-bar-fill { height: 100%; border-radius: 3px; }
-.pfs-alloc-divider { height: 1px; background: var(--border); margin: 14px 0; }
-
-/* Блок 4: Доходы */
-.pfs-income-total {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 12px; background: var(--surface-2); border-radius: 12px;
-  margin-bottom: 12px;
-}
-.pfs-income-total .label { font-size: 11px; color: var(--text-dim); font-weight: 600; }
-.pfs-income-sum { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 800; color: var(--green); }
-.pfs-income-row {
-  display: flex; align-items: center; gap: 10px;
-  padding: 8px 0; border-bottom: 1px solid var(--border);
-}
-.pfs-income-row:last-child { border-bottom: none; padding-bottom: 0; }
-.pfs-income-icon {
-  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 9px; font-weight: 800; background: var(--surface-3); color: var(--text-dim);
-}
-.pfs-income-info { flex: 1; min-width: 0; }
-.pfs-income-name { font-size: 12px; font-weight: 700; }
-.pfs-income-date { font-size: 10px; color: var(--text-mute); }
-.pfs-income-amount { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 800; color: var(--green); flex-shrink: 0; }
-.pfs-income-empty { text-align: center; padding: 20px 0; font-size: 12px; color: var(--text-mute); }
-
-/* Блок 5: Бенчмарк */
-.pfs-bench-wrap { margin: 0 -4px 10px; }
-.pfs-bench-legend { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
-.pfs-bench-row {
-  display: flex; align-items: center; gap: 8px;
-}
-.pfs-bench-line {
-  width: 22px; height: 2px; flex-shrink: 0; border-radius: 1px;
-}
-.pfs-bench-line.dashed {
-  background: none;
-  border-top: 2px dashed currentColor;
-}
-.pfs-bench-name { flex: 1; font-size: 12px; font-weight: 600; }
-.pfs-bench-val { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 800; }
-.pfs-bench-verdict {
-  text-align: center; padding: 10px 12px;
-  background: var(--surface-2); border-radius: 10px;
-  font-size: 12px; color: var(--text-dim); line-height: 1.5;
-}
-.pfs-bench-verdict b { color: var(--text); }
-/* Шкала долей */
-.pf-cash-bar {
-  display: flex; height: 8px; border-radius: 6px; overflow: hidden; gap: 2px;
-  margin-bottom: 10px;
-}
-.pf-cash-bar-seg {
-  border-radius: 4px; transition: flex 0.3s;
-}
-/* Легенда */
-.pf-cash-legend {
-  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px;
-}
-.pf-cash-legend-item {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 11px; font-weight: 600; color: var(--text-dim);
-}
-.pf-cash-legend-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-}
-/* Таблица по валютам */
-.pf-cash-table { display: flex; flex-direction: column; gap: 1px; }
-.pf-cash-row {
-  display: grid; grid-template-columns: 16px 1fr 1fr 1fr;
-  align-items: center; gap: 8px;
-  padding: 8px 0; border-top: 1px solid var(--border);
-  font-size: 12px;
-}
-.pf-cash-row:first-child { border-top: none; }
-.pf-cash-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-}
-.pf-cash-cur {
-  font-weight: 800; font-size: 13px; font-family: 'JetBrains Mono', monospace;
-}
-.pf-cash-col-head {
-  font-size: 9px; font-weight: 700; color: var(--text-mute);
-  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px;
-}
-.pf-cash-col-val {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
-}
-.pf-cash-col-val.blocked { color: var(--text-mute); }
-.pf-cash-approx {
-  font-size: 10px; color: var(--text-mute); font-family: 'JetBrains Mono', monospace;
-  margin-top: 1px;
-}
+.portfolio-header { padding: 24px 20px 16px; }
+.portfolio-header h1 { font-size: 26px; letter-spacing: -0.03em; margin-bottom: 16px; }
 .portfolio-value { display: flex; flex-direction: column; gap: 4px; }
 .portfolio-value .label {
   font-size: 11px; color: var(--text-mute); font-weight: 600;
@@ -1597,7 +1071,7 @@ input[type=range]::-webkit-slider-thumb {
 .portfolio-value .pl.down { color: var(--red); background: rgba(224,115,107,0.10); }
 
 .portfolio-tabs {
-  display: flex; gap: 6px; padding: 0 20px 10px;
+  display: flex; gap: 6px; padding: 0 20px 14px;
   overflow-x: auto; scrollbar-width: none;
 }
 .portfolio-tabs::-webkit-scrollbar { display: none; }
@@ -1607,22 +1081,6 @@ input[type=range]::-webkit-slider-thumb {
   color: var(--text-dim); cursor: pointer; white-space: nowrap;
 }
 .portfolio-tab.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-
-/* Биржа-фильтр в портфеле */
-.portfolio-exchange-tabs {
-  display: flex; gap: 5px; padding: 0 20px 14px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.portfolio-exchange-tabs::-webkit-scrollbar { display: none; }
-.pex-tab {
-  padding: 5px 12px; border-radius: 8px;
-  background: var(--surface-2); border: 1px solid var(--border);
-  font-size: 11px; font-weight: 700; color: var(--text-mute);
-  cursor: pointer; white-space: nowrap; transition: all 0.15s;
-}
-.pex-tab.active {
-  background: var(--surface-3); color: var(--text); border-color: var(--text-dim);
-}
 
 .portfolio-list {
   padding: 0 20px 20px; display: flex; flex-direction: column; gap: 10px;
@@ -1667,119 +1125,6 @@ input[type=range]::-webkit-slider-thumb {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .pc-meta-cell .value.green { color: var(--accent-soft); }
-
-/* ============ HOME ============ */
-.home-header { padding: 16px 20px 10px; }
-.home-greeting { display: flex; justify-content: space-between; align-items: center; }
-.home-hello { font-size: 12px; color: var(--text-mute); font-weight: 600; }
-.home-name { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
-.home-header-icons { display: flex; gap: 6px; }
-.home-notif-btn { position: relative; }
-.home-notif-dot {
-  position: absolute; top: 6px; right: 6px;
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--accent); border: 1.5px solid var(--bg);
-}
-
-/* Сторисы */
-.home-stories {
-  display: flex; gap: 12px; padding: 8px 20px 16px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.home-stories::-webkit-scrollbar { display: none; }
-.story-item {
-  display: flex; flex-direction: column; align-items: center; gap: 5px;
-  cursor: pointer; flex-shrink: 0;
-}
-.story-item span {
-  font-size: 10px; font-weight: 600; color: var(--text-dim);
-  white-space: nowrap; max-width: 56px; text-align: center; overflow: hidden; text-overflow: ellipsis;
-}
-.story-ring {
-  width: 56px; height: 56px; border-radius: 50%; padding: 2.5px;
-  background: var(--surface-3);
-}
-.story-ring.story-new {
-  background: linear-gradient(135deg, var(--accent), #5b97c4);
-}
-.story-avatar {
-  width: 100%; height: 100%; border-radius: 50%;
-  background: var(--surface-2);
-  border: 2px solid var(--bg);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
-}
-
-/* Портфель краткий */
-.home-portfolio-card {
-  margin: 0 20px 14px;
-  background: linear-gradient(135deg, #16201b, #1a2d22);
-  border: 1px solid rgba(31,138,91,0.2); border-radius: 22px;
-  padding: 20px;
-}
-.hpc-label { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
-.hpc-total { font-size: 30px; font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 3px; }
-.hpc-pl { font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace; margin-bottom: 16px; }
-.hpc-pl.up { color: var(--accent-soft); }
-.hpc-pl.down { color: var(--red); }
-.hpc-breakdown {
-  display: flex; align-items: center; gap: 0;
-  padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 16px;
-}
-.hpc-bd-item { flex: 1; }
-.hpc-bd-item .label { font-size: 9px; color: rgba(255,255,255,0.4); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
-.hpc-bd-item .value { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); }
-.hpc-bd-div { width: 1px; height: 28px; background: rgba(255,255,255,0.1); margin: 0 12px; }
-.hpc-actions { display: flex; justify-content: space-between; }
-.hpca-item { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; }
-.hpca-item span { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.5); }
-
-/* Секции */
-.home-section { padding: 0 20px 4px; }
-.home-section-title { font-size: 16px; font-weight: 800; margin-bottom: 10px; }
-
-/* Уведомления */
-.home-notifs { display: flex; flex-direction: column; gap: 8px; }
-.home-notif-card {
-  display: flex; align-items: center; gap: 12px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  padding: 12px 14px; cursor: pointer; transition: border-color 0.15s;
-}
-.home-notif-card:active { border-color: var(--accent); }
-.hn-icon {
-  width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-}
-.hn-green  { background: rgba(31,138,91,0.15); color: var(--accent-soft); }
-.hn-blue   { background: rgba(44,122,184,0.15); color: #5b97c4; }
-.hn-amber  { background: rgba(217,164,65,0.15); color: var(--yellow); }
-.hn-body { flex: 1; min-width: 0; }
-.hn-title { font-size: 12px; font-weight: 800; margin-bottom: 2px; }
-.hn-text { font-size: 11px; color: var(--text-dim); line-height: 1.4; }
-.hn-chevron { color: var(--text-mute); flex-shrink: 0; }
-
-/* Новости */
-.home-news {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
-  overflow: hidden; margin-top: 2px;
-}
-.home-news-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 12px 14px; border-bottom: 1px solid var(--border);
-  cursor: pointer;
-}
-.hni-body { flex: 1; min-width: 0; }
-.hni-source { font-size: 10px; color: var(--text-mute); font-weight: 600; margin-bottom: 4px; }
-.hni-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
-.hni-tag {
-  flex-shrink: 0; align-self: center;
-  font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 8px;
-  background: var(--surface-3); color: var(--accent-soft);
-  font-family: 'JetBrains Mono', monospace; cursor: pointer;
-  transition: background 0.15s;
-}
-.hni-tag:active { background: rgba(31,138,91,0.2); }
 
 /* ============ FAVORITES ============ */
 .fav-type-chips { padding: 0 20px 12px; }
@@ -1920,7 +1265,6 @@ input[type=range]::-webkit-slider-thumb {
   body { padding: 10px; align-items: flex-start; }
 }
 </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -1940,212 +1284,339 @@ input[type=range]::-webkit-slider-thumb {
       <div class="app-content" id="appContent">
 
         <!-- ===== VIEW: BONDS LIST (now the market hub) ===== -->
-        <div class="view" id="view-bonds-list">
+        <div class="view active" id="view-bonds-list">
           <div class="list-header">
-            <h1 id="instrumentTitle">Рынок</h1>
-          </div>
-
-          <!-- МИНИ-ПОИСК (триггер расширенного) -->
-          <div class="market-search-trigger" onclick="openSearchOverlay()">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-            <span>Тикер, эмитент или ISIN...</span>
-          </div>
-
-          <!-- БЛОК 1: НАШИ РАЗМЕЩЕНИЯ -->
-          <div class="market-section">
-            <div class="ms-header"><span class="ms-title">Наши размещения</span></div>
-            <div class="place-hero" onclick="openInstrumentDetail('BCC_PRIM_06.31')">
-              <div class="ph-circles"><div class="ph-circle ph-c1"></div><div class="ph-circle ph-c2"></div></div>
-              <div class="ph-badge">🔥 Горячее предложение</div>
-              <div class="ph-name">БЦК БО-07</div>
-              <div class="ph-sub">Special · IPO-облигации · заявки до 30 июня</div>
-              <div class="ph-stats">
-                <div class="ph-stat"><div class="v">16.2%</div><div class="l">Купон</div></div>
-                <div class="ph-stat"><div class="v">1 000 ₸</div><div class="l">Номинал</div></div>
-                <div class="ph-stat"><div class="v">2 года</div><div class="l">Срок</div></div>
-                <button class="ph-btn" onclick="event.stopPropagation();openInstrumentDetail('BCC_PRIM_06.31')">Заявка</button>
-              </div>
-            </div>
-            <div class="place-scroll">
-              <div class="place-card" onclick="openInstrumentDetail('BCC_PRIM_06.31')">
-                <div class="pc-badge ipo">IPO-облигации</div>
-                <div class="pc-name">БЦК БО-07</div>
-                <div class="pc-exchange">Special · BCC Group</div>
-                <div class="pc-bar-wrap">
-                  <div class="pc-bar-track"><div class="pc-bar-fill" style="width:78%"></div></div>
-                  <div class="pc-bar-meta"><span>Собрано 78%</span><span>до 30 июня</span></div>
-                </div>
-                <div class="pc-bottom"><span class="pc-yield">16.2%</span><span class="pc-min">от 10 000 ₸</span></div>
-              </div>
-              <div class="place-card" onclick="openInstrumentDetail('KEGOC_PRIM_09.32')">
-                <div class="pc-badge vdo">ВДО</div>
-                <div class="pc-name">МФО КазКредит</div>
-                <div class="pc-exchange">Special · МФО КазКредит</div>
-                <div class="pc-bar-wrap">
-                  <div class="pc-bar-track"><div class="pc-bar-fill" style="width:44%"></div></div>
-                  <div class="pc-bar-meta"><span>Собрано 44%</span><span>до 5 июля</span></div>
-                </div>
-                <div class="pc-bottom"><span class="pc-yield">18.0%</span><span class="pc-min">от 5 000 ₸</span></div>
-              </div>
-              <div class="place-card" onclick="openInstrumentDetail('MOM_KZT_05.27')">
-                <div class="pc-badge gov">Гос. бумаги</div>
-                <div class="pc-name">МЕАКАМ 182д</div>
-                <div class="pc-exchange">KASE · Минфин РК</div>
-                <div class="pc-bar-wrap">
-                  <div class="pc-bar-track"><div class="pc-bar-fill" style="width:91%"></div></div>
-                  <div class="pc-bar-meta"><span>Собрано 91%</span><span>до 28 июня</span></div>
-                </div>
-                <div class="pc-bottom"><span class="pc-yield">14.8%</span><span class="pc-min">от 1 000 ₸</span></div>
-              </div>
+            <h1 id="instrumentTitle">Облигации</h1>
+            <div class="icon-btn" onclick="goTo('favorites')" id="favHeaderBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>
             </div>
           </div>
 
-          <!-- БЛОК 2: ПИФы И ИПИФ -->
-          <div class="market-section">
-            <div class="ms-header"><span class="ms-title">ПИФы и ИПИФ</span><span class="ms-link" onclick="openSearchOverlay()">Все</span></div>
-            <div class="fund-scroll">
-              <div class="fund-card"><div class="fund-icon" style="background:rgba(31,138,91,0.15)">🏢</div><div class="fund-name">Недвижимость KZ</div><div class="fund-type">Закрытый · KASE</div><div class="fund-yield">+12.4%</div><div class="fund-period">за 1 год · KZT</div></div>
-              <div class="fund-card"><div class="fund-icon" style="background:rgba(44,122,184,0.15)">⚖️</div><div class="fund-name">Сбалансированный 1</div><div class="fund-type">Открытый · KASE</div><div class="fund-yield">+9.1%</div><div class="fund-period">за 1 год · KZT</div></div>
-              <div class="fund-card"><div class="fund-icon" style="background:rgba(133,79,11,0.15)">⚡</div><div class="fund-name">Энергетика & Ресурсы</div><div class="fund-type">Закрытый · AIX</div><div class="fund-yield" style="color:var(--yellow)">+18.7%</div><div class="fund-period">за 1 год · KZT</div></div>
-              <div class="fund-card"><div class="fund-icon" style="background:rgba(107,78,168,0.15)">🌐</div><div class="fund-name">Глобальный смешанный</div><div class="fund-type">Открытый · INTL</div><div class="fund-yield">+14.2%</div><div class="fund-period">за 1 год · USD</div></div>
+          <!-- TOP SEARCH ROW (общая, всегда наверху) -->
+          <div class="search-row">
+            <div class="search-bar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+              <input id="searchInput" placeholder="Тикер, эмитент или ISIN" oninput="recalcAll()" />
+            </div>
+            <div class="filter-btn" id="filterBtn" onclick="openFilters()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
+              <span class="filter-badge" id="filterBadge" style="display:none;">0</span>
+            </div>
+            <div class="filter-btn" id="sortBtn" onclick="openSort()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
+              <span class="filter-badge" id="sortBadge" style="display:none;">!</span>
             </div>
           </div>
 
-          <!-- БЛОК 3: ГОТОВЫЕ ПОРТФЕЛИ -->
-          <div class="market-section">
-            <div class="ms-header"><span class="ms-title">Готовые портфели</span></div>
-            <div class="rp-scroll">
-              <div class="rp-card rp-cons">
-                <div class="rp-head"><span class="rp-icon">🛡️</span><span class="rp-badge rp-badge-green">Новичкам</span></div>
-                <div class="rp-name">Консервативный</div>
-                <div class="rp-desc">Облигации и депозиты с минимальным риском</div>
-                <div class="rp-grid">
-                  <div><div class="label">Доходность</div><div class="value" style="color:#97C459">9–12%</div></div>
-                  <div><div class="label">Риск</div><div class="value">Низкий</div></div>
-                </div>
-                <div class="rp-footer"><span class="rp-min">от 50 000 ₸ · 8 акт.</span><button class="rp-btn" style="background:#97C459;color:#0e1512">Купить</button></div>
-              </div>
-              <div class="rp-card">
-                <div class="rp-head"><span class="rp-icon">⚖️</span><span class="rp-badge rp-badge-blue">Популярный</span></div>
-                <div class="rp-name">Сбалансированный</div>
-                <div class="rp-desc">Акции + облигации для умеренного роста</div>
-                <div class="rp-grid">
-                  <div><div class="label">Доходность</div><div class="value" style="color:var(--accent-soft)">14–20%</div></div>
-                  <div><div class="label">Риск</div><div class="value">Средний</div></div>
-                </div>
-                <div class="rp-footer"><span class="rp-min">от 100 000 ₸ · 12 акт.</span><button class="rp-btn" style="background:#2d7ab8">Купить</button></div>
-              </div>
-              <div class="rp-card">
-                <div class="rp-head"><span class="rp-icon">🚀</span><span class="rp-badge rp-badge-amber">Высокий риск</span></div>
-                <div class="rp-name">Агрессивный</div>
-                <div class="rp-desc">Акции роста и ВДО для максимальной доходности</div>
-                <div class="rp-grid">
-                  <div><div class="label">Доходность</div><div class="value" style="color:var(--yellow)">25–40%</div></div>
-                  <div><div class="label">Риск</div><div class="value" style="color:var(--red)">Высокий</div></div>
-                </div>
-                <div class="rp-footer"><span class="rp-min">от 200 000 ₸ · 15 акт.</span><button class="rp-btn" style="background:var(--yellow);color:#0e1512">Купить</button></div>
-              </div>
+          <!-- INSTRUMENT TYPE TABS (с бейджами кол-ва) -->
+          <div class="instrument-tabs">
+            <div class="instrument-tab" data-itype="stocks" onclick="switchInstrument(this, 'stocks')">
+              <span>Акции</span>
+              <span class="tab-count" data-itype-count="stocks">0</span>
+            </div>
+            <div class="instrument-tab active" data-itype="bonds" onclick="switchInstrument(this, 'bonds')">
+              <span>Облигации</span>
+              <span class="tab-count" data-itype-count="bonds">0</span>
+            </div>
+            <div class="instrument-tab" data-itype="etf" onclick="switchInstrument(this, 'etf')">
+              <span>Фонды</span>
+              <span class="tab-count" data-itype-count="etf">0</span>
+            </div>
+            <div class="instrument-tab" data-itype="ipif" onclick="switchInstrument(this, 'ipif')">
+              <span>ИПИФ</span>
+            </div>
+            <div class="instrument-tab disabled">
+              <span>Структурные ноты</span>
+              <span class="instrument-soon">скоро</span>
             </div>
           </div>
 
-          <!-- БЛОК 4: ТОП / ВЗЛЁТЫ / ПАДЕНИЯ -->
-          <div class="market-section">
-            <div class="tp-card">
-              <div class="tp-tabs">
-                <div class="tp-tab active" onclick="switchTopTab(this,'top')">🏆 Топ</div>
-                <div class="tp-tab" onclick="switchTopTab(this,'rise')">📈 Взлёты</div>
-                <div class="tp-tab" onclick="switchTopTab(this,'fall')">📉 Падения</div>
-                <div class="tp-tab" onclick="switchTopTab(this,'fav')">⭐ Избранное</div>
-              </div>
-              <div id="topPane" class="tp-pane"></div>
-              <div id="risePane" class="tp-pane" style="display:none"></div>
-              <div id="fallPane" class="tp-pane" style="display:none"></div>
-              <div id="favPane" class="tp-pane" style="display:none"></div>
+          <!-- MARKET TABS (общие для всех типов ЦБ, с бейджами кол-ва) -->
+          <div class="market-tabs" id="marketTabs">
+            <div class="market-tab" data-market="primary" onclick="switchMarket(this, 'primary')">
+              <span class="code">Special</span>
+              <span class="desc">Размещения</span>
+              <span class="market-count" data-market-count="primary">0</span>
+            </div>
+            <div class="market-tab active" data-market="KASE" onclick="switchMarket(this, 'KASE')">
+              <span class="code">KASE</span>
+              <span class="desc">Казахстан</span>
+              <span class="market-count" data-market-count="KASE">0</span>
+            </div>
+            <div class="market-tab" data-market="INTL" onclick="switchMarket(this, 'INTL')">
+              <span class="code">INTL</span>
+              <span class="desc">Международный</span>
+              <span class="market-count" data-market-count="INTL">0</span>
+            </div>
+            <div class="market-tab" data-market="AIX" onclick="switchMarket(this, 'AIX')">
+              <span class="code">AIX</span>
+              <span class="desc">Astana Intl</span>
+              <span class="market-count" data-market-count="AIX">0</span>
             </div>
           </div>
 
-          <!-- БЛОК 5: ПОДБОРКИ И ИДЕИ -->
-          <div class="market-section">
-            <div class="ms-header"><span class="ms-title">Подборки и идеи</span></div>
-            <div class="idea-scroll">
-              <div class="idea-card" onclick="openSearchOverlay()"><div class="idea-badge idea-green">Подборка</div><div class="idea-title">Дивидендные акции KZ</div><div class="idea-desc">Акции с высокой дивидендной доходностью на KASE</div><div class="idea-chips"><span>HSBK</span><span>KMG</span><span>KCEL</span></div></div>
-              <div class="idea-card" onclick="openSearchOverlay()"><div class="idea-badge idea-blue">IPO</div><div class="idea-title">Ближайшие размещения</div><div class="idea-desc">Новые выпуски с высокой доходностью</div><div class="idea-chips"><span>BCC</span><span>KEGOC</span></div></div>
-              <div class="idea-card" onclick="openSearchOverlay()"><div class="idea-badge idea-amber">Тренд</div><div class="idea-title">ВДО 16%+</div><div class="idea-desc">Высокодоходные облигации для опытных</div><div class="idea-chips"><span>КазКредит</span><span>KAFI</span></div></div>
-              <div class="idea-card" onclick="openSearchOverlay()"><div class="idea-badge idea-purple">Новичкам</div><div class="idea-title">Первые 3 инструмента</div><div class="idea-desc">С чего начать инвестировать в KZ</div><div class="idea-chips"><span>МЕККАМ</span><span>VOO</span><span>HSBK</span></div></div>
+          <div class="sort-bar">
+            <span class="count" id="resultCount">0 инструментов</span>
+            <span class="count" id="sortActive" style="color: var(--text-dim);">Без сортировки</span>
+          </div>
+
+          <!-- UNIVERSAL LIST (заменяет bondsSection / stocksSection / etfSection) -->
+          <div id="universalList" class="bond-list"></div>
+
+          <!-- BONDS SECTION (default) - больше не используется, оставлен пустым для совместимости -->
+          <div id="bondsSection" style="display:none;">
+
+          <!-- MARKET TABS -->
+          <div class="market-tabs" style="display:none;">
+            <div class="market-tab active" onclick="switchMarket(this, 'KASE')">
+              <span class="code">KASE</span>
+              <span class="desc">Казахстан</span>
+            </div>
+            <div class="market-tab" onclick="switchMarket(this, 'INTL')">
+              <span class="code">INTL</span>
+              <span class="desc">Международный</span>
+            </div>
+            <div class="market-tab" onclick="switchMarket(this, 'AIX')">
+              <span class="code">AIX</span>
+              <span class="desc">Astana Intl</span>
             </div>
           </div>
 
-          <!-- БЛОК 6: РАСШИРЕННЫЙ ПОИСК -->
-          <div class="market-section" style="padding-bottom:24px;">
-            <div class="search-banner" onclick="openSearchOverlay()">
-              <div class="sb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
-              <div class="sb-text">
-                <div class="sb-title">Расширенный поиск</div>
-                <div class="sb-sub">Все инструменты с фильтрами</div>
-                <div class="sb-chips"><span>Акции</span><span>Облигации</span><span>ETF</span><span>ИПИФ</span><span>Ноты</span></div>
-              </div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6" stroke-linecap="round"/></svg>
+          <div class="search-row" style="display:none;">
+            <div class="search-bar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+              <input placeholder="Тикер, эмитент или ISIN" />
+            </div>
+            <div class="filter-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="filter-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
             </div>
           </div>
 
-          <!-- SEARCH OVERLAY -->
-          <div class="search-overlay" id="searchOverlay" style="display:none;">
-            <div class="so-header">
-              <div class="so-search-row">
-                <div class="icon-btn" onclick="closeSearchOverlay()">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" stroke-linecap="round"/></svg>
-                </div>
-                <div class="search-bar" style="flex:1;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-                  <input id="searchInput" placeholder="Тикер, эмитент или ISIN" oninput="recalcAll()" />
-                </div>
-                <div class="filter-btn" id="filterBtn" onclick="openFilters()">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
-                  <span class="filter-badge" id="filterBadge" style="display:none;">0</span>
-                </div>
-                <div class="filter-btn" id="sortBtn" onclick="openSort()">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
-                  <span class="filter-badge" id="sortBadge" style="display:none;">!</span>
-                </div>
+          <div class="sort-bar" style="display:none;">
+            <span class="count" id="bondCount">5 облигаций · KASE</span>
+          </div>
+
+          <!-- KASE LIST -->
+          <div class="bond-list" id="list-KASE">
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo minfin">МФ</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">Минфин РК · МЕККАМ-60</div>
+                <div class="bond-mini-ticker">MOM_KZT_05.27</div>
               </div>
-              <div class="instrument-tabs" style="padding:12px 20px 8px;">
-                <div class="instrument-tab" data-itype="stocks" onclick="switchInstrument(this,'stocks')"><span>Акции</span><span class="tab-count" data-itype-count="stocks">0</span></div>
-                <div class="instrument-tab active" data-itype="bonds" onclick="switchInstrument(this,'bonds')"><span>Облигации</span><span class="tab-count" data-itype-count="bonds">0</span></div>
-                <div class="instrument-tab" data-itype="etf" onclick="switchInstrument(this,'etf')"><span>Фонды</span><span class="tab-count" data-itype-count="etf">0</span></div>
-                <div class="instrument-tab" data-itype="ipif" onclick="switchInstrument(this,'ipif')"><span>ИПИФ</span></div>
-                <div class="instrument-tab disabled"><span>Ноты</span><span class="instrument-soon">скоро</span></div>
-              </div>
-              <div class="market-tabs" id="marketTabs" style="padding:0 20px 10px;">
-                <div class="market-tab" data-market="primary" onclick="switchMarket(this,'primary')"><span class="code">Special</span><span class="desc">Размещения</span><span class="market-count" data-market-count="primary">0</span></div>
-                <div class="market-tab active" data-market="KASE" onclick="switchMarket(this,'KASE')"><span class="code">KASE</span><span class="desc">Казахстан</span><span class="market-count" data-market-count="KASE">0</span></div>
-                <div class="market-tab" data-market="INTL" onclick="switchMarket(this,'INTL')"><span class="code">INTL</span><span class="desc">Международный</span><span class="market-count" data-market-count="INTL">0</span></div>
-                <div class="market-tab" data-market="AIX" onclick="switchMarket(this,'AIX')"><span class="code">AIX</span><span class="desc">Astana Intl</span><span class="market-count" data-market-count="AIX">0</span></div>
-              </div>
-              <div class="sort-bar" style="padding:0 20px 10px;">
-                <span class="count" id="resultCount">0 инструментов</span>
-                <span class="count" id="sortActive" style="color:var(--text-dim);">Без сортировки</span>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">100.45</div>
+                <div class="bond-mini-change up">
+                  <span class="abs">+0.32 ₸</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.32%</span>
+                </div>
               </div>
             </div>
-            <div id="universalList" class="bond-list so-list"></div>
-            <div id="emptyInstrumentSection" style="display:none;">
-              <div class="empty-instrument">
-                <div class="empty-instrument-icon" id="emptyIcon"></div>
-                <h2 id="emptyTitle"></h2>
-                <div class="empty-desc" id="emptyDesc"></div>
-                <div class="empty-info"><div class="empty-info-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01" stroke-linecap="round"/></svg></div><div class="empty-info-text" id="emptyInfo"></div></div>
-                <div class="empty-cta"><span>Раздел в разработке</span></div>
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo halyk">H</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">Halyk Bank</div>
+                <div class="bond-mini-ticker">HSBK_KZT_03.28</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">98.70</div>
+                <div class="bond-mini-change down">
+                  <span class="abs">−0.18 ₸</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>0.18%</span>
+                </div>
+              </div>
+            </div>
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo kaspi">K</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">Kaspi.kz</div>
+                <div class="bond-mini-ticker">KSPI_KZT_06.29</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">101.20</div>
+                <div class="bond-mini-change up">
+                  <span class="abs">+0.54 ₸</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.54%</span>
+                </div>
+              </div>
+            </div>
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo kaf">КА</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">КазАгроФинанс</div>
+                <div class="bond-mini-ticker">KAFI_KZT_11.27</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">99.85</div>
+                <div class="bond-mini-change down">
+                  <span class="abs">−0.05 ₸</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>0.05%</span>
+                </div>
+              </div>
+            </div>
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo snrg">СЭ</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">Самрук-Энерго</div>
+                <div class="bond-mini-ticker">SNRG_KZT_04.30</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">100.10</div>
+                <div class="bond-mini-change up">
+                  <span class="abs">+0.11 ₸</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.11%</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div id="bondsSection" style="display:none;"></div>
-          <div id="stocksSection" style="display:none;"></div>
-          <div id="etfSection" style="display:none;"></div>
+          <!-- INTL LIST -->
+          <div class="bond-list" id="list-INTL" style="display:none;">
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo kmg">KMG</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">KazMunayGas</div>
+                <div class="bond-mini-ticker">KMG_USD_09.30</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">96.40</div>
+                <div class="bond-mini-change up">
+                  <span class="abs">+0.21 $</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.22%</span>
+                </div>
+              </div>
+            </div>
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo ust">US</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">US Treasury 10Y</div>
+                <div class="bond-mini-ticker">UST_USD_05.35</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">99.05</div>
+                <div class="bond-mini-change down">
+                  <span class="abs">−0.12 $</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>0.12%</span>
+                </div>
+              </div>
+            </div>
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo aapl">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+              </div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">Apple Inc.</div>
+                <div class="bond-mini-ticker">AAPL_USD_08.31</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">94.80</div>
+                <div class="bond-mini-change up">
+                  <span class="abs">+0.08 $</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.08%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AIX LIST -->
+          <div class="bond-list" id="list-AIX" style="display:none;">
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo aira">AA</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">Air Astana</div>
+                <div class="bond-mini-ticker">AIRA_USD_07.29</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">97.60</div>
+                <div class="bond-mini-change up">
+                  <span class="abs">+0.40 $</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l4 5H1z"/></svg>0.41%</span>
+                </div>
+              </div>
+            </div>
+            <div class="bond-mini" onclick="openBond()">
+              <div class="bond-logo kap">KAP</div>
+              <div class="bond-mini-left">
+                <div class="bond-mini-name">Kazatomprom</div>
+                <div class="bond-mini-ticker">KAP_USD_12.32</div>
+              </div>
+              <div class="bond-mini-right">
+                <div class="bond-mini-price">100.90</div>
+                <div class="bond-mini-change down">
+                  <span class="abs">−0.27 $</span>
+                  <span class="pct"><svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9L1 4h8z"/></svg>0.27%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div><!-- /bondsSection -->
+
+          <!-- STOCKS SECTION -->
+          <div id="stocksSection" style="display:none;">
+            <div class="search-row">
+              <div class="search-bar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+                <input placeholder="Тикер или компания" />
+              </div>
+              <div class="filter-btn" onclick="openInstrumentFilters('stocks')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
+              </div>
+              <div class="filter-btn" onclick="openSort()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
+              </div>
+            </div>
+            <div class="sort-bar">
+              <span class="count" id="stocksCount">10 акций</span>
+            </div>
+            <div class="bond-list" id="stocksList"></div>
+          </div>
+
+          <!-- ETF SECTION -->
+          <div id="etfSection" style="display:none;">
+            <div class="search-row">
+              <div class="search-bar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-mute);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+                <input placeholder="Тикер или фонд" />
+              </div>
+              <div class="filter-btn" onclick="openInstrumentFilters('etf')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M6 12h12M10 19h4" stroke-linecap="round"/></svg>
+              </div>
+              <div class="filter-btn" onclick="openSort()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
+              </div>
+            </div>
+            <div class="sort-bar">
+              <span class="count" id="etfCount">6 фондов</span>
+            </div>
+            <div class="bond-list" id="etfList"></div>
+          </div>
+
+          <!-- INSTRUMENT EMPTY STATES (для ИПИФ) -->
+          <div id="emptyInstrumentSection" style="display:none;">
+            <div class="empty-instrument">
+              <div class="empty-instrument-icon" id="emptyIcon"></div>
+              <h2 id="emptyTitle"></h2>
+              <div class="empty-desc" id="emptyDesc"></div>
+              <div class="empty-info">
+                <div class="empty-info-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01" stroke-linecap="round"/></svg>
+                </div>
+                <div class="empty-info-text" id="emptyInfo"></div>
+              </div>
+              <div class="empty-cta">
+                <span>Раздел в разработке</span>
+              </div>
+            </div>
+          </div>
         </div>
+
         <!-- ===== VIEW: BOND DETAIL ===== -->
         <div class="view" id="view-bond-detail">
           <div class="detail-header">
-            <div class="icon-btn" onclick="goBackFromDetail()">
+            <div class="icon-btn" onclick="goTo('bonds-list')">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6" stroke-linecap="round"/></svg>
             </div>
             <h1 id="bondDetailTitle">Облигация</h1>
@@ -2269,54 +1740,16 @@ input[type=range]::-webkit-slider-thumb {
                 </svg>
               </div>
 
-              <!-- МИН-МАКС ШКАЛА (за выбранный период) -->
-              <div class="price-range-bar">
-                <span class="prb-val" id="prbLow">99.95</span>
-                <div class="prb-track">
-                  <div class="prb-fill" id="prbFill" style="left:60%;right:10%;"></div>
-                  <div class="prb-thumb" id="prbThumb" style="left:60%;"></div>
-                </div>
-                <span class="prb-val" id="prbHigh">100.80</span>
-              </div>
-              <div class="prb-labels">
-                <span>Мин. периода</span>
-                <span id="prbCurrentLabel">Текущая: 100.45</span>
-                <span>Макс. периода</span>
-              </div>
-
-              <!-- STATS GRID — новая структура -->
+              <!-- STATS GRID under chart -->
               <div class="chart-stats-grid" id="chartStatsGrid">
-
-                <!-- Ряд 1: Закрытие вчера / Открытие сегодня -->
-                <div class="cs-cell">
-                  <div class="cs-label">Закрытие <span class="cs-badge">вчера</span></div>
-                  <div class="cs-value" id="csClose">100.13</div>
-                </div>
-                <div class="cs-cell">
-                  <div class="cs-label">Открытие <span class="cs-badge">сегодня</span></div>
-                  <div class="cs-value" id="csOpen">100.10</div>
-                </div>
-
-                <!-- Ряд 2: Средневзвешенная и Изменение за день -->
-                <div class="cs-cell">
-                  <div class="cs-label">VWAP <span class="cs-badge">сегодня</span></div>
-                  <div class="cs-value" id="csVwap">100.28</div>
-                </div>
-                <div class="cs-cell">
-                  <div class="cs-label">Изменение <span class="cs-badge">сегодня</span></div>
-                  <div class="cs-value" id="csDayChange">+0.32%</div>
-                </div>
-
-                <!-- Ряд 3: Объём торгов (деньги + сделки) — полная ширина -->
-                <div class="cs-cell cs-cell-wide cs-cell-volume">
-                  <div class="cs-label">Объём торгов <span class="cs-badge">сегодня</span></div>
-                  <div class="cs-volume-row">
-                    <div class="cs-value" id="csVolumeMoney">125.4M ₸</div>
-                    <div class="cs-vol-divider"></div>
-                    <div class="cs-value cs-vol-deals"><span id="csDeals">1 482</span> сделок</div>
-                  </div>
-                </div>
-
+                <div class="cs-cell"><div class="cs-label">Цена</div><div class="cs-value" id="csPrice">100.45</div></div>
+                <div class="cs-cell"><div class="cs-label">Открытие</div><div class="cs-value" id="csOpen">100.10</div></div>
+                <div class="cs-cell"><div class="cs-label">Закрытие</div><div class="cs-value" id="csClose">100.13</div></div>
+                <div class="cs-cell"><div class="cs-label">Максимум</div><div class="cs-value" id="csHigh">100.80</div></div>
+                <div class="cs-cell"><div class="cs-label">Минимум</div><div class="cs-value" id="csLow">99.95</div></div>
+                <div class="cs-cell"><div class="cs-label">52 нед. макс.</div><div class="cs-value" id="cs52High">102.30</div></div>
+                <div class="cs-cell"><div class="cs-label">52 нед. мин.</div><div class="cs-value" id="cs52Low">97.40</div></div>
+                <div class="cs-cell"><div class="cs-label">Объём торгов</div><div class="cs-value" id="csVolume">1.2M</div></div>
               </div>
             </div>
 
@@ -2715,178 +2148,25 @@ input[type=range]::-webkit-slider-thumb {
         <!-- ===== VIEW: PORTFOLIO ===== -->
         <div class="view" id="view-portfolio">
           <div class="portfolio-header">
-            <div class="pf-top-row">
-              <h1>Портфель</h1>
-              <div class="pf-currency-toggle">
-                <div class="pf-cur active" onclick="switchPortfolioCurrency(this, '₸')">₸</div>
-                <div class="pf-cur" onclick="switchPortfolioCurrency(this, '$')">$</div>
-              </div>
-            </div>
+            <h1>Портфель</h1>
             <div class="portfolio-value">
               <span class="label">Общая стоимость</span>
               <span class="value" id="portfolioTotal">198 740 ₸</span>
               <span class="pl up" id="portfolioPL">+3 240 ₸ · +1.66%</span>
             </div>
-            <div class="pf-breakdown">
-              <div class="pf-bd-item">
-                <div class="label">В бумагах</div>
-                <div class="value" id="pfInSecurities">196 000 ₸</div>
-              </div>
-              <div class="pf-bd-divider"></div>
-              <div class="pf-bd-item" id="pfCashItem">
-                <div class="label">Денежные</div>
-                <div class="value" id="pfCash">2 740 ₸</div>
-              </div>
-            </div>
           </div>
 
-          <!-- КНОПКИ ДЕЙСТВИЙ -->
-          <div class="pf-actions">
-            <div class="pfa-item" onclick="">
-              <div class="pfa-icon pfa-green">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span>Пополнить</span>
-            </div>
-            <div class="pfa-item" onclick="">
-              <div class="pfa-icon pfa-blue">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 16l4-8 4 8M9 12h6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span>Конвертировать</span>
-            </div>
-            <div class="pfa-item" onclick="goTo('bonds-list')">
-              <div class="pfa-icon pfa-accent">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
-              </div>
-              <span>Купить</span>
-            </div>
-            <div class="pfa-item" onclick="">
-              <div class="pfa-icon pfa-amber">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span>Вывести</span>
-            </div>
-            <div class="pfa-item" onclick="goTo('history')">
-              <div class="pfa-icon pfa-muted">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
-              </div>
-              <span>История</span>
-            </div>
-            <div class="pfa-item" onclick="">
-              <div class="pfa-icon pfa-muted">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round"/></svg>
-              </div>
-              <span>Отчёты</span>
-            </div>
+          <div class="portfolio-tabs">
+            <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'all')">Все</div>
+            <div class="portfolio-tab active" onclick="filterPortfolioByType(this, 'bonds')">Облигации</div>
+            <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'stocks')">Акции</div>
+            <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'etf')">Фонды</div>
+            <div class="portfolio-tab">Денежные</div>
           </div>
 
-          <!-- MAIN TABS: Активы / Деньги / Статистика -->
-          <div class="pf-main-tabs">
-            <div class="pf-main-tab active" onclick="switchPortfolioTab(this,'assets')">Активы</div>
-            <div class="pf-main-tab" onclick="switchPortfolioTab(this,'cash')">Деньги</div>
-            <div class="pf-main-tab" onclick="switchPortfolioTab(this,'stats')">Статистика</div>
+          <div class="portfolio-list" id="portfolioList">
+            <!-- 2 готовых позиции, добавлены динамически в JS -->
           </div>
-
-          <!-- === АКТИВЫ === -->
-          <div class="pf-pane" id="pfPaneAssets">
-            <div class="portfolio-tabs">
-              <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'all')">Все</div>
-              <div class="portfolio-tab active" onclick="filterPortfolioByType(this, 'bonds')">Облигации</div>
-              <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'stocks')">Акции</div>
-              <div class="portfolio-tab" onclick="filterPortfolioByType(this, 'etf')">Фонды</div>
-            </div>
-            <div class="portfolio-exchange-tabs">
-              <div class="pex-tab active" data-pex="all" onclick="filterPortfolioByExchange(this, 'all')">Все биржи</div>
-              <div class="pex-tab" data-pex="KASE" onclick="filterPortfolioByExchange(this, 'KASE')">KASE</div>
-              <div class="pex-tab" data-pex="INTL" onclick="filterPortfolioByExchange(this, 'INTL')">INTL</div>
-              <div class="pex-tab" data-pex="AIX" onclick="filterPortfolioByExchange(this, 'AIX')">AIX</div>
-              <div class="pex-tab" data-pex="primary" onclick="filterPortfolioByExchange(this, 'primary')">Special</div>
-            </div>
-            <div class="portfolio-list" id="portfolioList"></div>
-          </div>
-
-          <!-- === ДЕНЬГИ === -->
-          <div class="pf-pane" id="pfPaneCash" style="display:none;">
-            <div class="pf-cash-inner">
-              <div class="pf-cash-bar" id="pfCashBar"></div>
-              <div class="pf-cash-legend" id="pfCashLegend"></div>
-              <div class="pf-cash-table" id="pfCashTable"></div>
-            </div>
-          </div>
-
-          <!-- === СТАТИСТИКА === -->
-          <div class="pf-pane" id="pfPaneStats" style="display:none;">
-            <div class="pf-stats-wrap">
-
-              <!-- ПЕРЕКЛЮЧАТЕЛЬ ПЕРИОДА -->
-              <div class="pfs-period-row" id="pfsPeriodRow">
-                <div class="pfs-per active" data-period="1d" onclick="selectStatsPeriod(this)">1Д</div>
-                <div class="pfs-per" data-period="1w" onclick="selectStatsPeriod(this)">1Н</div>
-                <div class="pfs-per" data-period="1m" onclick="selectStatsPeriod(this)">1М</div>
-                <div class="pfs-per" data-period="3m" onclick="selectStatsPeriod(this)">3М</div>
-                <div class="pfs-per" data-period="1y" onclick="selectStatsPeriod(this)">1Г</div>
-                <div class="pfs-per" data-period="all" onclick="selectStatsPeriod(this)">Всё</div>
-              </div>
-
-              <!-- БЛОК 1: ДОХОДНОСТЬ -->
-              <div class="pfs-card">
-                <div class="pfs-card-header">Доходность портфеля</div>
-                <div class="pfs-return-main">
-                  <span class="pfs-return-pct" id="pfsReturnPct">+1.66%</span>
-                  <span class="pfs-return-badge" id="pfsReturnBadge">+3 240 ₸</span>
-                </div>
-                <div class="pfs-return-sub" id="pfsReturnSub">за месяц</div>
-                <div class="pfs-chart-wrap">
-                  <canvas id="pfsReturnChart" height="72"></canvas>
-                </div>
-                <div class="pfs-xlabels" id="pfsXLabels"></div>
-                <div class="pfs-metrics-row">
-                  <div class="pfs-metric"><div class="label">Нач. стоимость</div><div class="value" id="pfsStart">—</div></div>
-                  <div class="pfs-metric"><div class="label">Тек. стоимость</div><div class="value" id="pfsCurrent">—</div></div>
-                  <div class="pfs-metric"><div class="label">Макс. просадка</div><div class="value red" id="pfsDrawdown">—</div></div>
-                </div>
-              </div>
-
-              <!-- БЛОК 2: П/У ПО АКТИВАМ -->
-              <div class="pfs-card">
-                <div class="pfs-card-header">Прибыль / убыток</div>
-                <div class="pfs-pl-sub" id="pfsPLSub">за месяц · нереализованный</div>
-                <div class="pfs-pl-list" id="pfsPLList"></div>
-              </div>
-
-              <!-- БЛОК 3: АЛЛОКАЦИЯ -->
-              <div class="pfs-card">
-                <div class="pfs-card-header">Аллокация</div>
-                <div class="pfs-alloc-section-label">По типам</div>
-                <div class="pfs-alloc-list" id="pfsAllocType"></div>
-                <div class="pfs-alloc-divider"></div>
-                <div class="pfs-alloc-section-label">По биржам</div>
-                <div class="pfs-alloc-list" id="pfsAllocExchange"></div>
-              </div>
-
-              <!-- БЛОК 4: ДИВИДЕНДЫ И КУПОНЫ -->
-              <div class="pfs-card">
-                <div class="pfs-card-header">Дивиденды и купоны</div>
-                <div class="pfs-income-total">
-                  <span class="label" id="pfsIncomeLabel">Итого за месяц</span>
-                  <span class="pfs-income-sum" id="pfsIncomeTotal">0 ₸</span>
-                </div>
-                <div class="pfs-income-list" id="pfsIncomeList"></div>
-              </div>
-
-              <!-- БЛОК 5: БЕНЧМАРК -->
-              <div class="pfs-card">
-                <div class="pfs-card-header">Сравнение с бенчмарком</div>
-                <div class="pfs-bench-wrap">
-                  <canvas id="pfsBenchChart" height="80"></canvas>
-                </div>
-                <div class="pfs-bench-legend" id="pfsBenchLegend"></div>
-                <div class="pfs-bench-verdict" id="pfsBenchVerdict"></div>
-              </div>
-
-            </div>
-          </div>
-
         </div>
 
         <!-- ===== VIEW: FAVORITES ===== -->
@@ -2928,197 +2208,6 @@ input[type=range]::-webkit-slider-thumb {
           </div>
         </div>
 
-        <!-- ===== VIEW: HOME ===== -->
-        <div class="view active" id="view-home">
-
-          <!-- ШАПКА -->
-          <div class="home-header">
-            <div class="home-greeting">
-              <div>
-                <div class="home-hello">Добрый день 👋</div>
-                <div class="home-name">Александр</div>
-              </div>
-              <div class="home-header-icons">
-                <div class="icon-btn" onclick="goTo('history')">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
-                </div>
-                <div class="icon-btn home-notif-btn" id="homeNotifBtn">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke-linecap="round"/></svg>
-                  <span class="home-notif-dot"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- СТОРИСЫ -->
-          <div class="home-stories">
-            <div class="story-item" onclick="openInstrumentDetail('BCC_PRIM_06.31')">
-              <div class="story-ring story-new">
-                <div class="story-avatar" style="background:linear-gradient(135deg,#1f8a5b,#0C447C)">🔥</div>
-              </div>
-              <span>Размещение</span>
-            </div>
-            <div class="story-item" onclick="goTo('portfolio'); switchPortfolioTab(document.querySelectorAll('.pf-main-tab')[2],'stats')">
-              <div class="story-ring story-new">
-                <div class="story-avatar" style="background:linear-gradient(135deg,#2d7ab8,#6b4ea8)">📊</div>
-              </div>
-              <span>Доходность</span>
-            </div>
-            <div class="story-item" onclick="openInstrumentDetail('HSBK')">
-              <div class="story-ring story-new">
-                <div class="story-avatar" style="background:linear-gradient(135deg,#854F0B,#d4a017)">📈</div>
-              </div>
-              <span>Взлёт: HSBK</span>
-            </div>
-            <div class="story-item" onclick="openSearchOverlay()">
-              <div class="story-ring">
-                <div class="story-avatar" style="background:linear-gradient(135deg,#16201b,#2d3a30)">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-                </div>
-              </div>
-              <span>Поиск</span>
-            </div>
-            <div class="story-item" onclick="">
-              <div class="story-ring">
-                <div class="story-avatar" style="background:linear-gradient(135deg,#1a3a5c,#185FA5)">💡</div>
-              </div>
-              <span>Идеи</span>
-            </div>
-            <div class="story-item" onclick="">
-              <div class="story-ring">
-                <div class="story-avatar" style="background:linear-gradient(135deg,#3a1a5c,#6b4ea8)">📰</div>
-              </div>
-              <span>Новости</span>
-            </div>
-          </div>
-
-          <!-- ПОРТФЕЛЬ КРАТКИЙ -->
-          <div class="home-portfolio-card">
-            <div class="hpc-label">Мой портфель</div>
-            <div class="hpc-total" id="homePfTotal">198 740 ₸</div>
-            <div class="hpc-pl up" id="homePfPL">+3 240 ₸ · +1.66%</div>
-            <div class="hpc-breakdown">
-              <div class="hpc-bd-item">
-                <div class="label">В бумагах</div>
-                <div class="value" id="homePfSecurities">196 000 ₸</div>
-              </div>
-              <div class="hpc-bd-div"></div>
-              <div class="hpc-bd-item">
-                <div class="label">Денежные</div>
-                <div class="value" id="homePfCash">2 740 ₸</div>
-              </div>
-            </div>
-            <!-- Кнопки быстрых действий -->
-            <div class="hpc-actions">
-              <div class="hpca-item">
-                <div class="pfa-icon pfa-green">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <span>Пополнить</span>
-              </div>
-              <div class="hpca-item">
-                <div class="pfa-icon pfa-blue">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 16l4-8 4 8M9 12h6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <span>Конверт.</span>
-              </div>
-              <div class="hpca-item" onclick="goTo('bonds-list')">
-                <div class="pfa-icon pfa-accent">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </div>
-                <span>Купить</span>
-              </div>
-              <div class="hpca-item">
-                <div class="pfa-icon pfa-amber">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <span>Вывести</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- УВЕДОМЛЕНИЯ -->
-          <div class="home-section">
-            <div class="home-section-title">Важное</div>
-            <div class="home-notifs">
-              <div class="home-notif-card" onclick="openInstrumentDetail('HSBK_KZT_03.28')">
-                <div class="hn-icon hn-green">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <div class="hn-body">
-                  <div class="hn-title">Купонная выплата</div>
-                  <div class="hn-text">Halyk Bank — <b>+33 750 ₸</b> поступят 15 июля</div>
-                </div>
-                <div class="hn-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6" stroke-linecap="round"/></svg></div>
-              </div>
-              <div class="home-notif-card" onclick="openInstrumentDetail('BCC_PRIM_06.31')">
-                <div class="hn-icon hn-blue">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01" stroke-linecap="round"/></svg>
-                </div>
-                <div class="hn-body">
-                  <div class="hn-title">Размещение закрывается</div>
-                  <div class="hn-text">БЦК БО-07 — приём заявок до 30 июня</div>
-                </div>
-                <div class="hn-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6" stroke-linecap="round"/></svg></div>
-              </div>
-              <div class="home-notif-card">
-                <div class="hn-icon hn-amber">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                </div>
-                <div class="hn-body">
-                  <div class="hn-title">Курс доллара</div>
-                  <div class="hn-text">USD/KZT вырос до <b>465.20 ₸</b> (+0.8%)</div>
-                </div>
-                <div class="hn-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6" stroke-linecap="round"/></svg></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- НОВОСТИ -->
-          <div class="home-section" style="padding-bottom:24px;">
-            <div class="home-section-title">Новости рынка</div>
-            <div class="home-news">
-              <div class="home-news-item">
-                <div class="hni-body">
-                  <div class="hni-source">KASE · 2 ч назад</div>
-                  <div class="hni-title">Казатомпром повысил прогноз добычи урана на 2026 год</div>
-                </div>
-                <div class="hni-tag" onclick="openInstrumentDetail('KZAP')">KZAP</div>
-              </div>
-              <div class="home-news-item">
-                <div class="hni-body">
-                  <div class="hni-source">Bloomberg · 4 ч назад</div>
-                  <div class="hni-title">ФРС сохранила ставку. Инвесторы ждут снижения к концу года</div>
-                </div>
-                <div class="hni-tag" onclick="openInstrumentDetail('VOO')">VOO</div>
-              </div>
-              <div class="home-news-item">
-                <div class="hni-body">
-                  <div class="hni-source">Finprom · 5 ч назад</div>
-                  <div class="hni-title">Halyk Bank объявил о buyback акций на сумму 15 млрд тенге</div>
-                </div>
-                <div class="hni-tag" onclick="openInstrumentDetail('HSBK')">HSBK</div>
-              </div>
-              <div class="home-news-item">
-                <div class="hni-body">
-                  <div class="hni-source">Минфин РК · 6 ч назад</div>
-                  <div class="hni-title">МЕККАМ 12 мес: ставка купона установлена на уровне 14.8%</div>
-                </div>
-                <div class="hni-tag" onclick="openInstrumentDetail('MOM_KZT_05.27')">МЕККАМ</div>
-              </div>
-              <div class="home-news-item" style="border-bottom:none">
-                <div class="hni-body">
-                  <div class="hni-source">Reuters · 8 ч назад</div>
-                  <div class="hni-title">Apple представит новую линейку MacBook Pro с M5. Акции реагируют ростом</div>
-                </div>
-                <div class="hni-tag" onclick="openInstrumentDetail('AAPL')">AAPL</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- ===== VIEW: HISTORY ===== -->
         <div class="view" id="view-history">
           <div class="history-header">
             <h1>История</h1>
@@ -3164,21 +2253,21 @@ input[type=range]::-webkit-slider-thumb {
 
       <!-- BOTTOM NAV -->
       <div class="bottom-nav">
-        <div class="nav-item active" onclick="goTo('home')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>Главная</span>
-        </div>
-        <div class="nav-item" onclick="goTo('bonds-list')">
+        <div class="nav-item active" onclick="goTo('bonds-list')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18l6-6 4 4 8-8M14 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>Рынок</span>
+        </div>
+        <div class="nav-item" onclick="goTo('history')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
+          <span>История</span>
         </div>
         <div class="nav-item" onclick="goTo('portfolio')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2" stroke-linecap="round"/></svg>
           <span>Портфель</span>
         </div>
-        <div class="nav-item" onclick="openSearchOverlay()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-          <span>Поиск</span>
+        <div class="nav-item" onclick="goTo('favorites')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linejoin="round"/></svg>
+          <span>Избранное</span>
         </div>
       </div>
 
@@ -3815,25 +2904,16 @@ function goTo(viewId) {
   document.getElementById('appContent').scrollTop = 0;
 
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  const navMap = { 'home': 0, 'bonds-list': 1, 'bond-detail': 1, 'order-amount': 1, 'order-confirm': 1, 'success': 1, 'portfolio': 2, 'history': 0, 'favorites': 0 };
+  const navMap = { 'bonds-list': 0, 'bond-detail': 0, 'order-amount': 0, 'order-confirm': 0, 'success': 0, 'history': 1, 'portfolio': 2, 'favorites': 3 };
   const idx = navMap[viewId];
   if (idx !== undefined) document.querySelectorAll('.nav-item')[idx].classList.add('active');
-
 
   document.querySelectorAll('.flow-step').forEach(s => s.classList.remove('active'));
   const g = document.querySelector('.flow-step[data-step="' + viewId + '"]');
   if (g) g.classList.add('active');
 
   // Рендер портфеля при заходе
-  if (viewId === 'portfolio') {
-    if (portfolioActiveTab !== 'assets') {
-      const firstTab = document.querySelector('.pf-main-tab');
-      if (firstTab) switchPortfolioTab(firstTab, 'assets');
-    }
-    renderPortfolioHeader();
-    renderPortfolio();
-  }
-  if (viewId === 'home') renderHomePortfolio();
+  if (viewId === 'portfolio') renderPortfolio();
   if (viewId === 'favorites') renderFavorites();
   // При возврате в список облигаций / в портфель — сбрасываем форму, возвращаем flow на buy для дальнейших покупок
   if (viewId === 'bonds-list') { state.flow = 'buy'; state.instrumentType = 'bonds'; state.currentInstrument = null; resetOrderForm(); applyFlowUI(); }
@@ -3841,14 +2921,6 @@ function goTo(viewId) {
 
 // Активный фильтр в портфеле
 let portfolioFilterType = 'bonds';
-let portfolioFilterExchange = 'all';
-
-function filterPortfolioByExchange(el, exchange) {
-  document.querySelectorAll('.pex-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  portfolioFilterExchange = exchange;
-  renderPortfolio();
-}
 function filterPortfolioByType(el, type) {
   document.querySelectorAll('#view-portfolio .portfolio-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
@@ -3856,496 +2928,11 @@ function filterPortfolioByType(el, type) {
   renderPortfolio();
 }
 
-let portfolioCurrency = '₸';
-
-function switchPortfolioCurrency(el, cur) {
-  document.querySelectorAll('.pf-cur').forEach(e => e.classList.remove('active'));
-  el.classList.add('active');
-  portfolioCurrency = cur;
-  renderPortfolioHeader();
-  renderPortfolio();
-}
-
-// Коэффициент конвертации ₸→$ (фейковый для прототипа)
-const KZT_TO_USD = 1 / 465;
-
-// Данные о денежных средствах (фейковые для прототипа)
-const CASH_DATA = [
-  { cur: '₸', flag: '🇰🇿', avail: 542300, blocked: 0 },
-  { cur: '$', flag: '🇺🇸', avail: 1250,   blocked: 200 },
-];
-const CASH_COLORS = ['#1f8a5b', '#5b97c4', '#dc9a3c', '#a978d8'];
-
-let portfolioActiveTab = 'assets';
-
-function switchPortfolioTab(el, tab) {
-  document.querySelectorAll('.pf-main-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  portfolioActiveTab = tab;
-  document.getElementById('pfPaneAssets').style.display = tab === 'assets' ? '' : 'none';
-  document.getElementById('pfPaneCash').style.display   = tab === 'cash'   ? '' : 'none';
-  document.getElementById('pfPaneStats').style.display  = tab === 'stats'  ? '' : 'none';
-  if (tab === 'cash') renderCashDetail();
-  if (tab === 'stats') renderPortfolioStats();
-}
-
-// ===== PORTFOLIO STATISTICS =====
-let statsPeriod = '1m';
-let statsReturnChart = null;
-let statsBenchChart = null;
-
-// Данные периодов
-const STATS_PERIODS = {
-  '1d':  { label: '1 день',   sub: 'за день',   retPct: 0.12,  points: 24, xLabels: ['00:00','06:00','12:00','18:00',''], drawdown: -0.05 },
-  '1w':  { label: '1 неделя', sub: 'за неделю', retPct: 0.74,  points: 7,  xLabels: ['Пн','Вт','Ср','Чт','Пт','Сб',''], drawdown: -0.22 },
-  '1m':  { label: '1 месяц',  sub: 'за месяц',  retPct: 1.66,  points: 30, xLabels: ['1 мая','','','15 мая','','',''], drawdown: -0.41 },
-  '3m':  { label: '3 месяца', sub: 'за 3 мес.',  retPct: 4.18,  points: 12, xLabels: ['Мар','','','Апр','','','Май',''], drawdown: -1.10 },
-  '1y':  { label: '1 год',    sub: 'за год',    retPct: 12.40, points: 12, xLabels: ['Июн','Авг','Окт','Дек','Фев','Апр',''], drawdown: -3.20 },
-  'all': { label: 'всё время',sub: 'за всё время', retPct: 18.50, points: 18, xLabels: ['2023','','','2024','','','2025','',''], drawdown: -5.50 },
-};
-
-// Доходы по периодам (купоны + дивиденды)
-const INCOME_EVENTS = [
-  { name: 'Halyk Bank', ticker: 'HSBK_KZT_03.28', logo: 'H', color: '#1f8a5b', type: 'Купон', date: '2026-05-15', amount: 33750, cur: '₸' },
-  { name: 'Минфин РК', ticker: 'MOM_KZT_05.27', logo: 'МФ', color: '#2d7ab8', type: 'Купон', date: '2026-04-10', amount: 0, cur: '₸' },
-  { name: 'Apple Inc.', ticker: 'AAPL', logo: 'AAPL', color: '#555', type: 'Дивиденд', date: '2026-06-01', amount: 28, cur: '$' },
-  { name: 'Halyk Bank', ticker: 'HSBK_KZT_03.28', logo: 'H', color: '#1f8a5b', type: 'Купон', date: '2025-11-15', amount: 33750, cur: '₸' },
-  { name: 'Apple Inc.', ticker: 'AAPL', logo: 'AAPL', color: '#555', type: 'Дивиденд', date: '2025-12-01', amount: 27, cur: '$' },
-  { name: 'VOO', ticker: 'VOO', logo: 'VOO', color: '#854F0B', type: 'Дивиденд', date: '2025-12-28', amount: 12, cur: '$' },
-];
-
-// Диапазон дат периода
-function getPeriodDateRange(period) {
-  const now = new Date(2026, 5, 25); // TODAY
-  const end = new Date(now);
-  const start = new Date(now);
-  if (period === '1d')  start.setDate(end.getDate() - 1);
-  else if (period === '1w') start.setDate(end.getDate() - 7);
-  else if (period === '1m') start.setMonth(end.getMonth() - 1);
-  else if (period === '3m') start.setMonth(end.getMonth() - 3);
-  else if (period === '1y') start.setFullYear(end.getFullYear() - 1);
-  else start.setFullYear(2023, 0, 1);
-  return { start, end };
-}
-
-function selectStatsPeriod(el) {
-  document.querySelectorAll('.pfs-per').forEach(e => e.classList.remove('active'));
-  el.classList.add('active');
-  statsPeriod = el.getAttribute('data-period');
-  renderPortfolioStats();
-}
-
-function renderPortfolioStats() {
-  const cur = portfolioCurrency;
-  const rate = cur === '$' ? KZT_TO_USD : 1;
-  const sym = cur;
-  function fmt(n) { return Math.abs(Math.round(n)).toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + sym; }
-
-  const pd = STATS_PERIODS[statsPeriod];
-  const isPos = pd.retPct >= 0;
-
-  // Стоимость портфеля
-  let totalCurrent = 0;
-  state.holdings.forEach(h => {
-    const r = h.currency === '$' ? (cur === '$' ? 1 : 465) : (cur === '$' ? KZT_TO_USD : 1);
-    totalCurrent += Math.round(h.qty * (h.currentPrice / 100) * h.nominal * r);
-  });
-  const totalStart = Math.round(totalCurrent / (1 + pd.retPct / 100));
-  const retAbs = totalCurrent - totalStart;
-
-  // --- БЛОК 1 ---
-  const pctEl = document.getElementById('pfsReturnPct');
-  const badgeEl = document.getElementById('pfsReturnBadge');
-  pctEl.textContent = (isPos ? '+' : '') + pd.retPct.toFixed(2) + '%';
-  pctEl.className = 'pfs-return-pct' + (isPos ? '' : ' neg');
-  badgeEl.textContent = (isPos ? '+' : '−') + fmt(Math.abs(retAbs));
-  badgeEl.className = 'pfs-return-badge' + (isPos ? '' : ' neg');
-  document.getElementById('pfsReturnSub').textContent = pd.sub;
-  document.getElementById('pfsStart').textContent = fmt(totalStart);
-  document.getElementById('pfsCurrent').textContent = fmt(totalCurrent);
-  document.getElementById('pfsDrawdown').textContent = pd.drawdown.toFixed(2) + '%';
-
-  // X-Labels
-  const xEl = document.getElementById('pfsXLabels');
-  xEl.innerHTML = '';
-  const xLabels = pd.xLabels.filter(l => l);
-  xLabels.forEach(l => { const s = document.createElement('span'); s.textContent = l; xEl.appendChild(s); });
-
-  // График доходности
-  const returnCtx = document.getElementById('pfsReturnChart').getContext('2d');
-  const pts = pd.points;
-  const curve = Array.from({ length: pts }, (_, i) => {
-    const t = i / (pts - 1);
-    const noise = (Math.sin(i * 2.3) * 0.3 + Math.sin(i * 0.7) * 0.5) * Math.abs(pd.retPct) * 0.25;
-    return totalStart + (totalCurrent - totalStart) * t * (0.85 + Math.abs(Math.sin(i)) * 0.15) + noise;
-  });
-  const lineColor = isPos ? '#38b277' : '#e0736b';
-  if (statsReturnChart) statsReturnChart.destroy();
-  statsReturnChart = new Chart(returnCtx, {
-    type: 'line',
-    data: {
-      labels: Array.from({ length: pts }, (_, i) => i),
-      datasets: [{ data: curve, borderColor: lineColor, borderWidth: 2,
-        pointRadius: 0, fill: true,
-        backgroundColor: (ctx) => {
-          const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, 72);
-          g.addColorStop(0, isPos ? 'rgba(56,178,119,0.22)' : 'rgba(224,115,107,0.22)');
-          g.addColorStop(1, 'rgba(0,0,0,0)');
-          return g;
-        },
-        tension: 0.45
-      }]
-    },
-    options: { animation: false, plugins: { legend: { display: false }, tooltip: { enabled: false } },
-      scales: { x: { display: false }, y: { display: false } },
-      elements: { line: { borderCapStyle: 'round' } }
-    }
-  });
-
-  // --- БЛОК 2: П/У ---
-  document.getElementById('pfsPLSub').textContent = pd.sub + ' · нереализованный';
-  const plList = document.getElementById('pfsPLList');
-  plList.innerHTML = '';
-  const ICON_COLORS = ['#1f8a5b','#2d7ab8','#854F0B','#6b4ea8'];
-  const rows = state.holdings.map((h, i) => {
-    const r = h.currency === '$' ? (cur === '$' ? 1 : 465) : (cur === '$' ? KZT_TO_USD : 1);
-    const cv = h.qty * (h.currentPrice / 100) * h.nominal * r;
-    const pv = h.qty * (h.avgPrice / 100) * h.nominal * r;
-    const pl = (cv - pv) * (pd.retPct / 100) / 1.66;
-    const plPct = pv ? pl / pv * 100 : 0;
-    return { h, pl, plPct, icon: h.logoText, color: ICON_COLORS[i % ICON_COLORS.length] };
-  }).sort((a, b) => b.plPct - a.plPct);
-
-  rows.forEach(({ h, pl, plPct, icon, color }) => {
-    const pos = plPct >= 0;
-    const row = document.createElement('div');
-    row.className = 'pfs-pl-row';
-    row.innerHTML = `
-      <div class="pfs-pl-icon" style="background:${color}">${icon}</div>
-      <div class="pfs-pl-info">
-        <div class="pfs-pl-name">${h.name}</div>
-        <div class="pfs-pl-ticker">${h.ticker} · ${h.qty} шт</div>
-      </div>
-      <div class="pfs-pl-vals">
-        <div class="pfs-pl-pct" style="color:${pos ? 'var(--green)' : 'var(--red)'}">${pos ? '+' : '−'}${Math.abs(plPct).toFixed(2)}%</div>
-        <div class="pfs-pl-abs">${pos ? '+' : '−'}${fmt(Math.abs(pl))}</div>
-      </div>`;
-    plList.appendChild(row);
-  });
-
-  // --- БЛОК 3: Аллокация ---
-  let totalVal = 0;
-  const byType = { bonds: 0, stocks: 0, etf: 0 };
-  const byExchange = {};
-  state.holdings.forEach(h => {
-    const r = h.currency === '$' ? (cur === '$' ? 1 : 465) : (cur === '$' ? KZT_TO_USD : 1);
-    const v = h.qty * (h.currentPrice / 100) * h.nominal * r;
-    const itype = h.type || 'bonds';
-    if (byType[itype] !== undefined) byType[itype] += v; else byType.bonds += v;
-    const itd = INSTRUMENTS_CATALOG[h.ticker];
-    const mkt = (itd && itd.market) || 'KASE';
-    byExchange[mkt] = (byExchange[mkt] || 0) + v;
-    totalVal += v;
-  });
-  const cashVal = cur === '$' ? Math.round(542300 * KZT_TO_USD) : 542300;
-  const grandTotal = totalVal + cashVal;
-
-  const TYPE_COLORS = { bonds: '#1f8a5b', stocks: '#2d7ab8', etf: '#854F0B' };
-  const TYPE_NAMES  = { bonds: 'Облигации', stocks: 'Акции', etf: 'Фонды' };
-  const EXC_COLORS  = { KASE: '#1f8a5b', INTL: '#2d7ab8', AIX: '#854F0B', primary: '#6b4ea8' };
-
-  function renderAllocList(elId, data, colors, names) {
-    const el = document.getElementById(elId);
-    el.innerHTML = '';
-    const entries = Object.entries(data).filter(([,v]) => v > 0).sort((a,b) => b[1]-a[1]);
-    entries.forEach(([key, val]) => {
-      const pct = grandTotal ? val / grandTotal * 100 : 0;
-      const color = colors[key] || '#888';
-      const label = names ? (names[key] || key) : key;
-      const div = document.createElement('div');
-      div.className = 'pfs-alloc-row';
-      div.innerHTML = `
-        <div class="pfs-alloc-meta">
-          <span class="pfs-alloc-label">${label}</span>
-          <span>
-            <span class="pfs-alloc-pct">${pct.toFixed(1)}%</span>
-            <span class="pfs-alloc-sum" style="margin-left:6px;">${fmt(val)}</span>
-          </span>
-        </div>
-        <div class="pfs-alloc-bar-track">
-          <div class="pfs-alloc-bar-fill" style="width:${pct.toFixed(1)}%;background:${color}"></div>
-        </div>`;
-      el.appendChild(div);
-    });
-    // Денежные в типах
-    if (elId === 'pfsAllocType') {
-      const pct = grandTotal ? cashVal / grandTotal * 100 : 0;
-      const div = document.createElement('div');
-      div.className = 'pfs-alloc-row';
-      div.innerHTML = `
-        <div class="pfs-alloc-meta">
-          <span class="pfs-alloc-label">Денежные</span>
-          <span>
-            <span class="pfs-alloc-pct">${pct.toFixed(1)}%</span>
-            <span class="pfs-alloc-sum" style="margin-left:6px;">${fmt(cashVal)}</span>
-          </span>
-        </div>
-        <div class="pfs-alloc-bar-track">
-          <div class="pfs-alloc-bar-fill" style="width:${pct.toFixed(1)}%;background:#888"></div>
-        </div>`;
-      el.appendChild(div);
-    }
-  }
-  renderAllocList('pfsAllocType', byType, TYPE_COLORS, TYPE_NAMES);
-  renderAllocList('pfsAllocExchange', byExchange, EXC_COLORS, null);
-
-  // --- БЛОК 4: Доходы ---
-  const { start, end } = getPeriodDateRange(statsPeriod);
-  const filteredIncome = INCOME_EVENTS.filter(ev => {
-    const d = new Date(ev.date);
-    return d >= start && d <= end;
-  });
-  document.getElementById('pfsIncomeLabel').textContent = 'Итого ' + pd.sub;
-  const totalIncome = filteredIncome.reduce((s, ev) => {
-    const r = ev.cur === '$' ? (cur === '$' ? 1 : 465) : (cur === '$' ? KZT_TO_USD : 1);
-    return s + ev.amount * r;
-  }, 0);
-  document.getElementById('pfsIncomeTotal').textContent = totalIncome > 0 ? '+' + fmt(totalIncome) : '0 ' + sym;
-
-  const incomeList = document.getElementById('pfsIncomeList');
-  incomeList.innerHTML = '';
-  if (filteredIncome.length === 0) {
-    incomeList.innerHTML = '<div class="pfs-income-empty">Выплат в этом периоде нет</div>';
-  } else {
-    filteredIncome.forEach(ev => {
-      const r = ev.cur === '$' ? (cur === '$' ? 1 : 465) : (cur === '$' ? KZT_TO_USD : 1);
-      const amt = ev.amount * r;
-      const dateStr = new Date(ev.date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
-      const row = document.createElement('div');
-      row.className = 'pfs-income-row';
-      row.innerHTML = `
-        <div class="pfs-income-icon" style="background:${ev.color};color:#fff">${ev.logo}</div>
-        <div class="pfs-income-info">
-          <div class="pfs-income-name">${ev.name} · ${ev.type}</div>
-          <div class="pfs-income-date">${dateStr}</div>
-        </div>
-        <div class="pfs-income-amount">+${fmt(amt)}</div>`;
-      incomeList.appendChild(row);
-    });
-  }
-
-  // --- БЛОК 5: Бенчмарк ---
-  const hasUsd = state.holdings.some(h => h.currency === '$');
-  const kaseRet = pd.retPct * 0.72;
-  const sp500Ret = pd.retPct * 1.15;
-  const portRet  = pd.retPct;
-
-  const benchCtx = document.getElementById('pfsBenchChart').getContext('2d');
-  const benchPts = Math.min(pd.points, 12);
-  const makeDS = (finalRet, color, dash) => ({
-    data: Array.from({ length: benchPts }, (_, i) => {
-      const t = i / (benchPts - 1);
-      return finalRet * t * (0.8 + Math.sin(i * 1.1) * 0.2);
-    }),
-    borderColor: color, borderWidth: 2, pointRadius: 0,
-    fill: false, tension: 0.45,
-    borderDash: dash || [],
-  });
-  const datasets = [
-    makeDS(portRet, '#0C447C', []),
-    makeDS(kaseRet, '#888', [4, 3]),
-    ...(hasUsd ? [makeDS(sp500Ret, '#854F0B', [4, 3])] : []),
-  ];
-  if (statsBenchChart) statsBenchChart.destroy();
-  statsBenchChart = new Chart(benchCtx, {
-    type: 'line',
-    data: { labels: Array.from({ length: benchPts }, (_, i) => i), datasets },
-    options: { animation: false, plugins: { legend: { display: false }, tooltip: { enabled: false } },
-      scales: { x: { display: false }, y: { display: false } }
-    }
-  });
-
-  // Легенда бенчмарка
-  const legend = document.getElementById('pfsBenchLegend');
-  legend.innerHTML = '';
-  const benchItems = [
-    { label: 'Мой портфель', ret: portRet, color: '#0C447C', dash: false },
-    { label: 'KASE Index', ret: kaseRet, color: '#888', dash: true },
-    ...(hasUsd ? [{ label: 'S&P 500', ret: sp500Ret, color: '#854F0B', dash: true }] : []),
-  ];
-  benchItems.forEach(b => {
-    const sign = b.ret >= 0 ? '+' : '';
-    const row = document.createElement('div');
-    row.className = 'pfs-bench-row';
-    row.innerHTML = `
-      <div class="pfs-bench-line ${b.dash ? 'dashed' : ''}" style="background:${b.dash ? 'none' : b.color};color:${b.color};border-color:${b.color};"></div>
-      <span class="pfs-bench-name">${b.label}</span>
-      <span class="pfs-bench-val" style="color:${b.ret >= 0 ? 'var(--green)' : 'var(--red)'}">${sign}${b.ret.toFixed(2)}%</span>`;
-    legend.appendChild(row);
-  });
-
-  // Вердикт
-  const diff = portRet - kaseRet;
-  const isAhead = diff >= 0;
-  document.getElementById('pfsBenchVerdict').innerHTML =
-    `Портфель <b>${isAhead ? 'обгоняет' : 'отстаёт от'} KASE</b> на <b>${Math.abs(diff).toFixed(2)}%</b> ${pd.sub}`;
-}
-
-
-function renderCashDetail() {
-  const cur = portfolioCurrency;
-  const rate = cur === '$' ? KZT_TO_USD : 465; // ₸→$ или $→₸
-
-  // Общая сумма всех валют в базовой валюте (₸) для шкалы
-  const totalKzt = CASH_DATA.reduce((s, c) => s + c.avail * (c.cur === '₸' ? 1 : 465), 0);
-
-  // ШКала долей
-  const bar = document.getElementById('pfCashBar');
-  bar.innerHTML = '';
-  CASH_DATA.forEach((c, i) => {
-    const kzt = c.avail * (c.cur === '₸' ? 1 : 465);
-    const pct = totalKzt ? (kzt / totalKzt * 100) : 0;
-    const seg = document.createElement('div');
-    seg.className = 'pf-cash-bar-seg';
-    seg.style.cssText = `flex: ${pct}; background: ${CASH_COLORS[i]};`;
-    bar.appendChild(seg);
-  });
-
-  // Легенда
-  const legend = document.getElementById('pfCashLegend');
-  legend.innerHTML = '';
-  CASH_DATA.forEach((c, i) => {
-    const kzt = c.avail * (c.cur === '₸' ? 1 : 465);
-    const pct = totalKzt ? (kzt / totalKzt * 100).toFixed(0) : 0;
-    legend.innerHTML += `
-      <div class="pf-cash-legend-item">
-        <div class="pf-cash-legend-dot" style="background:${CASH_COLORS[i]}"></div>
-        ${c.cur} — ${pct}%
-      </div>`;
-  });
-
-  // Таблица строк
-  const table = document.getElementById('pfCashTable');
-  table.innerHTML = '';
-
-  // Заголовок
-  const head = document.createElement('div');
-  head.className = 'pf-cash-row';
-  head.innerHTML = `
-    <div></div><div></div>
-    <div><div class="pf-cash-col-head">Доступно</div></div>
-    <div><div class="pf-cash-col-head">Заблокировано</div></div>
-  `;
-  table.appendChild(head);
-
-  CASH_DATA.forEach((c, i) => {
-    // Конвертация в выбранную валюту отображения
-    let approxAvail = '', approxBlocked = '';
-    if (cur === '$' && c.cur === '₸') {
-      approxAvail   = '≈ ' + (c.avail * KZT_TO_USD).toFixed(0) + ' $';
-      approxBlocked = c.blocked ? '≈ ' + (c.blocked * KZT_TO_USD).toFixed(0) + ' $' : '';
-    } else if (cur === '₸' && c.cur === '$') {
-      approxAvail   = '≈ ' + Math.round(c.avail * 465).toLocaleString('ru-RU').replace(/,/g,' ') + ' ₸';
-      approxBlocked = c.blocked ? '≈ ' + Math.round(c.blocked * 465).toLocaleString('ru-RU').replace(/,/g,' ') + ' ₸' : '';
-    }
-
-    const row = document.createElement('div');
-    row.className = 'pf-cash-row';
-    row.innerHTML = `
-      <div class="pf-cash-dot" style="background:${CASH_COLORS[i]}"></div>
-      <div class="pf-cash-cur">${c.cur}</div>
-      <div>
-        <div class="pf-cash-col-val">${c.avail.toLocaleString('ru-RU').replace(/,/g,' ')} ${c.cur}</div>
-        ${approxAvail ? `<div class="pf-cash-approx">${approxAvail}</div>` : ''}
-      </div>
-      <div>
-        <div class="pf-cash-col-val blocked">${c.blocked ? c.blocked.toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + c.cur : '—'}</div>
-        ${approxBlocked ? `<div class="pf-cash-approx">${approxBlocked}</div>` : ''}
-      </div>
-    `;
-    table.appendChild(row);
-  });
-}
-
-function renderHomePortfolio() {
-  const cur = portfolioCurrency || '₸';
-  let totalCurrent = 0, totalPurchase = 0;
-  state.holdings.forEach(h => {
-    const r = h.currency === '$' ? (cur === '$' ? 1 : 465) : (cur === '$' ? KZT_TO_USD : 1);
-    totalCurrent += Math.round(h.qty * (h.currentPrice / 100) * h.nominal * r);
-    totalPurchase += Math.round(h.qty * (h.avgPrice / 100) * h.nominal * r);
-  });
-  const cashRaw = cur === '$' ? Math.round(542300 * KZT_TO_USD) : 542300;
-  const total = totalCurrent + cashRaw;
-  const pl = totalCurrent - totalPurchase;
-  const plPct = totalPurchase ? pl / totalPurchase * 100 : 0;
-  const plSign = pl >= 0 ? '+' : '−';
-  const sym = cur;
-  function fmt(n) { return Math.abs(Math.round(n)).toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + sym; }
-
-  const totalEl = document.getElementById('homePfTotal');
-  if (totalEl) totalEl.textContent = fmt(total);
-  const plEl = document.getElementById('homePfPL');
-  if (plEl) {
-    plEl.textContent = plSign + fmt(Math.abs(pl)) + ' · ' + plSign + Math.abs(plPct).toFixed(2) + '%';
-    plEl.className = 'hpc-pl ' + (pl >= 0 ? 'up' : 'down');
-  }
-  const secEl = document.getElementById('homePfSecurities');
-  if (secEl) secEl.textContent = fmt(totalCurrent);
-  const cashEl = document.getElementById('homePfCash');
-  if (cashEl) cashEl.textContent = fmt(cashRaw);
-}
-
-function renderPortfolioHeader() {
-  const cur = portfolioCurrency;
-  const sym = cur;
-
-  let inSecurities = 0, totalPL = 0, totalPurchase = 0;
-  state.holdings.forEach(h => {
-    const hRate = h.currency === '$' ? (cur === '$' ? 1 : 465) : (cur === '$' ? KZT_TO_USD : 1);
-    const cv = Math.round(h.qty * (h.currentPrice / 100) * h.nominal * hRate);
-    const pv = Math.round(h.qty * (h.avgPrice / 100) * h.nominal * hRate);
-    inSecurities += cv;
-    totalPL += cv - pv;
-    totalPurchase += pv;
-  });
-
-  // Денежные — сумма всех валют в выбранной
-  const cash = CASH_DATA.reduce((s, c) => {
-    const inSym = cur === '$'
-      ? (c.cur === '$' ? c.avail : Math.round(c.avail * KZT_TO_USD))
-      : (c.cur === '₸' ? c.avail : Math.round(c.avail * 465));
-    return s + inSym;
-  }, 0);
-
-  const total = inSecurities + cash;
-  const plPct = totalPurchase ? (totalPL / totalPurchase * 100) : 0;
-  const plSign = totalPL >= 0 ? '+' : '−';
-
-  function fmt(n) { return Math.abs(Math.round(n)).toLocaleString('ru-RU').replace(/,/g,' ') + ' ' + sym; }
-
-  document.getElementById('portfolioTotal').textContent = fmt(total);
-  document.getElementById('portfolioPL').textContent = plSign + fmt(Math.abs(totalPL)) + ' · ' + plSign + Math.abs(plPct).toFixed(2) + '%';
-  document.getElementById('portfolioPL').className = 'pl ' + (totalPL >= 0 ? 'up' : 'down');
-  document.getElementById('pfInSecurities').textContent = fmt(inSecurities);
-  document.getElementById('pfCash').textContent = fmt(cash);
-
-  // Обновить вкладку если открыта
-  if (portfolioActiveTab === 'cash') renderCashDetail();
-  if (portfolioActiveTab === 'stats') renderPortfolioStats();
-}
-
 function renderPortfolio() {
   const host = document.getElementById('portfolioList');
   host.innerHTML = '';
   let items = state.holdings;
   if (portfolioFilterType !== 'all') items = items.filter(h => (h.type || 'bonds') === portfolioFilterType);
-  if (portfolioFilterExchange !== 'all') {
-    items = items.filter(h => {
-      const it = INSTRUMENTS_CATALOG[h.ticker];
-      return it && it.market === portfolioFilterExchange;
-    });
-  }
   if (items.length === 0) {
     host.innerHTML = '<div class="fav-empty" style="padding:40px 24px;"><h3>Пока пусто</h3><p>В этой категории нет позиций</p></div>';
     return;
@@ -4362,13 +2949,31 @@ function renderPortfolio() {
     const plSign = pl >= 0 ? '+' : '−';
 
     // Метакарточка: разная для облигаций, акций, ETF
-    const itData = INSTRUMENTS_CATALOG[h.ticker];
-    const mRaw = itData && itData.market;
-    const mStr = mRaw ? ' · ' + (mRaw === 'primary' ? 'Special' : mRaw) : '';
+    let metaHtml = '';
+    if (isBond) {
+      metaHtml = `
+        <div class="pc-meta-cell"><div class="label">Ближайший купон</div><div class="value">${h.nextCouponDate}</div></div>
+        <div class="pc-meta-cell"><div class="label">Сумма купона</div><div class="value green">+${h.nextCouponAmount.toLocaleString('ru-RU').replace(/,/g,' ')} ${h.currency}</div></div>
+        <div class="pc-meta-cell"><div class="label">До погашения</div><div class="value">${h.daysToMaturity} дн.</div></div>
+      `;
+    } else if (itype === 'stocks') {
+      metaHtml = `
+        <div class="pc-meta-cell"><div class="label">Ср. цена покупки</div><div class="value">${h.avgPrice} ${h.currency}</div></div>
+        <div class="pc-meta-cell"><div class="label">Див. доходность</div><div class="value green">${h.divYield || 0}%</div></div>
+        <div class="pc-meta-cell"><div class="label">P/E</div><div class="value">${h.pe || '—'}</div></div>
+      `;
+    } else if (itype === 'etf') {
+      const assetLabel = h.asset === 'bonds' ? 'Облигации' : 'Акции';
+      metaHtml = `
+        <div class="pc-meta-cell"><div class="label">Ср. цена покупки</div><div class="value">${h.avgPrice} ${h.currency}</div></div>
+        <div class="pc-meta-cell"><div class="label">TER</div><div class="value">${h.ter || 0}%</div></div>
+        <div class="pc-meta-cell"><div class="label">Активы</div><div class="value">${assetLabel}</div></div>
+      `;
+    }
 
     const card = document.createElement('div');
     card.className = 'portfolio-card';
-    card.onclick = () => openInstrumentDetail(h.ticker);
+    card.onclick = () => openSell(h.id);
     card.innerHTML = `
       <div class="pc-top">
         <div class="bond-logo ${h.logoClass}">${h.logoText}</div>
@@ -4376,13 +2981,16 @@ function renderPortfolio() {
           <div class="pc-name">${h.name}</div>
           <div class="pc-ticker">
             <span class="type-tag ${itype}" style="margin-right:6px;">${TYPE_LABELS[itype] || itype}</span>
-            ${h.ticker}${mStr} · ${h.qty} шт
+            ${h.ticker} · ${h.qty} шт
           </div>
         </div>
         <div class="pc-value-block">
           <div class="pc-value">${currentValue.toLocaleString('ru-RU').replace(/,/g,' ')} ${h.currency}</div>
           <div class="pc-pl ${plClass}">${plSign}${Math.abs(pl).toLocaleString('ru-RU').replace(/,/g,' ')} ${h.currency} · ${plSign}${Math.abs(plPct).toFixed(2)}%</div>
         </div>
+      </div>
+      <div class="pc-meta">
+        ${metaHtml}
       </div>
     `;
     host.appendChild(card);
@@ -4406,14 +3014,6 @@ function openSell(holdingId, fromDetail) {
 }
 
 // Возврат с экрана покупки/продажи туда, откуда реально пришли
-// Назад с карточки инструмента — на источник входа (витрина, портфель, избранное)
-function goBackFromDetail() {
-  const entry = state.detailEntryPoint || 'bonds-list';
-  // Допустимые точки возврата — не даём вернуться на саму карточку рекурсивно
-  const safeViews = ['bonds-list', 'portfolio', 'favorites', 'history'];
-  goTo(safeViews.includes(entry) ? entry : 'bonds-list');
-}
-
 function goBackFromOrder() {
   if (state.flow === 'sell') {
     if (state.sellEntryPoint === 'detail' && state.currentDetailTicker) {
@@ -4629,16 +3229,9 @@ function openInstrumentDetail(ticker) {
   const it = INSTRUMENTS_CATALOG[ticker];
   if (!it) { goTo('bond-detail'); return; }
   state.currentDetailTicker = ticker;
-  // Запоминаем источник входа для кнопки Назад
-  state.detailEntryPoint = state.currentView;
   state.currentBondTicker = ticker; // для обратной совместимости с goBackFromOrder
 
   const isBondNow = it.type === 'bonds';
-
-  // Заголовок карточки
-  const titleByType = { bonds: 'Облигация', stocks: 'Акция', etf: 'Фонд' };
-  const titleEl = document.getElementById('bondDetailTitle');
-  if (titleEl) titleEl.textContent = titleByType[it.type] || 'Инструмент';
 
   // ШАПКА
   document.getElementById('bdLogo').className = 'bond-logo ' + it.logoClass;
@@ -4762,9 +3355,6 @@ function openInstrumentDetail(ticker) {
   // Сбрасываю вид графика на "График" (не Стакан) при открытии новой бумаги
   const chartTab = document.querySelector('.chart-view-tab');
   if (chartTab) switchChartView(chartTab, 'chart');
-  // Инициализируем статистику под графиком для активного периода
-  const activePeriod = document.querySelector('#chartRanges .chart-range.active');
-  updateChartStats(activePeriod ? activePeriod.textContent.trim() : '6М');
   // Сворачиваю раскрытые блоки купонов/аккордеона
   document.querySelectorAll('.coupon-expand-trigger.open, .accordion-trigger.open').forEach(t => t.classList.remove('open'));
   document.querySelectorAll('.coupon-expand-content.open, .accordion-content.open').forEach(c => c.classList.remove('open'));
@@ -4952,159 +3542,6 @@ function applyFiltersToItems(items, filters, ignoreMarket = false, ignoreType = 
 }
 
 // Пересчёт всех счётчиков на вкладках + перерисовка списка
-// ===== MARKET PAGE =====
-const TOP_DATA = {
-  top: [
-    { n:1, logo:'МФ', color:'#1f8a5b', ticker:'MOM_KZT_05.27', type:'Облигации', buys:'1 284', vol:'128M ₸', fire:true },
-    { n:2, logo:'H',  color:'#2d7ab8', ticker:'HSBK',           type:'Акции',    buys:'892',   vol:'177M ₸', fire:true },
-    { n:3, logo:'KMG',color:'#854F0B', ticker:'KMG',            type:'Акции',    buys:'541',   vol:'729M ₸', fire:false },
-    { n:4, logo:'VOO',color:'#555',    ticker:'VOO',            type:'ETF',      buys:'338',   vol:'164K $',  fire:false },
-    { n:5, logo:'BCC',color:'#6b4ea8', ticker:'BCC_PRIM_06.31', type:'Размещение',buys:'291',  vol:'29M ₸',  fire:false },
-  ],
-  rise: [
-    { n:1, logo:'TSLA',color:'#854F0B', ticker:'TSLA', name:'Tesla Inc.',    exchange:'INTL', price:'248.50 $', chg:'+5.35%' },
-    { n:2, logo:'EEM', color:'#6b4ea8', ticker:'EEM',  name:'iShares EM',   exchange:'INTL', price:'42.15 $',  chg:'+3.21%' },
-    { n:3, logo:'KAP', color:'#1f8a5b', ticker:'KZAP', name:'Казатомпром',  exchange:'AIX',  price:'52 100 ₸', chg:'+2.14%' },
-    { n:4, logo:'KO',  color:'#2d7ab8', ticker:'KO',   name:'Coca-Cola',    exchange:'INTL', price:'65.30 $',  chg:'+1.88%' },
-    { n:5, logo:'H',   color:'#1f8a5b', ticker:'HSBK', name:'Halyk Bank',   exchange:'KASE', price:'198.45 ₸', chg:'+1.07%' },
-  ],
-  fall: [
-    { n:1, logo:'K',   color:'#854F0B', ticker:'KSPI', name:'Kaspi.kz',     exchange:'KASE', price:'101.20 ₸', chg:'−2.40%' },
-    { n:2, logo:'КТ',  color:'#555',    ticker:'KZTK', name:'Казахтелеком', exchange:'KASE', price:'34 200 ₸', chg:'−1.35%' },
-    { n:3, logo:'FX',  color:'#6b4ea8', ticker:'FXUS', name:'FinEx US',     exchange:'INTL', price:'92.30 $',  chg:'−0.88%' },
-  ],
-};
-
-function renderTopPanes() {
-  const NUM_COLORS = ['#d4a017','#9e9e9e','#cd7f32','#666','#666'];
-  // Топ продаж
-  const topEl = document.getElementById('topPane');
-  if (topEl) {
-    topEl.innerHTML = '';
-    TOP_DATA.top.forEach((r,i) => {
-      const row = document.createElement('div');
-      row.className = 'tp-row';
-      row.style.cursor = 'pointer';
-      row.onclick = () => openInstrumentDetail(r.ticker);
-      row.innerHTML = `
-        <span class="tp-num" style="color:${NUM_COLORS[i]}">${r.n}</span>
-        <div class="tp-logo" style="background:${r.color}">${r.logo}</div>
-        <div class="tp-info">
-          <div class="tp-ticker">${r.ticker}${r.fire ? ' 🔥' : ''}</div>
-          <div class="tp-type">${r.type}</div>
-        </div>
-        <div class="tp-right">
-          <div class="tp-val">${r.buys} покупок</div>
-          <div class="tp-sub">${r.vol}</div>
-        </div>`;
-      topEl.appendChild(row);
-    });
-  }
-  // Взлёты
-  const riseEl = document.getElementById('risePane');
-  if (riseEl) {
-    riseEl.innerHTML = '';
-    TOP_DATA.rise.forEach((r,i) => {
-      const row = document.createElement('div');
-      row.className = 'tp-row';
-      row.style.cursor = 'pointer';
-      row.onclick = () => openInstrumentDetail(r.ticker);
-      row.innerHTML = `
-        <span class="tp-num" style="color:${NUM_COLORS[i]}">${r.n}</span>
-        <div class="tp-logo" style="background:${r.color}">${r.logo}</div>
-        <div class="tp-info">
-          <div class="tp-ticker">${r.ticker}</div>
-          <div class="tp-type">${r.name} · ${r.exchange}</div>
-        </div>
-        <div class="tp-right">
-          <div class="tp-val">${r.price}</div>
-          <div class="tp-sub" style="color:var(--green)">${r.chg}</div>
-        </div>`;
-      riseEl.appendChild(row);
-    });
-  }
-  // Падения
-  const fallEl = document.getElementById('fallPane');
-  if (fallEl) {
-    fallEl.innerHTML = '';
-    TOP_DATA.fall.forEach((r,i) => {
-      const row = document.createElement('div');
-      row.className = 'tp-row';
-      row.style.cursor = 'pointer';
-      row.onclick = () => openInstrumentDetail(r.ticker);
-      row.innerHTML = `
-        <span class="tp-num">${r.n}</span>
-        <div class="tp-logo" style="background:${r.color}">${r.logo}</div>
-        <div class="tp-info">
-          <div class="tp-ticker">${r.ticker}</div>
-          <div class="tp-type">${r.name} · ${r.exchange}</div>
-        </div>
-        <div class="tp-right">
-          <div class="tp-val">${r.price}</div>
-          <div class="tp-sub" style="color:var(--red)">${r.chg}</div>
-        </div>`;
-      fallEl.appendChild(row);
-    });
-  }
-}
-
-function switchTopTab(el, pane) {
-  document.querySelectorAll('.tp-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  ['topPane','risePane','fallPane','favPane'].forEach(id => {
-    const el2 = document.getElementById(id);
-    if (el2) el2.style.display = 'none';
-  });
-  const ids = { top:'topPane', rise:'risePane', fall:'fallPane', fav:'favPane' };
-  const target = document.getElementById(ids[pane]);
-  if (target) {
-    target.style.display = '';
-    if (pane === 'fav') renderFavPane();
-  }
-}
-
-function renderFavPane() {
-  const el = document.getElementById('favPane');
-  if (!el) return;
-  el.innerHTML = '';
-  if (favorites.size === 0) {
-    el.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-mute);font-size:13px;">Добавьте бумаги в избранное через ★ на карточке</div>';
-    return;
-  }
-  favorites.forEach((it, ticker) => {
-    const isUp = it.changePct >= 0;
-    const arrow = isUp ? '▲' : '▼';
-    const row = document.createElement('div');
-    row.className = 'tp-row';
-    row.style.cursor = 'pointer';
-    row.onclick = () => openInstrumentDetail(ticker);
-    row.innerHTML = `
-      <div class="tp-logo bond-logo ${it.logoClass}" style="width:30px;height:30px;font-size:9px;border-radius:8px;">${it.logoText}</div>
-      <div class="tp-info">
-        <div class="tp-ticker">${it.name}</div>
-        <div class="tp-type">${ticker}</div>
-      </div>
-      <div class="tp-right">
-        <div class="tp-val">${it.price}</div>
-        <div class="tp-sub" style="color:${isUp ? 'var(--green)' : 'var(--red)'}">${arrow} ${Math.abs(it.changePct).toFixed(2)}%</div>
-      </div>`;
-    el.appendChild(row);
-  });
-}
-
-function openSearchOverlay() {
-  const ov = document.getElementById('searchOverlay');
-  if (ov) { ov.style.display = 'flex'; }
-  recalcAll();
-  const inp = document.getElementById('searchInput');
-  if (inp) setTimeout(() => inp.focus(), 100);
-}
-
-function closeSearchOverlay() {
-  const ov = document.getElementById('searchOverlay');
-  if (ov) ov.style.display = 'none';
-}
-
 function recalcAll() {
   const filters = getActiveFilters();
   const hasSearch = !!filters.search;
@@ -5456,73 +3893,6 @@ function toggleLimitTip(e) {
 function setChartRange(el) {
   el.parentElement.querySelectorAll('.chart-range').forEach(r => r.classList.remove('active'));
   el.classList.add('active');
-  updateChartStats(el.textContent.trim());
-}
-
-// Обновляет статистику под графиком в зависимости от выбранного периода
-function updateChartStats(period) {
-  const ticker = state.currentDetailTicker;
-  const it = ticker ? INSTRUMENTS_CATALOG[ticker] : null;
-  const basePrice = it ? parseFloat(String(it.price).replace(/\s/g,'').replace(',', '.')) : 100;
-  const isBond = it && it.type === 'bonds';
-  const cur = it ? it.currency : '₸';
-
-  // Фейковые данные, смещённые по периоду для реализма
-  const spread = { 'Н': 0.6, '1М': 1.2, '6М': 3.5, '1Г': 6.0, 'Все': 9.5 };
-  const s = (spread[period] || 1.2) / 100;
-  const hi = parseFloat((basePrice * (1 + s)).toFixed(2));
-  const lo = parseFloat((basePrice * (1 - s * 0.7)).toFixed(2));
-  const close = parseFloat((basePrice * 0.9968).toFixed(2));
-  const open  = parseFloat((basePrice * 0.9985).toFixed(2));
-  const vwap  = parseFloat((basePrice * 0.9990).toFixed(2));
-  const dayChange = ((basePrice - close) / close * 100);
-  const changeStr = (dayChange >= 0 ? '+' : '') + dayChange.toFixed(2) + '%';
-  const volumeMoney = Math.round(basePrice * (12000 + Math.random() * 8000));
-  const deals = Math.round(1200 + Math.random() * 600);
-  const fmt2 = isBond ? 2 : (basePrice > 100 ? 2 : 4);
-  function f(n) { return n.toFixed(fmt2); }
-  function fm(n) {
-    if (n >= 1e9) return (n/1e9).toFixed(1) + 'B ' + cur;
-    if (n >= 1e6) return (n/1e6).toFixed(1) + 'M ' + cur;
-    if (n >= 1e3) return (n/1e3).toFixed(0) + 'K ' + cur;
-    return n.toLocaleString('ru-RU') + ' ' + cur;
-  }
-
-  // Cells
-  const closeEl = document.getElementById('csClose');
-  const openEl  = document.getElementById('csOpen');
-  const vwapEl  = document.getElementById('csVwap');
-  const changeEl= document.getElementById('csDayChange');
-  const volEl   = document.getElementById('csVolumeMoney');
-  const dealsEl = document.getElementById('csDeals');
-
-  if (closeEl) closeEl.textContent = f(close) + (isBond ? '%' : '');
-  if (openEl)  openEl.textContent  = f(open)  + (isBond ? '%' : '');
-  if (vwapEl)  vwapEl.textContent  = f(vwap)  + (isBond ? '%' : '');
-  if (changeEl) {
-    changeEl.textContent = changeStr;
-    changeEl.className = 'cs-value ' + (dayChange >= 0 ? 'up' : 'down');
-  }
-  if (volEl)   volEl.textContent   = fm(volumeMoney);
-  if (dealsEl) dealsEl.textContent = deals.toLocaleString('ru-RU').replace(/,/g,' ');
-
-  // Шкала мин-макс
-  const prbLowEl  = document.getElementById('prbLow');
-  const prbHighEl = document.getElementById('prbHigh');
-  const prbCurEl  = document.getElementById('prbCurrentLabel');
-  const prbFill   = document.getElementById('prbFill');
-  const prbThumb  = document.getElementById('prbThumb');
-  if (prbLowEl)  prbLowEl.textContent  = f(lo)  + (isBond ? '%' : '');
-  if (prbHighEl) prbHighEl.textContent = f(hi)   + (isBond ? '%' : '');
-  if (prbCurEl)  prbCurEl.textContent  = 'Текущая: ' + f(basePrice) + (isBond ? '%' : ' ' + cur);
-  if (prbFill && prbThumb) {
-    const range = hi - lo;
-    const pct = range > 0 ? ((basePrice - lo) / range * 100) : 50;
-    const clamped = Math.max(0, Math.min(100, pct));
-    prbFill.style.left = '0%';
-    prbFill.style.right = (100 - clamped) + '%';
-    prbThumb.style.left = clamped + '%';
-  }
 }
 function switchChartView(el, view) {
   document.querySelectorAll('.chart-view-tab').forEach(t => t.classList.remove('active'));
@@ -6022,9 +4392,8 @@ function addHistoryItem() {
 // Init on load
 window.addEventListener('DOMContentLoaded', () => {
   renderCalendar();
+  // Применяю фильтры/счётчики/рендер при первой загрузке
   recalcAll();
-  renderTopPanes();
-  renderHomePortfolio();
 });
 </script>
 
